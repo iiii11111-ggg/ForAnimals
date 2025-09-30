@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: 906ab4085d3572c4f92bbcac078a7c04
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armor_LP
+    100002: //RootNode
+    100004: Body_LP
+    100006: Eye_LP
+    100008: Head1
+    100010: Head2
+    100012: Scorpion1_bone_claw_l_1
+    100014: Scorpion1_bone_claw_l_2
+    100016: Scorpion1_bone_claw_l_3
+    100018: Scorpion1_bone_claw_l_4
+    100020: Scorpion1_bone_claw_r_1
+    100022: Scorpion1_bone_claw_r_2
+    100024: Scorpion1_bone_claw_r_3
+    100026: Scorpion1_bone_claw_r_4
+    100028: Scorpion1_bone_leg_l1_1
+    100030: Scorpion1_bone_leg_l1_2
+    100032: Scorpion1_bone_leg_l1_3
+    100034: Scorpion1_bone_leg_l2_1
+    100036: Scorpion1_bone_leg_l2_2
+    100038: Scorpion1_bone_leg_l2_3
+    100040: Scorpion1_bone_leg_l3_1
+    100042: Scorpion1_bone_leg_l3_2
+    100044: Scorpion1_bone_leg_l3_3
+    100046: Scorpion1_bone_leg_r1_1
+    100048: Scorpion1_bone_leg_r1_2
+    100050: Scorpion1_bone_leg_r1_3
+    100052: Scorpion1_bone_leg_r2_1
+    100054: Scorpion1_bone_leg_r2_2
+    100056: Scorpion1_bone_leg_r2_3
+    100058: Scorpion1_bone_leg_r3_1
+    100060: Scorpion1_bone_leg_r3_2
+    100062: Scorpion1_bone_leg_r3_3
+    100064: Scorpion1_bone_root
+    100066: Scorpion1_bone_tail1
+    100068: Scorpion1_bone_tail2
+    100070: Scorpion1_bone_tail3
+    100072: Scorpion1_bone_tail4
+    100074: Scorpion1_bone_tail5
+    100076: Scorpion1_bone_tail6
+    100078: Scorpion1_bone_tail7
+    100080: Tongue_LP
+    400000: Armor_LP
+    400002: //RootNode
+    400004: Body_LP
+    400006: Eye_LP
+    400008: Head1
+    400010: Head2
+    400012: Scorpion1_bone_claw_l_1
+    400014: Scorpion1_bone_claw_l_2
+    400016: Scorpion1_bone_claw_l_3
+    400018: Scorpion1_bone_claw_l_4
+    400020: Scorpion1_bone_claw_r_1
+    400022: Scorpion1_bone_claw_r_2
+    400024: Scorpion1_bone_claw_r_3
+    400026: Scorpion1_bone_claw_r_4
+    400028: Scorpion1_bone_leg_l1_1
+    400030: Scorpion1_bone_leg_l1_2
+    400032: Scorpion1_bone_leg_l1_3
+    400034: Scorpion1_bone_leg_l2_1
+    400036: Scorpion1_bone_leg_l2_2
+    400038: Scorpion1_bone_leg_l2_3
+    400040: Scorpion1_bone_leg_l3_1
+    400042: Scorpion1_bone_leg_l3_2
+    400044: Scorpion1_bone_leg_l3_3
+    400046: Scorpion1_bone_leg_r1_1
+    400048: Scorpion1_bone_leg_r1_2
+    400050: Scorpion1_bone_leg_r1_3
+    400052: Scorpion1_bone_leg_r2_1
+    400054: Scorpion1_bone_leg_r2_2
+    400056: Scorpion1_bone_leg_r2_3
+    400058: Scorpion1_bone_leg_r3_1
+    400060: Scorpion1_bone_leg_r3_2
+    400062: Scorpion1_bone_leg_r3_3
+    400064: Scorpion1_bone_root
+    400066: Scorpion1_bone_tail1
+    400068: Scorpion1_bone_tail2
+    400070: Scorpion1_bone_tail3
+    400072: Scorpion1_bone_tail4
+    400074: Scorpion1_bone_tail5
+    400076: Scorpion1_bone_tail6
+    400078: Scorpion1_bone_tail7
+    400080: Tongue_LP
+    2100000: Body
+    4300000: Body_LP
+    4300002: Tongue_LP
+    4300004: Eye_LP
+    4300006: Armor_LP
+    9500000: //RootNode
+    13700000: Armor_LP
+    13700002: Body_LP
+    13700004: Eye_LP
+    13700006: Tongue_LP
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 53e4334e0e3852346950c77c49be1d71, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190520
+  packageName: Scorpion King
+  packageVersion: 1.0
+  assetPath: Assets/Scorpion1/Basemesh/scorpion1_skin1_basemesh.fbx
+  uploadId: 420684

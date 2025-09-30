@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e3cba0adfbd65be4993fe170ca9aadf7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190520
+  packageName: Scorpion King
+  packageVersion: 1.0
+  assetPath: Assets/Scorpion1/Ground/mat_ground.mat
+  uploadId: 420684
