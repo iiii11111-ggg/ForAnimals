@@ -1,23 +1,47 @@
+ï»¿// SaveManager.cs (ì‹±ê¸€í†¤ ì ìš© ë²„ì „)
 using System.IO;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    public Transform playerTransform;
+    // 1. ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ ì¶”ê°€
+    public static SaveManager Instance { get; private set; }
+
+    // playerTransformì€ ë” ì´ìƒ publicì¼ í•„ìš”ê°€ ì—†ìŠµë‹ˆë‹¤.
+    private Transform playerTransform;
+
+    // 2. Awake() í•¨ìˆ˜ì—ì„œ ì¸ìŠ¤í„´ìŠ¤ ì„¤ì •
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // ì”¬ì´ ë°”ë€Œì–´ë„ ìœ ì§€ë˜ë„ë¡ ì„¤ì •
+        }
+        else
+        {
+            Destroy(gameObject); // ì´ë¯¸ ì¸ìŠ¤í„´ìŠ¤ê°€ ìˆìœ¼ë©´ ìƒˆë¡œ ìƒê¸´ ê²ƒì€ íŒŒê´´
+        }
+    }
 
     public void SaveGameData()
     {
-        // DataManager¿¡¼­ ÇöÀç ·ÎµåµÈ ½½·Ô ¹øÈ£¸¦ °¡Á®¿É´Ï´Ù.
-        int currentSaveSlot = PlayerData.currentSlotIndex;
-
-        // ½½·Ô ¹øÈ£°¡ À¯È¿ÇÑÁö È®ÀÎÇÕ´Ï´Ù.
-        if (currentSaveSlot == 0)
+        // ì €ì¥í•˜ëŠ” ì‹œì ì— í”Œë ˆì´ì–´ë¥¼ ì°¾ì•„ì„œ í• ë‹¹ (ì”¬ì´ ë°”ë€Œì–´ë„ ë¬¸ì œì—†ìŒ)
+        playerTransform = GameObject.FindWithTag("Player").transform;
+        if (playerTransform == null)
         {
-            Debug.LogError("ÇöÀç ÀúÀåÇÒ ½½·ÔÀÌ ¼±ÅÃµÇÁö ¾Ê¾Ò½À´Ï´Ù. ¸ŞÀÎ ¸Ş´º¿¡¼­ ½½·ÔÀ» ¼±ÅÃÇß´ÂÁö È®ÀÎÇÏ¼¼¿ä.");
+            Debug.LogError("Player íƒœê·¸ë¥¼ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
             return;
         }
 
-        string folderPath = Path.Combine(Application.persistentDataPath, "SAVE");
+        int currentSaveSlot = PlayerData.currentSlotIndex;
+        if (currentSaveSlot == 0)
+        {
+            Debug.LogError("í˜„ì¬ ì €ì¥í•  ìŠ¬ë¡¯ì´ ì„ íƒë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+            return;
+        }
+
+        string folderPath = Path.Combine(Application.dataPath, "../", "SAVE");
         if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
@@ -31,6 +55,29 @@ public class SaveManager : MonoBehaviour
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(filePath, json);
 
-        Debug.Log("½½·Ô " + currentSaveSlot + "¿¡ °ÔÀÓ µ¥ÀÌÅÍ°¡ ÀúÀåµÇ¾ú½À´Ï´Ù.");
+        Debug.Log("ìŠ¬ë¡¯ " + currentSaveSlot + "ì— ê²Œì„ ë°ì´í„°ê°€ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
+
+    private string GetDestructionKey(int saveSlotIndex, string objectID)
+    {
+        // ì˜ˆì‹œ í‚¤: "Slot_3_Destroyed_Chest_001"
+        return "Slot_" + saveSlotIndex.ToString() + "_Destroyed_" + objectID;
+    }
+
+    // ğŸ’¡ 2. íŒŒê´´ ê¸°ë¡ í™•ì¸ (int ì¸ë±ìŠ¤ ì‚¬ìš©)
+    public bool HasBeenDestroyed(int saveSlotIndex, string objectID)
+    {
+        string key = GetDestructionKey(saveSlotIndex, objectID);
+        return PlayerPrefs.GetInt(key, 0) == 1;
+    }
+
+    // ğŸ’¡ 3. íŒŒê´´ ê¸°ë¡ ì €ì¥ (int ì¸ë±ìŠ¤ ì‚¬ìš©)
+    public void MarkAsDestroyed(int saveSlotIndex, string objectID)
+    {
+        string key = GetDestructionKey(saveSlotIndex, objectID);
+        PlayerPrefs.SetInt(key, 1);
+        PlayerPrefs.Save();
+        Debug.Log($"ìŠ¬ë¡¯ ì¸ë±ìŠ¤ [{saveSlotIndex}]ì— ID: {objectID}ê°€ ì˜êµ¬ íŒŒê´´ëœ ê²ƒìœ¼ë¡œ ê¸°ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.");
+    }
+
 }
