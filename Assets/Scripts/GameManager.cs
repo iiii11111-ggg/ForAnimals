@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour
         PlayerData.currentSlotIndex = slotIndex;
         Debug.Log("DataManager에 슬롯 번호 " + slotIndex + " 저장됨.");
 
+        if (Dialog.Instance != null)
+        {
+            Dialog.Instance.ResetDialogSystem();
+            Debug.Log("<color=cyan><b>[GameManager] 씬 로드 시작 직전, Dialog 시스템을 선제적으로 초기화합니다.</b></color>");
+        }
+
         // 2. 씬 로딩 및 데이터 적용 코루틴을 시작합니다.
         StartCoroutine(LoadSceneAndApplyData(sceneName));
     }
@@ -38,15 +44,6 @@ public class GameManager : MonoBehaviour
         while (!asyncLoad.isDone)
         {
             yield return null; // 씬 로드가 끝날 때까지 대기
-        }
-
-        // --- 씬 로딩 직후 작업 (가장 중요!) ---
-
-        // 1. Dialog 같은 싱글톤 시스템을 '먼저' 초기화합니다.
-        if (Dialog.Instance != null)
-        {
-            Dialog.Instance.ResetDialogSystem();
-            Debug.Log("<color=lime><b>[GameManager] Dialog System 초기화 완료.</b></color>");
         }
 
         // 2. 저장된 게임 데이터를 로드합니다. (기존 InGameSceneLoader의 로직)

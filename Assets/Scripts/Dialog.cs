@@ -50,6 +50,7 @@ public class Dialog : MonoBehaviour
         EndDialog = false;
 
         Debug.Log($"[Dialog] StartDialog: 내부 script 리스트에 데이터 할당 완료. 현재 script 개수: {script.Count}"); 
+        Debug.Log($"[Dialog] StartDialog: 내부 script 리스트에 데이터 할당 완료. 현재 script 텍스트: {script[0]}"); 
 }
 
     public void ResetDialogSystem()
@@ -85,6 +86,7 @@ public class Dialog : MonoBehaviour
             NextActive = false;
             index++;
             OnIndexChanged?.Invoke(index);
+            Debug.Log($"[Dialog] NextDialog: index 값 확인 :{index}");
             text.text = script[index];
             speaker.text = name[index];
             ScriptLog.Add(script[index - 1]);

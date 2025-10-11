@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\mainmenu\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\tutorialevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tutorialevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\mainmenu\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\mainmenu\\loadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu\\loadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|e:\\unity\\projects\\foranimals-git\\foranimals\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\mainmenu\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|e:\\unity\\projects\\foranimals-git\\foranimals\\assets\\scripts\\mainmenu\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\stage1\\start_event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\stage1\\start_event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\dialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,12 +35,8 @@
       "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rabbittopanda_t.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\tutorialevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tutorialevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\stage1\\start_event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\stage1\\start_event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|e:\\unity\\projects\\foranimals-git\\foranimals\\assets\\scripts\\mainmenu\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu\\playerdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3EB3BD28-1A36-6736-AAB8-FEF94A767B99}|Assembly-CSharp.csproj|E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,24 +54,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "GameData.cs",
+              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\GameData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu\\GameData.cs",
+              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\GameData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainMenu\\GameData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T15:54:57.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAIwE4AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-30T15:47:13.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Start_Event.cs",
               "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\Stage1\\Start_Event.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Stage1\\Start_Event.cs",
@@ -75,11 +92,77 @@
               "RelativeToolTip": "Assets\\Scripts\\Stage1\\Start_Event.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T11:37:38.56Z"
+              "WhenOpened": "2025-09-30T11:37:38.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoadManager.cs",
+              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\LoadManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu\\LoadManager.cs",
+              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\LoadManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainMenu\\LoadManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T05:54:33.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SaveManager.cs",
+              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\SaveManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu\\SaveManager.cs",
+              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\SaveManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainMenu\\SaveManager.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAxwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T05:21:55.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dialog.cs",
+              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\Dialog.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Dialog.cs",
+              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\Dialog.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Dialog.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAQwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T00:43:20.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RabbitToPanda_T.cs",
+              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\RabbitToPanda_T.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RabbitToPanda_T.cs",
+              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\RabbitToPanda_T.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RabbitToPanda_T.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T00:42:55.532Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TutorialEvent.cs",
+              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\TutorialEvent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TutorialEvent.cs",
+              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\TutorialEvent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TutorialEvent.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T06:15:21.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "PlayerData.cs",
               "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\PlayerData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu\\PlayerData.cs",
@@ -92,69 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoadManager.cs",
-              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\LoadManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu\\LoadManager.cs",
-              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\LoadManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MainMenu\\LoadManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T05:54:33.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SaveManager.cs",
-              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\SaveManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu\\SaveManager.cs",
-              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\MainMenu\\SaveManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MainMenu\\SaveManager.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAQwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T05:21:55.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Dialog.cs",
-              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\Dialog.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Dialog.cs",
-              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\Dialog.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Dialog.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAwCMAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T00:43:20.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RabbitToPanda_T.cs",
-              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\RabbitToPanda_T.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\RabbitToPanda_T.cs",
-              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\RabbitToPanda_T.cs",
-              "RelativeToolTip": "Assets\\Scripts\\RabbitToPanda_T.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T00:42:55.532Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TutorialEvent.cs",
-              "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\TutorialEvent.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TutorialEvent.cs",
-              "ToolTip": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\TutorialEvent.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TutorialEvent.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAcwEoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T06:15:21.597Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
@@ -166,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Animal_WanderScript.cs",
               "DocumentMoniker": "E:\\Unity\\Projects\\ForAnimals-Git\\ForAnimals\\Assets\\polyperfect\\Low Poly Animated Animals\\- Scripts\\Wander Script\\Animal_WanderScript.cs",
               "RelativeDocumentMoniker": "Assets\\polyperfect\\Low Poly Animated Animals\\- Scripts\\Wander Script\\Animal_WanderScript.cs",
