@@ -80,4 +80,11 @@ public class SaveManager : MonoBehaviour
         Debug.Log($"슬롯 인덱스 [{saveSlotIndex}]에 ID: {objectID}가 영구 파괴된 것으로 기록되었습니다.");
     }
 
+    public void ClearDestroyedObjectHistory()
+    {
+        Debug.Log("모든 파괴된 오브젝트 기록을 삭제합니다.");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+    }
+
 }

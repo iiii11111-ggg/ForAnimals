@@ -172,7 +172,7 @@ public class Intro_Animation : MonoBehaviour
 
         if (index == 1)
         {
-            CinemachineBrain brain = FindObjectOfType<CinemachineBrain>();
+            CinemachineBrain brain = Object.FindAnyObjectByType<CinemachineBrain>();
             brain.DefaultBlend.Style = CinemachineBlendDefinition.Styles.Cut;
             RabbitCam.Priority = MonkeyCam.Priority + 1;
         }

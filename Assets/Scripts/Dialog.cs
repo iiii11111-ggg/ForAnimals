@@ -20,20 +20,38 @@ public class Dialog : MonoBehaviour
     private bool NextActive;
     public bool EndDialog;
 
+    public GameObject dialogPanel;
+
     public event Action<int> OnIndexChanged;
+
+    public event Action OnDialogEnded;
 
     void Awake()
     {
-        // --- 싱글톤 중복 방지 로직 ---
         if (Instance == null)
         {
-            // 이 인스턴스가 최초 생성된 인스턴스
             Instance = this;
-            DontDestroyOnLoad(gameObject); // 씬 전환 시 파괴되지 않도록 설정
-            // LoadCount(); // PlayerPrefs 사용할 경우 여기서 로드
+            DontDestroyOnLoad(gameObject);
+            Debug.Log($"<color=lime><b>[싱글톤] Dialog (ID:{GetInstanceID()})가 유일한 인스턴스로 등록되었습니다.</b></color>");
+        }
+        else if (Instance != this)
+        {
+            Debug.LogWarning($"<color=orange><b>[싱글톤] 중복된 Dialog (ID:{GetInstanceID()})가 파괴됩니다.</b></color>");
+            Destroy(gameObject);
         }
         NextActive = true;
         EndDialog = false;
+    }
+
+    void OnDestroy()
+    {
+        Debug.LogError($"<color=red><b>!!!!! [싱글톤] Dialog (ID:{GetInstanceID()})가 파괴되었습니다!!!!!</b></color>");
+
+        // 만약 현재 파괴되는 놈이 유일한 인스턴스였다면, static 변수를 비워줘야 합니다.
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     public void StartDialog(List<string> _script,List<string> _name)
@@ -80,6 +98,13 @@ public class Dialog : MonoBehaviour
         if (index == script.Count - 1)
         {
             EndDialog = true;
+
+            int subscriberCount = OnDialogEnded?.GetInvocationList().Length ?? 0;
+
+            Debug.Log($"<color=yellow><b>[방송국] 이벤트 송출 직전! 현재 구독자 수: {subscriberCount} 명</b></color>");
+
+
+            OnDialogEnded?.Invoke();
         }
         else if (NextActive)
         {
