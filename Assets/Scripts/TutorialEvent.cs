@@ -15,7 +15,7 @@ public class TutorialEvent : MonoBehaviour
     private GameObject dp;
 
     [Header("Components")]
-    public PlayerController pc;
+    public PlayerController_Rabbit pc;
     public Animator an;
     public CinemachineCamera pCam, cCam;
 
@@ -41,7 +41,7 @@ public class TutorialEvent : MonoBehaviour
 
     void Start()
     {
-        pc = player.GetComponent<PlayerController>();
+        pc = player.GetComponent<PlayerController_Rabbit>();
         an = player.GetComponent<Animator>();
     }
 

@@ -13,7 +13,7 @@ public class Start_Event : MonoBehaviour
         {
             if (Dialog.Instance.EndDialog) 
             { 
-                player.GetComponentInChildren<PlayerController>().enabled = true;
+                player.GetComponentInChildren<PlayerController_Rabbit>().enabled = true;
 
             }
         }
@@ -24,7 +24,7 @@ public class Start_Event : MonoBehaviour
         {
             StartEvent.GetComponentInChildren<Intro_Animation>().enabled = true;
 
-            player.GetComponentInChildren<PlayerController>().enabled = false;
+            player.GetComponentInChildren<PlayerController_Rabbit>().enabled = false;
 
             StartCoroutine(FadeUI());
 

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController_Monkey : MonoBehaviour
 {
-
     public Rigidbody rb;
 
     public float moveSpeed = 8f;
@@ -23,7 +22,7 @@ public class PlayerController : MonoBehaviour
         Movement();
     }
 
-    public void Movement() 
+    public void Movement()
     {
         float xInput = Input.GetAxis("Horizontal");
         float zInput = Input.GetAxis("Vertical");
@@ -40,13 +39,13 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
         }
-        else 
+        else
         {
             an.SetBool("isRunning", false);
         }
 
-            // --- 5. �̵� �ӵ� ���� ---
-            float xSpeed = xInput * moveSpeed;
+        // --- 5. �̵� �ӵ� ���� ---
+        float xSpeed = xInput * moveSpeed;
         float zSpeed = zInput * moveSpeed;
         rb.linearVelocity = new Vector3(xSpeed, rb.linearVelocity.y, zSpeed);
     }
