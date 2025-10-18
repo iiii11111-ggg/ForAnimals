@@ -10,13 +10,14 @@ public class Intro_Animation : MonoBehaviour
     private AudioSource mainAudioSource;
     public AudioClip backgroundMusicJungle;
 
-    public CinemachineCamera FollowCam, StartCam, BoomCam,MonkeyCam, RabbitCam, RabbitFocusingCam,introEndCam;
+    public CinemachineCamera FollowCam, StartCam, BoomCam,MonkeyCam,MonkeyCam_M, RabbitCam, RabbitFocusingCam,introEndCam;
     public StageIntro_T script;
-    public GameObject player, ChatPoint, dialog, startMap, BrokenMap, nils, monkey,EndPoint;
+    public GameObject player, BoomPoint,RabbitPoint, startMap, BrokenMap, nils, monkey,EndPoint;
+    private GameObject dialog;
     public Animator RabbitAn,MonkeyAn;
     public CanvasGroup CG;
     public bool EventTrigger, NotLoop;
-    private int sequence;
+    private int sequence, priorityIndex;
 
     public Light spotLight;
     public AudioSource thunderSound;
@@ -25,34 +26,31 @@ public class Intro_Animation : MonoBehaviour
 
     void OnEnable()
     {
+        dialog = Dialog.Instance.dialogPanel;
         script = GetComponent<StageIntro_T>();
         sequence = 0;
+        priorityIndex = 50;
         EventTrigger = false;
         mainAudioSource = Camera.main.GetComponent<AudioSource>();
         mainAudioSource.clip = backgroundMusicJungle;
         mainAudioSource.loop = true; // 반복 재생 설정
         mainAudioSource.Play();
-        StartCoroutine(startScene(ChatPoint.transform.position));
+        StartCoroutine(startScene(BoomPoint.transform.position));
     }
 
     void Update()
     {
-        float distance = Vector3.Distance(player.transform.position, ChatPoint.transform.position);
+        float distance = Vector3.Distance(player.transform.position, BoomPoint.transform.position);
         if (sequence == 0 && distance <= 1f)
-        {
-            StartCoroutine(BoomChat());
-            sequence++;
-        }
-        if (sequence == 1 && Dialog.Instance.EndDialog)
         {
             StartCoroutine(BoomScene());
             sequence++;
         }
-        if (sequence == 2 && EventTrigger)
+        if (sequence == 1 && EventTrigger)
         {
+            script.intro();
             player.transform.LookAt(monkey.transform);
             dialog.SetActive(true);
-            script.intro2();
             CinemachineBrain brain = FindObjectOfType<CinemachineBrain>();
             brain.DefaultBlend.Style = CinemachineBlendDefinition.Styles.EaseInOut;
             MonkeyCam.Priority = BoomCam.Priority + 1;
@@ -128,19 +126,12 @@ public class Intro_Animation : MonoBehaviour
         }
     }
 
-    IEnumerator BoomChat()
-    {
-        CG.alpha = 1;
-        BoomCam.Priority = StartCam.Priority + 1;
-        dialog.SetActive(true);
-        script.intro1();
-        yield return null;
-    }
     IEnumerator BoomScene()
     {
+        BoomCam.Priority = StartCam.Priority + 1;
         dialog.SetActive(false);
         StartCoroutine(Fade(1f, 0f, 2f));
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         //번개 치기
         spotLight.enabled = true;
         yield return new WaitForSeconds(0.2f);
@@ -169,49 +160,62 @@ public class Intro_Animation : MonoBehaviour
     }
     void IndexChanged(int index) 
     {
-
         if (index == 1)
         {
             CinemachineBrain brain = Object.FindAnyObjectByType<CinemachineBrain>();
             brain.DefaultBlend.Style = CinemachineBlendDefinition.Styles.Cut;
-            RabbitCam.Priority = MonkeyCam.Priority + 1;
+            CG.alpha = 1;
         }
-        else if (index == 2) 
+        else if (index == 2)
         {
-            monkey.transform.LookAt(player.transform);
-            MonkeyCam.Priority = RabbitCam.Priority + 1;
+            CG.alpha = 0;
         }
         else if (index == 3)
         {
-            RabbitCam.Priority = MonkeyCam.Priority + 1;
+            CG.alpha = 1;
+            MonkeyCam.Priority = priorityIndex;
+            priorityIndex++;
         }
         else if (index == 4)
         {
-            MonkeyCam.Priority = RabbitCam.Priority + 1;
+            monkey.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            player.transform.position = RabbitPoint.transform.position;
+            CG.alpha = 0;
+            MonkeyCam_M.Priority = priorityIndex;
+            priorityIndex++;
         }
         else if (index == 5)
         {
-            RabbitCam.Priority = MonkeyCam.Priority + 1;
+            monkey.transform.LookAt(player.transform);
+            RabbitCam.Priority = priorityIndex;
+            priorityIndex++;
         }
         else if (index == 6)
         {
-            RabbitFocusingCam.Priority = RabbitCam.Priority + 1;
+            BoomCam.Priority = priorityIndex;
+            priorityIndex++;
         }
         else if (index == 7)
         {
-            MonkeyCam.Priority = RabbitCam.Priority + 1;
+            RabbitCam.Priority = priorityIndex;
+            priorityIndex++;
         }
         else if (index == 8)
+        {
+            RabbitFocusingCam.Priority = priorityIndex;
+            priorityIndex++;
+        }
+        else if (index == 9) 
         {
             Vector3 Rposition = new Vector3(player.transform.position.x + 4, player.transform.position.y, player.transform.position.z);
             monkey.transform.position = Rposition;
             monkey.transform.LookAt(player.transform);
             StartCoroutine(introEndScene(EndPoint.transform.position));
-            introEndCam.Priority = MonkeyCam.Priority + 1;
+            introEndCam.Priority = priorityIndex;
+            priorityIndex++;
             StartCoroutine(Fade(0f, 1f, 8f));
         }
-
-    }
+        }
 
     IEnumerator Fade(float startAlpha, float endAlpha, float duration)
     {

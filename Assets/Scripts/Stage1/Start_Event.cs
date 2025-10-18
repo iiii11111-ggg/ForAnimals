@@ -1,25 +1,55 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using System.Xml;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Start_Event : MonoBehaviour
+public class Start_Event : MonoBehaviour, IEventController
 {
     public GameObject StartEvent,player;
     public CanvasGroup chText;
 
-    void Update()
-    {
-        if (Dialog.Instance != null)
-        {
-            if (Dialog.Instance.EndDialog) 
-            { 
-                player.GetComponentInChildren<PlayerController_Rabbit>().enabled = true;
+    private bool hasTriggered = false;
 
-            }
+    [Header("Save System ID")]
+    [SerializeField] private string uniqueID; 
+
+    [Header("Custom Start Actions")]
+    [SerializeField] private UnityEvent onEventStart; 
+
+    [SerializeField] private UnityEvent onEventEnd;
+
+    [Header("System Interface")]
+    public string UniqueID => uniqueID;
+    public UnityEvent OnEventStart => onEventStart;
+
+    public UnityEvent OnEventEnd => onEventEnd;
+
+    void Awake()
+    {
+        int currentSlotIndex = PlayerData.currentSlotIndex;
+        if (string.IsNullOrEmpty(uniqueID))
+        {
+            Debug.LogError("StartEvent의 uniqueID가 설정되지 않았습니다!", gameObject);
+            return;
+        }
+
+        if (SaveManager.Instance.HasBeenDestroyed(currentSlotIndex, uniqueID))
+        {
+            Destroy(gameObject);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (hasTriggered || !other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        hasTriggered = true;
+
+        EventManager.Instance.RequestEventStart(this);
         if (other.CompareTag("Player")) 
         {
             StartEvent.GetComponentInChildren<Intro_Animation>().enabled = true;
@@ -28,10 +58,25 @@ public class Start_Event : MonoBehaviour
 
             StartCoroutine(FadeUI());
 
-            Collider trigger = GetComponent<Collider>();
-            trigger.isTrigger = false;
+
         }
     }
+    public void ScriptStart()
+    {
+        StartEvent.GetComponentInChildren<Intro_Animation>().enabled = true;
+
+        player.GetComponentInChildren<PlayerController_Rabbit>().enabled = false;
+
+        StartCoroutine(FadeUI());
+
+        Collider trigger = GetComponent<Collider>();
+        trigger.isTrigger = false;
+    }
+    public void ScriptEnd()
+    {
+    }
+
+
 
     IEnumerator FadeUI() 
     {
@@ -46,9 +91,6 @@ public class Start_Event : MonoBehaviour
         chText.alpha = 0f;
         chText.interactable = false;
         chText.blocksRaycasts = false;
-
-
-
     }
     IEnumerator Fade(float startAlpha, float endAlpha, float duration)
     {
@@ -64,6 +106,4 @@ public class Start_Event : MonoBehaviour
 
         }
     }
-
-
 }

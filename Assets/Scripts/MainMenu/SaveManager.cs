@@ -1,6 +1,8 @@
 ﻿// SaveManager.cs (싱글톤 적용 버전)
 using System.IO;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour
 {
@@ -9,6 +11,12 @@ public class SaveManager : MonoBehaviour
 
     // playerTransform은 더 이상 public일 필요가 없습니다.
     private Transform playerTransform;
+
+    public Image popupImg;
+
+    public float stayDuration = 1.0f;
+
+    public float fadeDuration = 0.2f;
 
     // 2. Awake() 함수에서 인스턴스 설정
     void Awake()
@@ -22,6 +30,12 @@ public class SaveManager : MonoBehaviour
         {
             Destroy(gameObject); // 이미 인스턴스가 있으면 새로 생긴 것은 파괴
         }
+
+        Color color = popupImg.color;
+
+        color.a = 0f;
+
+        popupImg.color = color;
     }
 
     public void SaveGameData()
@@ -56,6 +70,8 @@ public class SaveManager : MonoBehaviour
         File.WriteAllText(filePath, json);
 
         Debug.Log("슬롯 " + currentSaveSlot + "에 게임 데이터가 저장되었습니다.");
+
+        ShowTemporaryUIWithFade();
     }
 
     private string GetDestructionKey(int saveSlotIndex, string objectID)
@@ -85,6 +101,43 @@ public class SaveManager : MonoBehaviour
         Debug.Log("모든 파괴된 오브젝트 기록을 삭제합니다.");
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+    }
+
+
+    public void ShowTemporaryUIWithFade()
+    {
+        StopAllCoroutines();
+
+        StartCoroutine(FadeInStayFadeOut());
+    }
+
+    private IEnumerator FadeInStayFadeOut()
+    {
+        yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
+
+        yield return new WaitForSeconds(stayDuration);
+
+        yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
+    }
+
+    private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, timer / duration);
+
+            Color color = popupImg.color;
+            color.a = newAlpha;
+            popupImg.color = color;
+
+            yield return null; 
+        }
+        Color finalColor = popupImg.color; 
+        finalColor.a = endAlpha;
+        popupImg.color = finalColor; 
     }
 
 }

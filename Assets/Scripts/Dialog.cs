@@ -99,6 +99,9 @@ public class Dialog : MonoBehaviour
         {
             EndDialog = true;
 
+            index++;
+            OnIndexChanged?.Invoke(index);
+
             int subscriberCount = OnDialogEnded?.GetInvocationList().Length ?? 0;
 
             Debug.Log($"<color=yellow><b>[방송국] 이벤트 송출 직전! 현재 구독자 수: {subscriberCount} 명</b></color>");
