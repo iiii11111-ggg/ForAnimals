@@ -89,4 +89,16 @@ public class PlayerController_Monkey : MonoBehaviour
         an.SetFloat("Speed", horizontalSpeed);
         an.SetBool("isJumping", !isGrounded);
     }
+    public void TeleportTo(Vector3 destination)
+    {
+        // CharacterController를 잠시 비활성화해야 transform.position을 안전하게 설정할 수 있습니다.
+        controller.enabled = false;
+        transform.position = destination;
+        controller.enabled = true;
+
+        // 텔레포트 후 수직 속도를 초기화하여, 텔레포트하자마자
+        // 이전에 쌓인 낙하 속도로 인해 바닥으로 곤두박질치는 것을 방지합니다.
+        playerVelocity = Vector3.zero;
+        Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
+    }
 }
