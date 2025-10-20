@@ -14,19 +14,6 @@ public class SoundManager : MonoBehaviour
     public AudioClip TutorialClip;
     public AudioClip testSFXClip;  // 테스트용 효과음 (버튼 클릭용)
 
-    void Awake()
-    {
-        // 싱글톤 패턴 (선택 사항)
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // 씬 전환에도 유지
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     void Start()
     {

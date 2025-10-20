@@ -3,8 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class LoadManager : MonoBehaviour
 {
+    private GameObject optionOn;
     public void LoadGameData(int slotIndex)
     {
-        GameManager.Instance.LoadGameSlot(slotIndex, "InGame");
+        optionOn = OptionManager.instance.optionUi;
+        optionOn.SetActive(true);
+        GameManager.Instance.LoadGameSlot(slotIndex);
     }
 }

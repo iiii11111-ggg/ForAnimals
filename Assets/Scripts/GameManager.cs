@@ -1,4 +1,4 @@
-// GameManager.cs
+ï»¿// GameManager.cs
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,82 +7,103 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public bool IsLoading { get; private set; } // ğŸ‘ˆ 1. 'ë¡œë”© ì¤‘' ìƒíƒœë¥¼ ì•Œë ¤ì¤„ ë³€ìˆ˜ ì¶”ê°€
 
     void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(this.gameObject);
+            return; 
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    public void LoadGameSlot(int slotIndex, string sceneName)
+    public void LoadGameSlot(int slotIndex)
     {
-        // 1. ¾ÕÀ¸·Î »ç¿ëÇÒ ½½·Ô ¹øÈ£¸¦ ÀúÀåÇÕ´Ï´Ù.
+        // 1. ì•ìœ¼ë¡œ ì‚¬ìš©í•  ìŠ¬ë¡¯ ë²ˆí˜¸ë¥¼ ì €ì¥í•©ë‹ˆë‹¤.
         PlayerData.currentSlotIndex = slotIndex;
-        Debug.Log("DataManager¿¡ ½½·Ô ¹øÈ£ " + slotIndex + " ÀúÀåµÊ.");
+        Debug.Log("DataManagerì— ìŠ¬ë¡¯ ë²ˆí˜¸ " + slotIndex + " ì €ì¥ë¨.");
 
         if (Dialog.Instance != null)
         {
             Dialog.Instance.ResetDialogSystem();
-            Debug.Log("<color=cyan><b>[GameManager] ¾À ·Îµå ½ÃÀÛ Á÷Àü, Dialog ½Ã½ºÅÛÀ» ¼±Á¦ÀûÀ¸·Î ÃÊ±âÈ­ÇÕ´Ï´Ù.</b></color>");
+            Debug.Log("<color=cyan><b>[GameManager] ì”¬ ë¡œë“œ ì‹œì‘ ì§ì „, Dialog ì‹œìŠ¤í…œì„ ì„ ì œì ìœ¼ë¡œ ì´ˆê¸°í™”í•©ë‹ˆë‹¤.</b></color>");
         }
 
-        // 2. ¾À ·Îµù ¹× µ¥ÀÌÅÍ Àû¿ë ÄÚ·çÆ¾À» ½ÃÀÛÇÕ´Ï´Ù.
-        StartCoroutine(LoadSceneAndApplyData(sceneName));
+        // 2. ì”¬ ë¡œë”© ë° ë°ì´í„° ì ìš© ì½”ë£¨í‹´ì„ ì‹œì‘í•©ë‹ˆë‹¤.
+        StartCoroutine(LoadSceneAndApplyData(slotIndex));
     }
 
-    private IEnumerator LoadSceneAndApplyData(string sceneName)
+    private IEnumerator LoadSceneAndApplyData(int slotIndex)
     {
-        // --- ¾À ·Îµù ---
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        while (!asyncLoad.isDone)
-        {
-            yield return null; // ¾À ·Îµå°¡ ³¡³¯ ¶§±îÁö ´ë±â
-        }
+        Debug.Log("<color=red><b>[GameManager] LOAD START! IsLoadingì„ TRUEë¡œ ì„¤ì •í•©ë‹ˆë‹¤.</b></color>");
+        IsLoading = true;
 
-        // 2. ÀúÀåµÈ °ÔÀÓ µ¥ÀÌÅÍ¸¦ ·ÎµåÇÕ´Ï´Ù. (±âÁ¸ InGameSceneLoaderÀÇ ·ÎÁ÷)
-        int slotToLoad = PlayerData.currentSlotIndex;
         string folderPath = Path.Combine(Application.dataPath, "../", "SAVE");
-        string filePath = Path.Combine(folderPath, "SaveSlot" + slotToLoad + ".json");
+        string filePath = Path.Combine(folderPath, "SaveSlot" + slotIndex + ".json");
         GameData data;
+        string sceneToLoad;
 
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
             data = JsonUtility.FromJson<GameData>(json);
-            Debug.Log("½½·Ô " + slotToLoad + " µ¥ÀÌÅÍ ·Îµå ¼º°ø. ÀúÀåÀ§Ä¡: " + data.characterPosition);
+
+            sceneToLoad = data.currentSceneName;
+
+            if (string.IsNullOrEmpty(sceneToLoad))
+            {
+                Debug.LogError($"ìŠ¬ë¡¯ {slotIndex}ì˜ ì €ì¥ íŒŒì¼ì— ì”¬ ì´ë¦„ì´ ì—†ìŠµë‹ˆë‹¤! ê¸°ë³¸ ì”¬ìœ¼ë¡œ ë¡œë“œí•©ë‹ˆë‹¤.");
+                sceneToLoad = "Tutorial";
+            }
+            Debug.Log("ìŠ¬ë¡¯ " + slotIndex + " ë°ì´í„° ë¡œë“œ ì„±ê³µ. ë¶ˆëŸ¬ì˜¬ ì”¬: " + sceneToLoad);
         }
         else
         {
-            // ¼¼ÀÌºê ÆÄÀÏÀÌ ¾øÀ¸¸é ±âº»°ªÀ¸·Î »õ·Î »ı¼º
-            data = new GameData();
-            data.characterPosition = new Vector3(24, 0, 5); // ±âº» ½ÃÀÛ À§Ä¡
+            // ì„¸ì´ë¸Œ íŒŒì¼ì´ ì—†ìœ¼ë©´ 'ìƒˆ ê²Œì„'ìœ¼ë¡œ ê°„ì£¼í•©ë‹ˆë‹¤.
+            Debug.Log("ìŠ¬ë¡¯ " + slotIndex + "ì— ì €ì¥ íŒŒì¼ì´ ì—†ìœ¼ë¯€ë¡œ 'ìƒˆ ê²Œì„'ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
 
+            // ìƒˆ ê²Œì„ì„ ìœ„í•œ ê¸°ë³¸ê°’ ì„¤ì •
+            data = new GameData();
+            data.characterPosition = new Vector3(24, 0, 5); // ğŸ‘ˆ ìƒˆ ê²Œì„ ì‹œì‘ ìœ„ì¹˜
+            sceneToLoad = "Tutorial"; // ğŸ‘ˆ ìƒˆ ê²Œì„ ì‹œì‘ ì”¬ ì´ë¦„
+            data.currentSceneName = sceneToLoad;
+
+            // ìƒˆ ê²Œì„ ë°ì´í„°ë¥¼ íŒŒì¼ë¡œ ì €ì¥
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
             string json = JsonUtility.ToJson(data);
             File.WriteAllText(filePath, json);
-            Debug.Log("½½·Ô " + slotToLoad + "¿¡ »õ·Î¿î °ÔÀÓ ÆÄÀÏ »ı¼ºµÊ.");
         }
 
-        // 3. ¾À¿¡ ÀÖ´Â ÇÃ·¹ÀÌ¾î¸¦ Ã£¾Æ¼­ À§Ä¡¸¦ Àû¿ëÇÕ´Ï´Ù.
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
+        while (!asyncLoad.isDone)
+        {
+            yield return null; // ì”¬ ë¡œë“œê°€ ëë‚  ë•Œê¹Œì§€ ëŒ€ê¸°
+        }
+
+        // --- ì”¬ ë¡œë”© ì™„ë£Œ í›„ ---
+        Debug.Log("<color=yellow><b>[GameManager] ì”¬ ë¡œë”© ì™„ë£Œ. ì´ì œ í”Œë ˆì´ì–´ ìœ„ì¹˜ë¥¼ ì ìš©í•©ë‹ˆë‹¤.</b></color>");
+
+        // ì”¬ì— ìˆëŠ” í”Œë ˆì´ì–´ë¥¼ ì°¾ì•„ì„œ ìœ„ì¹˜ë¥¼ ì ìš©í•©ë‹ˆë‹¤.
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            player.transform.position = data.characterPosition;
-            Debug.Log("<color=yellow>ÇÃ·¹ÀÌ¾î À§Ä¡ Àû¿ë ¿Ï·á.</color>");
+            
+            player.GetComponent<PlayerController_Rabbit>().TeleportTo(data.characterPosition);
+            Debug.Log($"<color=yellow><b>[GameManager] í”Œë ˆì´ì–´ ìœ„ì¹˜ ì ìš© ì™„ë£Œ: {data.characterPosition}</b></color>");
         }
         else
         {
-            Debug.LogError("ÇÃ·¹ÀÌ¾î ¿ÀºêÁ§Æ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù! Player ÅÂ±×¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+            Debug.LogError("í”Œë ˆì´ì–´ ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤! Player íƒœê·¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
         }
+
+        yield return new WaitForEndOfFrame();
+        Debug.Log("<color=red><b>[GameManager] LOAD END! IsLoadingì„ FALSEë¡œ ì„¤ì •í•©ë‹ˆë‹¤.</b></color>");
+        IsLoading = false;
     }
 }

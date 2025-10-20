@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a3830f017052ed243a17cbf55f3ab3cc
+timeCreated: 1536763103
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Rocks/rock_small_02.prefab
+  uploadId: 304632

@@ -13,7 +13,7 @@ public class Stage_Move : MonoBehaviour
         {
             tutorial.SetActive(false);
             startEvent.SetActive(true);
-            player.transform.position = position.transform.position;
+            player.GetComponent<PlayerController_Rabbit>().TeleportTo(position.transform.position);
             StartCam.Priority = FollowCam.Priority + 1;
         }
     }

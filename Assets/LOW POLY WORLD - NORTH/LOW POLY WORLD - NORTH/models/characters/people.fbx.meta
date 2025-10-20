@@ -1,0 +1,4939 @@
+fileFormatVersion: 2
+guid: a3237183ddeac274e8c8c9818e37536a
+timeCreated: 1488296318
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 1
+    100002: 2
+    100004: 2_end
+    100006: ball
+    100008: chest
+    100010: Crampon
+    100012: Eskimo
+    100014: Eskimo_2
+    100016: fishing_rod
+    100018: fishing_rod_2
+    100020: fishing_rod_3
+    100022: foot.L
+    100024: foot.L.001
+    100026: foot.L_end
+    100028: foot.R
+    100030: foot.R.001
+    100032: foot.R_end
+    100034: forearm.L
+    100036: forearm.R
+    100038: general
+    100040: glasses_1
+    100042: glasses_2
+    100044: hand.L
+    100046: hand.L_end
+    100048: hand.R
+    100050: head
+    100052: head_end
+    100054: hips
+    100056: neck
+    100058: //RootNode
+    100060: pick
+    100062: pick_2
+    100064: pick_3
+    100066: polar_explorer
+    100068: polar_explorer_2
+    100070: polar_explorer_3
+    100072: rig
+    100074: shin.L
+    100076: shin.L_end
+    100078: shin.R
+    100080: shin.R_end
+    100082: shoulder.L
+    100084: shoulder.R
+    100086: skiing_1
+    100088: skiing_2
+    100090: skiing_3
+    100092: snowmobile
+    100094: snowmobile_2
+    100096: snowmobile_3
+    100098: snowmobile_ski
+    100100: snowmobile_ski_end
+    100102: spear
+    100104: spear_2
+    100106: spine
+    100108: sticks
+    100110: sticks_2
+    100112: thigh.L
+    100114: thigh.R
+    100116: upper_arm.L
+    100118: upper_arm.R
+    100120: worm
+    400000: 1
+    400002: 2
+    400004: 2_end
+    400006: ball
+    400008: chest
+    400010: Crampon
+    400012: Eskimo
+    400014: Eskimo_2
+    400016: fishing_rod
+    400018: fishing_rod_2
+    400020: fishing_rod_3
+    400022: foot.L
+    400024: foot.L.001
+    400026: foot.L_end
+    400028: foot.R
+    400030: foot.R.001
+    400032: foot.R_end
+    400034: forearm.L
+    400036: forearm.R
+    400038: general
+    400040: glasses_1
+    400042: glasses_2
+    400044: hand.L
+    400046: hand.L_end
+    400048: hand.R
+    400050: head
+    400052: head_end
+    400054: hips
+    400056: neck
+    400058: //RootNode
+    400060: pick
+    400062: pick_2
+    400064: pick_3
+    400066: polar_explorer
+    400068: polar_explorer_2
+    400070: polar_explorer_3
+    400072: rig
+    400074: shin.L
+    400076: shin.L_end
+    400078: shin.R
+    400080: shin.R_end
+    400082: shoulder.L
+    400084: shoulder.R
+    400086: skiing_1
+    400088: skiing_2
+    400090: skiing_3
+    400092: snowmobile
+    400094: snowmobile_2
+    400096: snowmobile_3
+    400098: snowmobile_ski
+    400100: snowmobile_ski_end
+    400102: spear
+    400104: spear_2
+    400106: spine
+    400108: sticks
+    400110: sticks_2
+    400112: thigh.L
+    400114: thigh.R
+    400116: upper_arm.L
+    400118: upper_arm.R
+    400120: worm
+    4300000: polar_explorer_3
+    4300002: fishing_rod_3
+    4300004: worm
+    4300006: fishing_rod_2
+    4300008: fishing_rod
+    4300010: spear_2
+    4300012: pick_3
+    4300014: glasses_2
+    4300016: glasses_1
+    4300018: pick_2
+    4300020: sticks_2
+    4300022: pick
+    4300024: polar_explorer_2
+    4300026: Eskimo_2
+    4300028: sticks
+    4300030: polar_explorer
+    4300032: Eskimo
+    4300034: spear
+    4300036: snowmobile_3
+    4300038: snowmobile_2
+    4300040: snowmobile
+    4300042: Crampon
+    4300044: skiing_2
+    4300046: skiing_3
+    4300048: skiing_1
+    4300050: ball
+    7400000: rig|attack_1
+    7400002: rig|attack_2
+    7400004: rig|climbing
+    7400006: rig|climbing_idle
+    7400008: rig|dead
+    7400010: rig|fishing_catch
+    7400012: rig|fishing_idle
+    7400014: rig|fishing_throw
+    7400016: rig|hit
+    7400018: rig|idle
+    7400020: rig|idle_2
+    7400022: rig|jump
+    7400024: rig|pick_up
+    7400026: rig|pray
+    7400028: rig|run
+    7400030: rig|run_left
+    7400032: rig|run_right
+    7400034: rig|salute
+    7400036: rig|skiing_go_1
+    7400038: rig|skiing_go_2
+    7400040: rig|skiing_go_2_left
+    7400042: rig|skiing_go_2_right
+    7400044: rig|skiing_idle
+    7400046: rig|snowmobile_go
+    7400048: rig|snowmobile_left
+    7400050: rig|snowmobile_right
+    7400052: rig|throws_the_ball
+    7400054: rig|walk
+    7400056: rig|walk_back
+    7400058: rig|walk_left
+    7400060: rig|walk_right
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: ball
+    13700002: Crampon
+    13700004: Eskimo
+    13700006: Eskimo_2
+    13700008: fishing_rod
+    13700010: fishing_rod_2
+    13700012: fishing_rod_3
+    13700014: glasses_1
+    13700016: glasses_2
+    13700018: pick
+    13700020: pick_2
+    13700022: pick_3
+    13700024: polar_explorer
+    13700026: polar_explorer_2
+    13700028: polar_explorer_3
+    13700030: skiing_1
+    13700032: skiing_2
+    13700034: skiing_3
+    13700036: snowmobile
+    13700038: snowmobile_2
+    13700040: snowmobile_3
+    13700042: spear
+    13700044: spear_2
+    13700046: sticks
+    13700048: sticks_2
+    13700050: worm
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rig|attack_1
+      takeName: rig|attack_1
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|attack_2
+      takeName: rig|attack_2
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|climbing
+      takeName: rig|climbing
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|climbing_idle
+      takeName: rig|climbing_idle
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|dead
+      takeName: rig|dead
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|fishing_catch
+      takeName: rig|fishing_catch
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|fishing_idle
+      takeName: rig|fishing_idle
+      firstFrame: 0
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|fishing_throw
+      takeName: rig|fishing_throw
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|hit
+      takeName: rig|hit
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|idle
+      takeName: rig|idle
+      firstFrame: 0
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|idle_2
+      takeName: rig|idle_2
+      firstFrame: 0
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|jump
+      takeName: rig|jump
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|pick_up
+      takeName: rig|pick_up
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|pray
+      takeName: rig|pray
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|run
+      takeName: rig|run
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|run_left
+      takeName: rig|run_left
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|run_right
+      takeName: rig|run_right
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|salute
+      takeName: rig|salute
+      firstFrame: 0
+      lastFrame: 97
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|skiing_go_1
+      takeName: rig|skiing_go_1
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|skiing_go_2
+      takeName: rig|skiing_go_2
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|skiing_go_2_left
+      takeName: rig|skiing_go_2_left
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|skiing_go_2_right
+      takeName: rig|skiing_go_2_right
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|skiing_idle
+      takeName: rig|skiing_idle
+      firstFrame: 0
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|snowmobile_go
+      takeName: rig|snowmobile_go
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|snowmobile_left
+      takeName: rig|snowmobile_left
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|snowmobile_right
+      takeName: rig|snowmobile_right
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|throws_the_ball
+      takeName: rig|throws_the_ball
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|walk
+      takeName: rig|walk
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|walk_back
+      takeName: rig|walk_back
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|walk_left
+      takeName: rig|walk_left
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|walk_right
+      takeName: rig|walk_right
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ball
+        weight: 1
+      - path: Crampon
+        weight: 1
+      - path: Eskimo
+        weight: 1
+      - path: Eskimo_2
+        weight: 1
+      - path: fishing_rod
+        weight: 1
+      - path: fishing_rod_2
+        weight: 1
+      - path: fishing_rod_3
+        weight: 1
+      - path: glasses_1
+        weight: 1
+      - path: glasses_2
+        weight: 1
+      - path: pick
+        weight: 1
+      - path: pick_2
+        weight: 1
+      - path: pick_3
+        weight: 1
+      - path: polar_explorer
+        weight: 1
+      - path: polar_explorer_2
+        weight: 1
+      - path: polar_explorer_3
+        weight: 1
+      - path: rig
+        weight: 1
+      - path: rig/general
+        weight: 1
+      - path: rig/general/foot.L.001
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L
+        weight: 1
+      - path: rig/general/foot.L.001/foot.L/foot.L_end
+        weight: 1
+      - path: rig/general/foot.R.001
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R
+        weight: 1
+      - path: rig/general/foot.R.001/foot.R/foot.R_end
+        weight: 1
+      - path: rig/general/hips
+        weight: 1
+      - path: rig/general/hips/thigh.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L
+        weight: 1
+      - path: rig/general/hips/thigh.L/shin.L/shin.L_end
+        weight: 1
+      - path: rig/general/hips/thigh.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R
+        weight: 1
+      - path: rig/general/hips/thigh.R/shin.R/shin.R_end
+        weight: 1
+      - path: rig/general/snowmobile_ski
+        weight: 1
+      - path: rig/general/snowmobile_ski/snowmobile_ski_end
+        weight: 1
+      - path: rig/general/spine
+        weight: 1
+      - path: rig/general/spine/chest
+        weight: 1
+      - path: rig/general/spine/chest/neck
+        weight: 1
+      - path: rig/general/spine/chest/neck/head
+        weight: 1
+      - path: rig/general/spine/chest/neck/head/head_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/hand.L_end
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2
+        weight: 1
+      - path: rig/general/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/1/2/2_end
+        weight: 1
+      - path: skiing_1
+        weight: 1
+      - path: skiing_2
+        weight: 1
+      - path: skiing_3
+        weight: 1
+      - path: snowmobile
+        weight: 1
+      - path: snowmobile_2
+        weight: 1
+      - path: snowmobile_3
+        weight: 1
+      - path: spear
+        weight: 1
+      - path: spear_2
+        weight: 1
+      - path: sticks
+        weight: 1
+      - path: sticks_2
+        weight: 1
+      - path: worm
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/characters/people.fbx
+  uploadId: 616078

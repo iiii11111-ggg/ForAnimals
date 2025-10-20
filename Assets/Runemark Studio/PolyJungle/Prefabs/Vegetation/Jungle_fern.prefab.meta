@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 19d28ab34d25184449cf2e1ca80eac2c
+timeCreated: 1536823688
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Vegetation/Jungle_fern.prefab
+  uploadId: 304632

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f203c9511fc4d6f43a217ab03d94882f
+timeCreated: 1536762112
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Buildings/Materials/HutWallWeave.mat
+  uploadId: 304632

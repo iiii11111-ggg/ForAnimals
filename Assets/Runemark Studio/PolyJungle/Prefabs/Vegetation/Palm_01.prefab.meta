@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 701b8f2443c288f42a460695ead52f4a
+timeCreated: 1536763080
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Vegetation/Palm_01.prefab
+  uploadId: 304632

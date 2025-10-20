@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 824437db3a30f4b4fb6e87c07f164523
+timeCreated: 1536762902
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Props/Materials/Straw.mat
+  uploadId: 304632

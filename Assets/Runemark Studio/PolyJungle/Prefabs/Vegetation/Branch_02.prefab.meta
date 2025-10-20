@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 382fcbccf89596040bdfd42910702c27
+timeCreated: 1536763073
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Vegetation/Branch_02.prefab
+  uploadId: 304632

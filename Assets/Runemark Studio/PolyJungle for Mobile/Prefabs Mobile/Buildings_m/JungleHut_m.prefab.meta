@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 81351d7f2fe98c04fb800f2867661f2f
+timeCreated: 1554730099
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle for Mobile/Prefabs Mobile/Buildings_m/JungleHut_m.prefab
+  uploadId: 304632

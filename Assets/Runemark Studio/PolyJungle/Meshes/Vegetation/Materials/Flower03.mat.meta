@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a72ed428d8dfd0846b3695064310bfb2
+timeCreated: 1536760998
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Vegetation/Materials/Flower03.mat
+  uploadId: 304632

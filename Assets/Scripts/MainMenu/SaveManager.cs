@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class SaveManager : MonoBehaviour
 {
     // 1. 싱글톤 인스턴스 변수 추가
@@ -21,21 +21,62 @@ public class SaveManager : MonoBehaviour
     // 2. Awake() 함수에서 인스턴스 설정
     void Awake()
     {
-        if (Instance == null)
+
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // 씬이 바뀌어도 유지되도록 설정
+
+            Debug.LogWarning($"중복 SaveManager 파괴: '{this.gameObject.name}'. 원본은 '{Instance.gameObject.name}' 입니다.");
+            Destroy(this.gameObject);
+            return; 
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
+        Color color = popupImg.color;
+        color.a = 0f;
+        popupImg.color = color;
+    }
+   
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // 3. 씬 로드 이벤트 구독 해제(Unsubscribe) (메모리 누수 방지)
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // 4. 씬 로드가 완료될 때마다 이 함수가 자동 호출됨
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        bool isLoading = (GameManager.Instance != null && GameManager.Instance.IsLoading);
+        Debug.Log($"<color=cyan><b>[SaveManager] OnSceneLoaded 실행됨. 현재 로딩 중인가? => {isLoading}</b></color>");
+        if (isLoading)
+        {
+            Debug.Log("<color=cyan><b>[SaveManager] 게임 로딩 중이므로 자동 저장을 건너뜁니다.</b></color>");
+            return;
+        }
+        // 메인 메뉴나 타이틀 씬 등 저장할 필요 없는 씬은 제외
+        if (scene.name == "Main" || scene.name == "BugCrash")
+        {
+            return;
+        }
+
+        // 씬이 로드된 후 플레이어를 찾음 (?. 연산자로 null 체크)
+        playerTransform = GameObject.FindWithTag("Player")?.transform;
+
+        if (playerTransform != null)
+        {
+            // 씬 로드 완료 시, '현재 씬 이름'과 '플레이어 위치'를 자동 저장
+            SaveCurrentProgress(scene.name, playerTransform.position);
         }
         else
         {
-            Destroy(gameObject); // 이미 인스턴스가 있으면 새로 생긴 것은 파괴
+            Debug.LogWarning(scene.name + " 씬에 'Player' 태그 오브젝트가 없습니다. 위치 저장을 건너뜁니다.");
         }
-
-        Color color = popupImg.color;
-
-        color.a = 0f;
-
-        popupImg.color = color;
     }
 
     public void SaveGameData()
@@ -48,6 +89,24 @@ public class SaveManager : MonoBehaviour
             return;
         }
 
+        // 💡 핵심: 현재 씬 이름과 플레이어 위치를 가져와서 범용 저장 함수를 호출합니다.
+        string currentScene = SceneManager.GetActiveScene().name;
+        SaveCurrentProgress(currentScene, playerTransform.position);
+
+        Debug.Log("슬롯 " + PlayerData.currentSlotIndex + "에 게임 데이터가 수동 저장되었습니다.");
+        ShowTemporaryUIWithFade();
+    }
+    public void SaveGameData(Vector3 specificPosition)
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        SaveCurrentProgress(currentScene, specificPosition);
+
+        Debug.Log("지정된 위치(" + specificPosition + ")를 수동 저장했습니다.");
+        ShowTemporaryUIWithFade();
+    }
+
+    public void SaveCurrentProgress(string sceneName, Vector3 position)
+    {
         int currentSaveSlot = PlayerData.currentSlotIndex;
         if (currentSaveSlot == 0)
         {
@@ -60,19 +119,20 @@ public class SaveManager : MonoBehaviour
         {
             Directory.CreateDirectory(folderPath);
         }
-
         string filePath = Path.Combine(folderPath, "SaveSlot" + currentSaveSlot + ".json");
 
         GameData data = new GameData();
-        data.characterPosition = playerTransform.position;
+        data.characterPosition = position;
+        data.currentSceneName = sceneName; // 👈 확장된 GameData에 씬 이름 저장
 
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(filePath, json);
 
-        Debug.Log("슬롯 " + currentSaveSlot + "에 게임 데이터가 저장되었습니다.");
+        Debug.Log($"슬롯 {currentSaveSlot}에 자동 저장 완료 (씬: {sceneName}, 위치: {position})");
 
-        ShowTemporaryUIWithFade();
     }
+
+
 
     private string GetDestructionKey(int saveSlotIndex, string objectID)
     {
@@ -103,6 +163,9 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+   
+
+  
 
     public void ShowTemporaryUIWithFade()
     {

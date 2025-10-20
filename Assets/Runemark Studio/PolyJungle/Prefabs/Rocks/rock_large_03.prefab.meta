@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 41cf60e200e51e54ebbecb3ffefc6d45
+timeCreated: 1536763111
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Rocks/rock_large_03.prefab
+  uploadId: 304632

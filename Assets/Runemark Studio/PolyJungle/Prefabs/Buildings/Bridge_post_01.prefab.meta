@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f19b883526c7c9e45aac5696acfff61b
+timeCreated: 1536763145
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Buildings/Bridge_post_01.prefab
+  uploadId: 304632

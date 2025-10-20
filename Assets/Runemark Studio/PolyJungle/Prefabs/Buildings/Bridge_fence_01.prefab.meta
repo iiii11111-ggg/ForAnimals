@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dd3a8c9281c514048a570f67bd82869b
+timeCreated: 1536763147
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Buildings/Bridge_fence_01.prefab
+  uploadId: 304632

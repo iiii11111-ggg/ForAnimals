@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1c3d3194e71466a47b50146f8fac6eae
+timeCreated: 1536761443
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Vegetation/Materials/Tree_01.mat
+  uploadId: 304632

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f7778c060e48b3645ba6d17f61122599
+timeCreated: 1554727776
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle for Mobile/Meshes Mobile/Materials/jungle_colors_NoCull.mat
+  uploadId: 304632

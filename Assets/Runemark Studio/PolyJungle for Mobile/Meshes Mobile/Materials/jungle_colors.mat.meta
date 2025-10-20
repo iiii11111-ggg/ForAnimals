@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 42c1c3494f28b2045aeeaf708f027771
+timeCreated: 1554727776
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle for Mobile/Meshes Mobile/Materials/jungle_colors.mat
+  uploadId: 304632

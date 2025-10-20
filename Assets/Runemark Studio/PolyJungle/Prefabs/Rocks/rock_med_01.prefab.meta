@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 44d42e65575326b4f8464362b021a2a1
+timeCreated: 1536763109
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Rocks/rock_med_01.prefab
+  uploadId: 304632

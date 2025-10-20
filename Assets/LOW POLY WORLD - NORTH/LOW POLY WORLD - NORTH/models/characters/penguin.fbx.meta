@@ -1,0 +1,927 @@
+fileFormatVersion: 2
+guid: bf13ad094fe0ede449c4e0b472a73e4f
+timeCreated: 1488270983
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BODY
+    100002: Bone
+    100004: F1.L
+    100006: F1.R
+    100008: F2.L
+    100010: F2.L_end
+    100012: F2.R
+    100014: F2.R_end
+    100016: HEAD
+    100018: HEAD_end
+    100020: L1.L
+    100022: L1.R
+    100024: L2.L
+    100026: L2.L.001
+    100028: L2.L_end
+    100030: L2.R
+    100032: L2.R.001
+    100034: L2.R_end
+    100036: L3.L
+    100038: L3.L_end
+    100040: L3.R
+    100042: L3.R_end
+    100044: NEAK
+    100046: PELVIS
+    100048: //RootNode
+    100050: penguin
+    100052: rig_penguin
+    100054: TAIL
+    100056: TAIL_end
+    400000: BODY
+    400002: Bone
+    400004: F1.L
+    400006: F1.R
+    400008: F2.L
+    400010: F2.L_end
+    400012: F2.R
+    400014: F2.R_end
+    400016: HEAD
+    400018: HEAD_end
+    400020: L1.L
+    400022: L1.R
+    400024: L2.L
+    400026: L2.L.001
+    400028: L2.L_end
+    400030: L2.R
+    400032: L2.R.001
+    400034: L2.R_end
+    400036: L3.L
+    400038: L3.L_end
+    400040: L3.R
+    400042: L3.R_end
+    400044: NEAK
+    400046: PELVIS
+    400048: penguin
+    400050: //RootNode
+    400052: rig_penguin
+    400054: TAIL
+    400056: TAIL_end
+    4300000: penguin
+    7400000: rig_penguin|attack
+    7400002: rig_penguin|dead
+    7400004: rig_penguin|eat
+    7400006: rig_penguin|hit
+    7400008: rig_penguin|hit_left
+    7400010: rig_penguin|hit_right
+    7400012: rig_penguin|idle
+    7400014: rig_penguin|idle_2
+    7400016: rig_penguin|walk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: penguin
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rig_penguin|attack
+      takeName: rig_penguin|attack
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|dead
+      takeName: rig_penguin|dead
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|eat
+      takeName: rig_penguin|eat
+      firstFrame: 0
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|hit
+      takeName: rig_penguin|hit
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|hit_left
+      takeName: rig_penguin|hit_left
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|hit_right
+      takeName: rig_penguin|hit_right
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|idle
+      takeName: rig_penguin|idle
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|idle_2
+      takeName: rig_penguin|idle_2
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_penguin|walk
+      takeName: rig_penguin|walk
+      firstFrame: 0
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: penguin
+        weight: 1
+      - path: rig_penguin
+        weight: 1
+      - path: rig_penguin/BODY
+        weight: 1
+      - path: rig_penguin/BODY/F1.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L
+        weight: 1
+      - path: rig_penguin/BODY/F1.L/F2.L/F2.L_end
+        weight: 1
+      - path: rig_penguin/BODY/F1.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R
+        weight: 1
+      - path: rig_penguin/BODY/F1.R/F2.R/F2.R_end
+        weight: 1
+      - path: rig_penguin/BODY/NEAK
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD
+        weight: 1
+      - path: rig_penguin/BODY/NEAK/HEAD/HEAD_end
+        weight: 1
+      - path: rig_penguin/Bone
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L
+        weight: 1
+      - path: rig_penguin/Bone/L2.L.001/L3.L/L3.L_end
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R
+        weight: 1
+      - path: rig_penguin/Bone/L2.R.001/L3.R/L3.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.L/L2.L/L2.L_end
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R
+        weight: 1
+      - path: rig_penguin/PELVIS/L1.R/L2.R/L2.R_end
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL
+        weight: 1
+      - path: rig_penguin/PELVIS/TAIL/TAIL_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/characters/penguin.fbx
+  uploadId: 616078

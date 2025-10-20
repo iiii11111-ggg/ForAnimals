@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9725f01c5767bfc4ab1546917796e578
+timeCreated: 1536763065
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Vegetation/Bromelia_01.prefab
+  uploadId: 304632

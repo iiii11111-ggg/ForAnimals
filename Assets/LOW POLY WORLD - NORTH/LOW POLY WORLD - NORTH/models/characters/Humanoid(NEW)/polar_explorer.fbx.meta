@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 7aa39f307546f6a47bece6637b18f2c9
+timeCreated: 1493205499
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: chest
+    100002: foot.L
+    100004: foot.R
+    100006: forearm.L
+    100008: forearm.R
+    100010: glasses_1
+    100012: hand.L
+    100014: hand.L_end
+    100016: hand.R
+    100018: hand.R_end
+    100020: head
+    100022: head_end
+    100024: hips
+    100026: lower_leg.L
+    100028: lower_leg.R
+    100030: neck
+    100032: pick_3
+    100034: //RootNode
+    100036: polar_explorer
+    100038: rig
+    100040: shoulder.L
+    100042: shoulder.R
+    100044: spine
+    100046: toes.L
+    100048: toes.L_end
+    100050: toes.R
+    100052: toes.R_end
+    100054: upper_arm.L
+    100056: upper_arm.R
+    100058: upper_chest
+    100060: upper_leg.L
+    100062: upper_leg.R
+    100064: footwear
+    100066: glasses
+    100068: weapon
+    400000: chest
+    400002: foot.L
+    400004: foot.R
+    400006: forearm.L
+    400008: forearm.R
+    400010: glasses_1
+    400012: hand.L
+    400014: hand.L_end
+    400016: hand.R
+    400018: hand.R_end
+    400020: head
+    400022: head_end
+    400024: hips
+    400026: lower_leg.L
+    400028: lower_leg.R
+    400030: neck
+    400032: pick_3
+    400034: polar_explorer
+    400036: //RootNode
+    400038: rig
+    400040: shoulder.L
+    400042: shoulder.R
+    400044: spine
+    400046: toes.L
+    400048: toes.L_end
+    400050: toes.R
+    400052: toes.R_end
+    400054: upper_arm.L
+    400056: upper_arm.R
+    400058: upper_chest
+    400060: upper_leg.L
+    400062: upper_leg.R
+    400064: footwear
+    400066: glasses
+    400068: weapon
+    4300000: pick_3
+    4300002: glasses_1
+    4300004: polar_explorer
+    4300006: weapon
+    4300008: glasses
+    4300010: footwear
+    9500000: //RootNode
+    13700000: glasses_1
+    13700002: pick_3
+    13700004: polar_explorer
+    13700006: footwear
+    13700008: glasses
+    13700010: weapon
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/characters/Humanoid(NEW)/polar_explorer.fbx
+  uploadId: 616078

@@ -1,0 +1,1710 @@
+fileFormatVersion: 2
+guid: 19016690830ebd4428b0d0418edf77ae
+timeCreated: 1488284148
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bear_1
+    100004: bear_2
+    100006: body
+    100008: chest
+    100010: ear.L
+    100012: ear.L.001
+    100014: ear.L.001_end
+    100016: ear.R
+    100018: ear.R.001
+    100020: ear.R.001_end
+    100022: ear_k.L
+    100024: ear_k.L_end
+    100026: ear_k.R
+    100028: ear_k.R_end
+    100030: general
+    100032: head
+    100034: hip_1.L
+    100036: hip_1.R
+    100038: knee_1.L
+    100040: knee_1.L_end
+    100042: knee_1.R
+    100044: knee_1.R_end
+    100046: knee_2.L
+    100048: knee_2.L_end
+    100050: knee_2.R
+    100052: knee_2.R_end
+    100054: leg_1.L
+    100056: leg_1.L_end
+    100058: leg_1.R
+    100060: leg_1.R_end
+    100062: leg_1_ik.L
+    100064: leg_1_ik.R
+    100066: leg_2.L
+    100068: leg_2.L_end
+    100070: leg_2.R
+    100072: leg_2.R_end
+    100074: leg_2_ik.L
+    100076: leg_2_ik.R
+    100078: leg_3.L
+    100080: leg_3.R
+    100082: leg_4.L
+    100084: leg_4.L_end
+    100086: leg_4.R
+    100088: leg_4.R_end
+    100090: leg_5.L
+    100092: leg_5.R
+    100094: n1
+    100096: n2
+    100098: n3
+    100100: paw_2.L
+    100102: paw_2.L_end
+    100104: paw_2.R
+    100106: paw_2.R_end
+    100108: pelvis
+    100110: rig_bear
+    100112: stomach
+    100114: t1
+    100116: t2
+    100118: t2_end
+    100120: Bear
+    100122: Bear.001
+    400000: //RootNode
+    400002: bear_1
+    400004: bear_2
+    400006: body
+    400008: chest
+    400010: ear.L
+    400012: ear.L.001
+    400014: ear.L.001_end
+    400016: ear.R
+    400018: ear.R.001
+    400020: ear.R.001_end
+    400022: ear_k.L
+    400024: ear_k.L_end
+    400026: ear_k.R
+    400028: ear_k.R_end
+    400030: general
+    400032: head
+    400034: hip_1.L
+    400036: hip_1.R
+    400038: knee_1.L
+    400040: knee_1.L_end
+    400042: knee_1.R
+    400044: knee_1.R_end
+    400046: knee_2.L
+    400048: knee_2.L_end
+    400050: knee_2.R
+    400052: knee_2.R_end
+    400054: leg_1.L
+    400056: leg_1.L_end
+    400058: leg_1.R
+    400060: leg_1.R_end
+    400062: leg_1_ik.L
+    400064: leg_1_ik.R
+    400066: leg_2.L
+    400068: leg_2.L_end
+    400070: leg_2.R
+    400072: leg_2.R_end
+    400074: leg_2_ik.L
+    400076: leg_2_ik.R
+    400078: leg_3.L
+    400080: leg_3.R
+    400082: leg_4.L
+    400084: leg_4.L_end
+    400086: leg_4.R
+    400088: leg_4.R_end
+    400090: leg_5.L
+    400092: leg_5.R
+    400094: n1
+    400096: n2
+    400098: n3
+    400100: paw_2.L
+    400102: paw_2.L_end
+    400104: paw_2.R
+    400106: paw_2.R_end
+    400108: pelvis
+    400110: rig_bear
+    400112: stomach
+    400114: t1
+    400116: t2
+    400118: t2_end
+    400120: Bear
+    400122: Bear.001
+    4300000: bear_2
+    4300002: bear_1
+    4300004: Bear
+    4300006: Bear.001
+    7400000: rig_bear|hit_left
+    7400002: rig_bear|run
+    7400004: rig_bear|walk
+    7400006: rig_bear|walk_1
+    7400008: attack
+    7400010: attack_2
+    7400012: dead
+    7400014: eat
+    7400016: hit
+    7400018: hit_left
+    7400020: hit_right
+    7400022: idle_2
+    7400024: run
+    7400026: idle
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: bear_1
+    13700002: bear_2
+    13700004: Bear
+    13700006: Bear.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: attack
+      takeName: attack
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack_2
+      takeName: attack_2
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: dead
+      takeName: dead
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: eat
+      takeName: eat
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit
+      takeName: hit
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit_left
+      takeName: hit_left
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit_right
+      takeName: hit_right
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle_2
+      takeName: idle_2
+      firstFrame: 0
+      lastFrame: 71
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: run
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_1
+        weight: 1
+      - path: bear_2
+        weight: 1
+      - path: rig_bear
+        weight: 1
+      - path: rig_bear/general
+        weight: 1
+      - path: rig_bear/general/body
+        weight: 1
+      - path: rig_bear/general/body/chest
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.L/leg_1.L/leg_1.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R
+        weight: 1
+      - path: rig_bear/general/body/chest/hip_1.R/leg_1.R/leg_1.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L/ear_k.L/ear_k.L_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.L.001/ear.L.001_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R/ear_k.R/ear_k.R_end
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001
+        weight: 1
+      - path: rig_bear/general/body/chest/n1/n2/n3/head/ear.R.001/ear.R.001_end
+        weight: 1
+      - path: rig_bear/general/knee_1.L
+        weight: 1
+      - path: rig_bear/general/knee_1.L/knee_1.L_end
+        weight: 1
+      - path: rig_bear/general/knee_1.R
+        weight: 1
+      - path: rig_bear/general/knee_1.R/knee_1.R_end
+        weight: 1
+      - path: rig_bear/general/knee_2.L
+        weight: 1
+      - path: rig_bear/general/knee_2.L/knee_2.L_end
+        weight: 1
+      - path: rig_bear/general/knee_2.R
+        weight: 1
+      - path: rig_bear/general/knee_2.R/knee_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.L/leg_2.L/leg_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R
+        weight: 1
+      - path: rig_bear/general/leg_1_ik.R/leg_2.R/leg_2.R_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.L/leg_5.L/paw_2.L/paw_2.L_end
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R
+        weight: 1
+      - path: rig_bear/general/leg_2_ik.R/leg_5.R/paw_2.R/paw_2.R_end
+        weight: 1
+      - path: rig_bear/general/stomach
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.L/leg_4.L/leg_4.L_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/leg_3.R/leg_4.R/leg_4.R_end
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2
+        weight: 1
+      - path: rig_bear/general/stomach/pelvis/t1/t2/t2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/characters/bear.fbx
+  uploadId: 616078

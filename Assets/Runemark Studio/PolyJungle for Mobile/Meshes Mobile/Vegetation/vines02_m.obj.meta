@@ -1,0 +1,101 @@
+fileFormatVersion: 2
+guid: 4de7c84a4da23814faf5886387885716
+timeCreated: 1554732339
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Vine_single_01_CUBezierCurve.022
+    100002: Vine_single_02_vines02.001
+    100004: Vine_single_03_CUBezierCurve.020
+    100006: //RootNode
+    400000: Vine_single_01_CUBezierCurve.022
+    400002: Vine_single_02_vines02.001
+    400004: Vine_single_03_CUBezierCurve.020
+    400006: //RootNode
+    2300000: Vine_single_01_CUBezierCurve.022
+    2300002: Vine_single_02_vines02.001
+    2300004: Vine_single_03_CUBezierCurve.020
+    3300000: Vine_single_01_CUBezierCurve.022
+    3300002: Vine_single_02_vines02.001
+    3300004: Vine_single_03_CUBezierCurve.020
+    4300000: Vine_single_01_CUBezierCurve.022
+    4300002: Vine_single_02_vines02.001
+    4300004: Vine_single_03_CUBezierCurve.020
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle for Mobile/Meshes Mobile/Vegetation/vines02_m.obj
+  uploadId: 304632

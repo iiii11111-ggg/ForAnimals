@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: af1cc58ca77c32c41bad36a0105804d7
+timeCreated: 1536763170
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Props/ClayPot_02.prefab
+  uploadId: 304632

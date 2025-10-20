@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: be7fb4eecb9643443963300714ccd424
+timeCreated: 1536761251
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Vegetation/Materials/Flower_white.mat
+  uploadId: 304632

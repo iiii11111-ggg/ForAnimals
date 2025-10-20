@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5ecdfa3f66c0c6d43b23a9667b8cbb60
+timeCreated: 1536763177
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Props/Mask_03.prefab
+  uploadId: 304632

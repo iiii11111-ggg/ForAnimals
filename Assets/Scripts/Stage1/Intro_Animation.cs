@@ -1,5 +1,6 @@
 using Polyperfect.People;
 using System.Collections;
+using System.Xml;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,9 +11,9 @@ public class Intro_Animation : MonoBehaviour
     private AudioSource mainAudioSource;
     public AudioClip backgroundMusicJungle;
 
-    public CinemachineCamera FollowCam, StartCam, BoomCam,MonkeyCam,MonkeyCam_M, RabbitCam, RabbitFocusingCam,introEndCam;
+    public CinemachineCamera RabbitFollowCam, StartCam, BoomCam,MonkeyCam,MonkeyCam_M, RabbitCam, RabbitFocusingCam,introEndCam;
     public StageIntro_T script;
-    public GameObject player, BoomPoint,RabbitPoint, startMap, BrokenMap, nils, monkey,EndPoint;
+    public GameObject player_Rabbit,BoomPoint,RabbitPoint, startMap, BrokenMap, nils, monkey,EndPoint,InGamePoint;
     private GameObject dialog;
     public Animator RabbitAn,MonkeyAn;
     public CanvasGroup CG;
@@ -40,7 +41,7 @@ public class Intro_Animation : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(player.transform.position, BoomPoint.transform.position);
+        float distance = Vector3.Distance(player_Rabbit.transform.position, BoomPoint.transform.position);
         if (sequence == 0 && distance <= 1f)
         {
             StartCoroutine(BoomScene());
@@ -49,7 +50,7 @@ public class Intro_Animation : MonoBehaviour
         if (sequence == 1 && EventTrigger)
         {
             script.intro();
-            player.transform.LookAt(monkey.transform);
+            player_Rabbit.transform.LookAt(monkey.transform);
             dialog.SetActive(true);
             CinemachineBrain brain = FindObjectOfType<CinemachineBrain>();
             brain.DefaultBlend.Style = CinemachineBlendDefinition.Styles.EaseInOut;
@@ -66,13 +67,13 @@ public class Intro_Animation : MonoBehaviour
 
 
         float moveDuration = 6.0f;
-        Vector3 startPosition = player.transform.position;
+        Vector3 startPosition = player_Rabbit.transform.position;
         float elapsedTime = 0f;
 
 
-        player.SetActive(false);
+        player_Rabbit.SetActive(false);
         yield return new WaitForSeconds(2.0f);
-        player.SetActive(true);
+        player_Rabbit.SetActive(true);
         RabbitAn.SetBool("isRunning", true);
 
         while (elapsedTime < moveDuration)
@@ -81,11 +82,11 @@ public class Intro_Animation : MonoBehaviour
             float t = elapsedTime / moveDuration;
 
             t = Mathf.SmoothStep(0.0f, 1.0f, t);
-            player.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            player_Rabbit.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
 
-            if (targetPosition != player.transform.position)
+            if (targetPosition != player_Rabbit.transform.position)
             {
-                player.transform.LookAt(targetPosition);
+                player_Rabbit.transform.LookAt(targetPosition);
             }
 
             elapsedTime += Time.deltaTime;
@@ -98,7 +99,7 @@ public class Intro_Animation : MonoBehaviour
     {
 
         float moveDuration = 10.0f;
-        Vector3 startPositionP = player.transform.position;
+        Vector3 startPositionP = player_Rabbit.transform.position;
         Vector3 startPositionM = monkey.transform.position;
         float elapsedTime = 0f;
 
@@ -111,12 +112,12 @@ public class Intro_Animation : MonoBehaviour
             float t = elapsedTime / moveDuration;
 
             t = Mathf.SmoothStep(0.0f, 1.0f, t);
-            player.transform.position = Vector3.Lerp(startPositionP, targetPosition, t);
+            player_Rabbit.transform.position = Vector3.Lerp(startPositionP, targetPosition, t);
             monkey.transform.position = Vector3.Lerp(startPositionM, targetPosition, t);
 
-            if (targetPosition != player.transform.position)
+            if (targetPosition != player_Rabbit.transform.position)
             {
-                player.transform.LookAt(targetPosition);
+                player_Rabbit.transform.LookAt(targetPosition);
                 monkey.transform.LookAt(targetPosition);
 
             }
@@ -179,14 +180,14 @@ public class Intro_Animation : MonoBehaviour
         else if (index == 4)
         {
             monkey.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-            player.transform.position = RabbitPoint.transform.position;
+            player_Rabbit.transform.position = RabbitPoint.transform.position;
             CG.alpha = 0;
             MonkeyCam_M.Priority = priorityIndex;
             priorityIndex++;
         }
         else if (index == 5)
         {
-            monkey.transform.LookAt(player.transform);
+            monkey.transform.LookAt(player_Rabbit.transform);
             RabbitCam.Priority = priorityIndex;
             priorityIndex++;
         }
@@ -207,13 +208,15 @@ public class Intro_Animation : MonoBehaviour
         }
         else if (index == 9) 
         {
-            Vector3 Rposition = new Vector3(player.transform.position.x + 4, player.transform.position.y, player.transform.position.z);
+            dialog.SetActive(false);
+            Vector3 Rposition = new Vector3(player_Rabbit.transform.position.x + 4, player_Rabbit.transform.position.y, player_Rabbit.transform.position.z);
             monkey.transform.position = Rposition;
-            monkey.transform.LookAt(player.transform);
+            monkey.transform.LookAt(player_Rabbit.transform);
             StartCoroutine(introEndScene(EndPoint.transform.position));
             introEndCam.Priority = priorityIndex;
             priorityIndex++;
-            StartCoroutine(Fade(0f, 1f, 8f));
+            StartCoroutine(Fade(0f, 1f, 5f));
+            StartCoroutine(MoveJungle());
         }
         }
 
@@ -227,8 +230,11 @@ public class Intro_Animation : MonoBehaviour
             CG.alpha = newAlpha;
             yield return null;
             CG.alpha = endAlpha;
-
-
         }
+    }
+    IEnumerator MoveJungle() 
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Jungle");
     }
 }

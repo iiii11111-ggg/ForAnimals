@@ -1,0 +1,612 @@
+fileFormatVersion: 2
+guid: b10057de402ad2b45bf80e3c8592b8f8
+timeCreated: 1488265454
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 1
+    100002: 1_end
+    100004: 2
+    100006: 2_end
+    100008: 3
+    100010: 3_end
+    100012: body
+    100014: Bone
+    100016: f1.L
+    100018: f1.R
+    100020: f2.L
+    100022: f2.L_end
+    100024: f2.R
+    100026: f2.R_end
+    100028: head
+    100030: mounth
+    100032: mounth_end
+    100034: rig_whale
+    100036: t1
+    100038: t2
+    100040: tile
+    100042: tile_end
+    100044: //RootNode
+    100046: whale
+    100048: whale_water
+    400000: 1
+    400002: 1_end
+    400004: 2
+    400006: 2_end
+    400008: 3
+    400010: 3_end
+    400012: body
+    400014: Bone
+    400016: f1.L
+    400018: f1.R
+    400020: f2.L
+    400022: f2.L_end
+    400024: f2.R
+    400026: f2.R_end
+    400028: head
+    400030: mounth
+    400032: mounth_end
+    400034: rig_whale
+    400036: t1
+    400038: t2
+    400040: tile
+    400042: tile_end
+    400044: //RootNode
+    400046: whale
+    400048: whale_water
+    4300000: whale_water
+    4300002: whale
+    7400000: rig_whale|attack
+    7400002: rig_whale|dead
+    7400004: rig_whale|hit
+    7400006: rig_whale|idle
+    7400008: rig_whale|idle_2
+    7400010: rig_whale|swim
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: whale
+    13700002: whale_water
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rig_whale|attack
+      takeName: rig_whale|attack
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_whale
+        weight: 1
+      - path: rig_whale/Bone
+        weight: 1
+      - path: rig_whale/Bone/body
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_whale/Bone/body/t1
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile/tile_end
+        weight: 1
+      - path: rig_whale/Bone/head
+        weight: 1
+      - path: rig_whale/Bone/head/1
+        weight: 1
+      - path: rig_whale/Bone/head/1/1_end
+        weight: 1
+      - path: rig_whale/Bone/head/2
+        weight: 1
+      - path: rig_whale/Bone/head/2/2_end
+        weight: 1
+      - path: rig_whale/Bone/head/3
+        weight: 1
+      - path: rig_whale/Bone/head/3/3_end
+        weight: 1
+      - path: rig_whale/Bone/head/mounth
+        weight: 1
+      - path: rig_whale/Bone/head/mounth/mounth_end
+        weight: 1
+      - path: whale
+        weight: 1
+      - path: whale_water
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_whale|dead
+      takeName: rig_whale|dead
+      firstFrame: 0
+      lastFrame: 149
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_whale
+        weight: 1
+      - path: rig_whale/Bone
+        weight: 1
+      - path: rig_whale/Bone/body
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_whale/Bone/body/t1
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile/tile_end
+        weight: 1
+      - path: rig_whale/Bone/head
+        weight: 1
+      - path: rig_whale/Bone/head/1
+        weight: 1
+      - path: rig_whale/Bone/head/1/1_end
+        weight: 1
+      - path: rig_whale/Bone/head/2
+        weight: 1
+      - path: rig_whale/Bone/head/2/2_end
+        weight: 1
+      - path: rig_whale/Bone/head/3
+        weight: 1
+      - path: rig_whale/Bone/head/3/3_end
+        weight: 1
+      - path: rig_whale/Bone/head/mounth
+        weight: 1
+      - path: rig_whale/Bone/head/mounth/mounth_end
+        weight: 1
+      - path: whale
+        weight: 1
+      - path: whale_water
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_whale|hit
+      takeName: rig_whale|hit
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_whale
+        weight: 1
+      - path: rig_whale/Bone
+        weight: 1
+      - path: rig_whale/Bone/body
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_whale/Bone/body/t1
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile/tile_end
+        weight: 1
+      - path: rig_whale/Bone/head
+        weight: 1
+      - path: rig_whale/Bone/head/1
+        weight: 1
+      - path: rig_whale/Bone/head/1/1_end
+        weight: 1
+      - path: rig_whale/Bone/head/2
+        weight: 1
+      - path: rig_whale/Bone/head/2/2_end
+        weight: 1
+      - path: rig_whale/Bone/head/3
+        weight: 1
+      - path: rig_whale/Bone/head/3/3_end
+        weight: 1
+      - path: rig_whale/Bone/head/mounth
+        weight: 1
+      - path: rig_whale/Bone/head/mounth/mounth_end
+        weight: 1
+      - path: whale
+        weight: 1
+      - path: whale_water
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_whale|idle
+      takeName: rig_whale|idle
+      firstFrame: 0
+      lastFrame: 209
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_whale
+        weight: 1
+      - path: rig_whale/Bone
+        weight: 1
+      - path: rig_whale/Bone/body
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_whale/Bone/body/t1
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile/tile_end
+        weight: 1
+      - path: rig_whale/Bone/head
+        weight: 1
+      - path: rig_whale/Bone/head/1
+        weight: 1
+      - path: rig_whale/Bone/head/1/1_end
+        weight: 1
+      - path: rig_whale/Bone/head/2
+        weight: 1
+      - path: rig_whale/Bone/head/2/2_end
+        weight: 1
+      - path: rig_whale/Bone/head/3
+        weight: 1
+      - path: rig_whale/Bone/head/3/3_end
+        weight: 1
+      - path: rig_whale/Bone/head/mounth
+        weight: 1
+      - path: rig_whale/Bone/head/mounth/mounth_end
+        weight: 1
+      - path: whale
+        weight: 1
+      - path: whale_water
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_whale|idle_2
+      takeName: rig_whale|idle_2
+      firstFrame: 0
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_whale
+        weight: 1
+      - path: rig_whale/Bone
+        weight: 1
+      - path: rig_whale/Bone/body
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_whale/Bone/body/t1
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile/tile_end
+        weight: 1
+      - path: rig_whale/Bone/head
+        weight: 1
+      - path: rig_whale/Bone/head/1
+        weight: 1
+      - path: rig_whale/Bone/head/1/1_end
+        weight: 1
+      - path: rig_whale/Bone/head/2
+        weight: 1
+      - path: rig_whale/Bone/head/2/2_end
+        weight: 1
+      - path: rig_whale/Bone/head/3
+        weight: 1
+      - path: rig_whale/Bone/head/3/3_end
+        weight: 1
+      - path: rig_whale/Bone/head/mounth
+        weight: 1
+      - path: rig_whale/Bone/head/mounth/mounth_end
+        weight: 1
+      - path: whale
+        weight: 1
+      - path: whale_water
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_whale|swim
+      takeName: rig_whale|swim
+      firstFrame: 0
+      lastFrame: 154
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_whale
+        weight: 1
+      - path: rig_whale/Bone
+        weight: 1
+      - path: rig_whale/Bone/body
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L
+        weight: 1
+      - path: rig_whale/Bone/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R
+        weight: 1
+      - path: rig_whale/Bone/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_whale/Bone/body/t1
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile
+        weight: 1
+      - path: rig_whale/Bone/body/t1/t2/tile/tile_end
+        weight: 1
+      - path: rig_whale/Bone/head
+        weight: 1
+      - path: rig_whale/Bone/head/1
+        weight: 1
+      - path: rig_whale/Bone/head/1/1_end
+        weight: 1
+      - path: rig_whale/Bone/head/2
+        weight: 1
+      - path: rig_whale/Bone/head/2/2_end
+        weight: 1
+      - path: rig_whale/Bone/head/3
+        weight: 1
+      - path: rig_whale/Bone/head/3/3_end
+        weight: 1
+      - path: rig_whale/Bone/head/mounth
+        weight: 1
+      - path: rig_whale/Bone/head/mounth/mounth_end
+        weight: 1
+      - path: whale
+        weight: 1
+      - path: whale_water
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/characters/whale.fbx
+  uploadId: 616078

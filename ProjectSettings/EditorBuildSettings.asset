@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 7e8b21edce4600b419c272ad802b8a56
   - enabled: 1
-    path: Assets/Scenes/InGame.unity
+    path: Assets/Scenes/Tutorial.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Jungle.unity
+    guid: 121a2979f40e52440ba1052fab943a0c
   - enabled: 1
     path: Assets/Scenes/BugCrash.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02

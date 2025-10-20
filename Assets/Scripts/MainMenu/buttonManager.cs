@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class buttonManager : MonoBehaviour
 {
-   
+    public GameObject optionUiActive;
 
     public void Startbutton()//public이있어야 함수 연결이 가능함
     {
@@ -47,6 +47,10 @@ public class buttonManager : MonoBehaviour
     }
     public void mainexitbtn()//public이있어야 함수 연결이 가능함
     {
+        BackButtonManager.Instance.TogglePause();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        optionUiActive.SetActive(false);
         SceneManager.LoadScene("Main");
     }
     public void exitbtn()//public이있어야 함수 연결이 가능함

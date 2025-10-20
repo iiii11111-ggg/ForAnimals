@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 284f0dc4add94424cbef1f51b565a88f
+timeCreated: 1536763071
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Vegetation/JungleTree.prefab
+  uploadId: 304632

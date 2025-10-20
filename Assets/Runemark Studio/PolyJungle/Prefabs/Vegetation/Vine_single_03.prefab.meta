@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 289c9ae9e850a3a4bbf9c9e2b619be3f
+timeCreated: 1536763076
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Vegetation/Vine_single_03.prefab
+  uploadId: 304632

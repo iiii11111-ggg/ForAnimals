@@ -1,0 +1,5 @@
+Poly Jungle V1.1 Update Log
+
+- Added Mobile friendly meshes in OBJ format, with single material and texture atlas. 
+
+- Added merged versions of some of the models as single OBJ without submeshes

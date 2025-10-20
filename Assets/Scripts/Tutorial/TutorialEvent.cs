@@ -76,16 +76,15 @@ public class TutorialEvent : MonoBehaviour, IEventController
         dp = Dialog.Instance.dialogPanel;
         RabbitToPanda_T Script = dp.GetComponentInChildren<RabbitToPanda_T>();
         Script.StartTutorialDialog();
-        pc.enabled = false;
+        pc.canMove = false;
         HelpMessage.SetActive(false);
         an.SetBool("isRunning", false);
-        pc.rb.linearVelocity = Vector3.zero;
         StartCoroutine(talkPanda());
     }
     public void ScriptEnd()
     {
         Debug.Log("튜토리얼 대화 종료");
-        pc.enabled = true;
+        pc.canMove = true;
         dp.SetActive(false);
         pCam.Priority = cCam.Priority + 1;
         chatEvent.SetActive(false);
@@ -98,7 +97,7 @@ public class TutorialEvent : MonoBehaviour, IEventController
         yield return new WaitForSeconds(0.2f);
         dp.SetActive(true);
         cCam.Priority = pCam.Priority + 1;
-        pc.transform.position = playerPosition.transform.position;
+        pc.TeleportTo(playerPosition.transform.position);
         pc.transform.LookAt(panda.transform);
     }
 }

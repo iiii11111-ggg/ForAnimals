@@ -1,0 +1,696 @@
+fileFormatVersion: 2
+guid: ec2b9ff6c61d3da4d8104e57df948063
+timeCreated: 1488279820
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body
+    100002: f1.L
+    100004: f1.R
+    100006: f2.L
+    100008: f2.L_end
+    100010: f2.R
+    100012: f2.R_end
+    100014: f3.L
+    100016: f3.R
+    100018: f4.L
+    100020: f4.L_end
+    100022: f4.R
+    100024: f4.R_end
+    100026: general
+    100028: head
+    100030: head_end
+    100032: neak
+    100034: pelvis
+    100036: rig_warlus
+    100038: warlus
+    100040: //RootNode
+    400000: body
+    400002: f1.L
+    400004: f1.R
+    400006: f2.L
+    400008: f2.L_end
+    400010: f2.R
+    400012: f2.R_end
+    400014: f3.L
+    400016: f3.R
+    400018: f4.L
+    400020: f4.L_end
+    400022: f4.R
+    400024: f4.R_end
+    400026: general
+    400028: head
+    400030: head_end
+    400032: neak
+    400034: pelvis
+    400036: rig_warlus
+    400038: //RootNode
+    400040: warlus
+    4300000: warlus
+    7400000: rig_warlus|attack
+    7400002: rig_warlus|dead
+    7400004: rig_warlus|eat
+    7400006: rig_warlus|hit_left
+    7400008: rig_warlus|hit_right
+    7400010: rig_warlus|idle
+    7400012: rig_warlus|idle_2
+    7400014: rig_warlus|walk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: warlus
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rig_warlus|attack
+      takeName: rig_warlus|attack
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_warlus|dead
+      takeName: rig_warlus|dead
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_warlus|eat
+      takeName: rig_warlus|eat
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_warlus|hit_left
+      takeName: rig_warlus|hit_left
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_warlus|hit_right
+      takeName: rig_warlus|hit_right
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_warlus|idle
+      takeName: rig_warlus|idle
+      firstFrame: 0
+      lastFrame: 98
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_warlus|idle_2
+      takeName: rig_warlus|idle_2
+      firstFrame: 0
+      lastFrame: 98
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_warlus|walk
+      takeName: rig_warlus|walk
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_warlus
+        weight: 1
+      - path: rig_warlus/general
+        weight: 1
+      - path: rig_warlus/general/body
+        weight: 1
+      - path: rig_warlus/general/body/f1.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L
+        weight: 1
+      - path: rig_warlus/general/body/f1.L/f2.L/f2.L_end
+        weight: 1
+      - path: rig_warlus/general/body/f1.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R
+        weight: 1
+      - path: rig_warlus/general/body/f1.R/f2.R/f2.R_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.L/f4.L/f4.L_end
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R
+        weight: 1
+      - path: rig_warlus/general/body/pelvis/f3.R/f4.R/f4.R_end
+        weight: 1
+      - path: rig_warlus/general/neak
+        weight: 1
+      - path: rig_warlus/general/neak/head
+        weight: 1
+      - path: rig_warlus/general/neak/head/head_end
+        weight: 1
+      - path: warlus
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/characters/warlus.fbx
+  uploadId: 616078

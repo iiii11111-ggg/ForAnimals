@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 889a984313f779f4583032348c75eb7e
+timeCreated: 1536826319
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 15600000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Scenes/New Terrain.asset
+  uploadId: 304632

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 07c714a77d4e5d549811b9f422ae6537
+timeCreated: 1554727596
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 25800000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle for Mobile/LineupScene_Mobile/LightingData.asset
+  uploadId: 304632

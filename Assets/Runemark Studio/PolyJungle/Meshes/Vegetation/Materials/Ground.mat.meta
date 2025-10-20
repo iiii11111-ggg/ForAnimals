@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6452ed92cbd4df7448c7ed0f6bcfd10c
+timeCreated: 1536760721
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Vegetation/Materials/Ground.mat
+  uploadId: 304632

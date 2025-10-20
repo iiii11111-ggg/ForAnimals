@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ba31274c973935848846c8806ef5fda8
+timeCreated: 1536763151
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Prefabs/Buildings/Bridge_02.prefab
+  uploadId: 304632

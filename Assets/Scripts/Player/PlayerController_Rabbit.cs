@@ -1,54 +1,98 @@
 ﻿using UnityEngine;
 
+// 이 스크립트는 CharacterController와 Animator 컴포넌트를 필요로 합니다.
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController_Rabbit : MonoBehaviour
 {
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;
+    public float turnSpeed = 12f;
+    public float gravity = -9.81f; // 중력 값
 
-    public Rigidbody rb;
+    [Header("Control")]
+    public bool canMove = true; // 외부에서 움직임을 제어할 스위치
 
-    public float moveSpeed = 8f;
-    public float turnSpeed = 15f;
+    [Header("References")]
+    private CharacterController controller; // Rigidbody 대신 CharacterController 사용
+    private Animator an;
+    private Transform mainCameraTransform;
 
-    public Animator an;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Vector3 playerVelocity; // 중력 적용을 위한 수직 속도
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>(); // CharacterController 컴포넌트 가져오기
         an = GetComponent<Animator>();
+        mainCameraTransform = Camera.main.transform;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        an.SetBool("isJumping", false);
-        Movement();
+        // PauseManager의 static 변수를 참조하여 일시정지 상태인지 확인합니다.
+        if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
+
+        // --- 1. 바닥 감지 ---
+        bool isGrounded = controller.isGrounded;
+        if (isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = -2f;
+        }
+
+        // --- 2. 입력 처리 및 수평 이동 계산 ---
+        Vector3 horizontalMove = Vector3.zero;
+        if (canMove)
+        {
+            float xInput = Input.GetAxisRaw("Horizontal");
+            float zInput = Input.GetAxisRaw("Vertical");
+            Vector3 inputDirection = new Vector3(xInput, 0f, zInput).normalized;
+
+            if (inputDirection.magnitude >= 0.1f)
+            {
+                // 카메라 기준 이동 방향 계산
+                float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
+                Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
+
+                // 부드러운 회전
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
+
+                // 최종 수평 이동 방향
+                Vector3 moveDirection = targetRotation * Vector3.forward;
+                horizontalMove = moveDirection * moveSpeed;
+            }
+        }
+
+        // --- 3. 중력 적용 ---
+        playerVelocity.y += gravity * Time.deltaTime;
+
+        // --- 4. 최종 이동 실행 (Move를 한 번만 호출!) ---
+        // 수평 이동(horizontalMove)과 수직 이동(playerVelocity)을 합쳐서 한 번에 적용합니다.
+        controller.Move((horizontalMove + new Vector3(0, playerVelocity.y, 0)) * Time.deltaTime);
+
+        // --- 5. 애니메이션 처리 ---
+        // CharacterController의 실제 속도를 기반으로 애니메이션을 제어합니다.
+        float currentHorizontalSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
+        an.SetBool("isRunning", currentHorizontalSpeed > 0.1f);
     }
 
-    public void Movement() 
+    /// <summary>
+    /// 캐릭터를 지정된 위치로 즉시 이동시킵니다 (텔레포트).
+    /// </summary>
+    /// <param name="destination">이동할 목표 위치</param>
+    public void TeleportTo(Vector3 destination)
     {
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
+        // CharacterController를 잠시 비활성화해야 transform.position을 안전하게 설정할 수 있습니다.
+        controller.enabled = false;
+        transform.position = destination;
+        controller.enabled = true;
 
-
-        Vector3 moveDirection = new Vector3(xInput, 0f, zInput);
-
-
-        if (moveDirection.sqrMagnitude > 0.01f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-
-            an.SetBool("isRunning", true);
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
-        }
-        else 
-        {
-            an.SetBool("isRunning", false);
-        }
-
-            // --- 5. �̵� �ӵ� ���� ---
-            float xSpeed = xInput * moveSpeed;
-        float zSpeed = zInput * moveSpeed;
-        rb.linearVelocity = new Vector3(xSpeed, rb.linearVelocity.y, zSpeed);
+        // 텔레포트 후 수직 속도를 초기화하여, 텔레포트하자마자
+        // 이전에 쌓인 낙하 속도로 인해 바닥으로 곤두박질치는 것을 방지합니다.
+        playerVelocity = Vector3.zero;
+        Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
     }
-
 }
+

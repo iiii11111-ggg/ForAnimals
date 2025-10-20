@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4485cea7bcab1a94bbde794850a486f1
+timeCreated: 1536762900
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Props/Materials/PotColor01.mat
+  uploadId: 304632

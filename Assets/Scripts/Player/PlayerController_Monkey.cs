@@ -1,78 +1,92 @@
 ﻿using UnityEngine;
 
+// 이 스크립트는 CharacterController와 Animator 컴포넌트를 필요로 합니다.
+[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Animator))]
 public class PlayerController_Monkey : MonoBehaviour
 {
-    public Rigidbody rb;
+    [Header("Movement Settings")]
+    public float moveSpeed = 5f;
+    public float dashSpeed = 10f; // 대시 속도 추가
+    public float turnSpeed = 12f;
+    public float gravity = -9.81f;
 
-    public float moveSpeed = 8f;
-    public float dashSpeed = 24f;
-    public float turnSpeed = 15f;
+    [Header("Jump Settings")]
+    public float jumpHeight = 1.5f; // 점프 높이 추가
 
-    public Animator an;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Control")]
+    public bool canMove = true;
+
+    [Header("References")]
+    private CharacterController controller;
+    private Animator an;
+    private Transform mainCameraTransform;
+
+    private Vector3 playerVelocity;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
         an = GetComponent<Animator>();
+        mainCameraTransform = Camera.main.transform;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Movement();
-    }
+        if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
 
-    public void Movement()
-    {
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
+        // --- 1. 바닥 감지 및 중력 초기화 ---
+        bool isGrounded = controller.isGrounded;
 
-        // 입력 방향 벡터 (Y축은 0으로 고정)
-        Vector3 moveDirection = new Vector3(xInput, 0f, zInput).normalized;
-
-        // 1. 대시 상태 확인
-        bool isMoving = moveDirection.sqrMagnitude > 0.01f;
-        bool isDashing = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-
-        // 2. 현재 적용할 이동 속도와 애니메이션 속도 결정
-        float currentTargetSpeed; // Rigidbody에 적용할 속도
-        float animSpeed;          // Animator에 전달할 Float 값
-
-        if (isMoving)
+        if (isGrounded && playerVelocity.y < 0)
         {
-            // 움직일 때
-            currentTargetSpeed = isDashing ? dashSpeed : moveSpeed;
-
-            // Animator에는 Rigidbody에 적용할 속도 값을 그대로 전달 (Idle, Walk, Run 블렌딩 기준)
-            animSpeed = currentTargetSpeed;
-        }
-        else
-        {
-            // 정지 상태 (Idle)
-            currentTargetSpeed = 0f;
-            animSpeed = 0f;
+            playerVelocity.y = -2f; // 바닥에 붙어있도록 살짝 아래로 힘을 줌
         }
 
-        // 3. Animator의 "Speed" 파라미터 업데이트 (딜레이 없이 모션 블렌딩)
-        // an.SetFloat("Speed", 0.1f); 대신 an.SetFloat("Speed", animSpeed); 를 사용해야 합니다.
-        an.SetFloat("Speed", animSpeed);
-
-
-        // 4. 캐릭터 회전 로직
-        if (isMoving)
+        // --- 2. 입력 처리 ---
+        Vector3 inputDirection = Vector3.zero;
+        if (canMove)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            float xInput = Input.GetAxisRaw("Horizontal");
+            float zInput = Input.GetAxisRaw("Vertical");
+            inputDirection = new Vector3(xInput, 0f, zInput).normalized;
+        }
 
-            // 부드러운 회전
+        // --- 3. 수평 이동 방향 및 속도 계산 ---
+        Vector3 horizontalMove = Vector3.zero;
+        if (inputDirection.magnitude >= 0.1f)
+        {
+            bool isDashing = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            float currentSpeed = isDashing ? dashSpeed : moveSpeed;
+
+            float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
+            Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
+
+            Vector3 moveDirection = targetRotation * Vector3.forward;
+            horizontalMove = moveDirection * currentSpeed;
         }
 
-        // 5. Rigidbody를 이용한 실제 이동 구현
-        float xSpeed = xInput * currentTargetSpeed;
-        float zSpeed = zInput * currentTargetSpeed;
+        // --- 4. 점프 처리 ---
+        if (canMove && Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
 
-        // Rigidbody 선형 속도 설정 (Y축은 중력을 위해 현재 값 유지)
-        rb.linearVelocity = new Vector3(xSpeed, rb.linearVelocity.y, zSpeed);
+        // --- 5. 최종 이동 계산 및 실행 (Move 한 번만 호출!) ---
+        // 중력 적용
+        playerVelocity.y += gravity * Time.deltaTime;
+
+        // 수평 이동과 수직 이동(중력, 점프)을 합쳐서 한 번에 Move를 호출
+        controller.Move((horizontalMove + playerVelocity) * Time.deltaTime);
+
+        // --- 6. 애니메이션 처리 ---
+        // CharacterController의 velocity를 사용하여 실제 이동 속도를 반영
+        float horizontalSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
+        an.SetFloat("Speed", horizontalSpeed);
+        an.SetBool("isJumping", !isGrounded);
     }
-
 }

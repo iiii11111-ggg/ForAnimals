@@ -45,11 +45,10 @@ public class Dialog : MonoBehaviour
 
     void OnDestroy()
     {
-        Debug.LogError($"<color=red><b>!!!!! [싱글톤] Dialog (ID:{GetInstanceID()})가 파괴되었습니다!!!!!</b></color>");
-
         // 만약 현재 파괴되는 놈이 유일한 인스턴스였다면, static 변수를 비워줘야 합니다.
         if (Instance == this)
         {
+            Debug.LogError($"<color=red><b>!!!!! [싱글톤] Dialog (ID:{GetInstanceID()})가 파괴되었습니다!!!!!</b></color>");
             Instance = null;
         }
     }
@@ -66,6 +65,9 @@ public class Dialog : MonoBehaviour
         speaker.text = name[index];
         ScriptLog.Clear();
         EndDialog = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         Debug.Log($"[Dialog] StartDialog: 내부 script 리스트에 데이터 할당 완료. 현재 script 개수: {script.Count}"); 
         Debug.Log($"[Dialog] StartDialog: 내부 script 리스트에 데이터 할당 완료. 현재 script 텍스트: {script[0]}"); 
@@ -98,6 +100,9 @@ public class Dialog : MonoBehaviour
         if (index == script.Count - 1)
         {
             EndDialog = true;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
             index++;
             OnIndexChanged?.Invoke(index);

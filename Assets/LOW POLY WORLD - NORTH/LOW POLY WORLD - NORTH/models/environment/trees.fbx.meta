@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: 5ab851b488229284f9774b777e023b75
+timeCreated: 1487950115
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: fir_tree_1
+    100002: fir_tree_2
+    100004: fir_tree_3
+    100006: fir_tree_4
+    100008: fir_tree_5
+    100010: fir_tree_6
+    100012: fir_tree_snow_1
+    100014: fir_tree_snow_2
+    100016: fir_tree_snow_3
+    100018: log
+    100020: log_2
+    100022: log_3
+    100024: log_4
+    100026: log_5
+    100028: logs
+    100030: logs_2
+    100032: pine_tree_1
+    100034: pine_tree_2
+    100036: pine_tree_3
+    100038: pine_tree_4
+    100040: pine_tree_5
+    100042: pine_tree_6
+    100044: pine_tree_snow_1
+    100046: pine_tree_snow_2
+    100048: pine_tree_snow_3
+    100050: //RootNode
+    400000: fir_tree_1
+    400002: fir_tree_2
+    400004: fir_tree_3
+    400006: fir_tree_4
+    400008: fir_tree_5
+    400010: fir_tree_6
+    400012: fir_tree_snow_1
+    400014: fir_tree_snow_2
+    400016: fir_tree_snow_3
+    400018: log
+    400020: log_2
+    400022: log_3
+    400024: log_4
+    400026: log_5
+    400028: logs
+    400030: logs_2
+    400032: pine_tree_1
+    400034: pine_tree_2
+    400036: pine_tree_3
+    400038: pine_tree_4
+    400040: pine_tree_5
+    400042: pine_tree_6
+    400044: pine_tree_snow_1
+    400046: pine_tree_snow_2
+    400048: pine_tree_snow_3
+    400050: //RootNode
+    2300000: fir_tree_1
+    2300002: fir_tree_2
+    2300004: fir_tree_3
+    2300006: fir_tree_4
+    2300008: fir_tree_5
+    2300010: fir_tree_6
+    2300012: fir_tree_snow_1
+    2300014: fir_tree_snow_2
+    2300016: fir_tree_snow_3
+    2300018: log
+    2300020: log_2
+    2300022: log_3
+    2300024: log_4
+    2300026: log_5
+    2300028: logs
+    2300030: logs_2
+    2300032: pine_tree_1
+    2300034: pine_tree_2
+    2300036: pine_tree_3
+    2300038: pine_tree_4
+    2300040: pine_tree_5
+    2300042: pine_tree_6
+    2300044: pine_tree_snow_1
+    2300046: pine_tree_snow_2
+    2300048: pine_tree_snow_3
+    3300000: fir_tree_1
+    3300002: fir_tree_2
+    3300004: fir_tree_3
+    3300006: fir_tree_4
+    3300008: fir_tree_5
+    3300010: fir_tree_6
+    3300012: fir_tree_snow_1
+    3300014: fir_tree_snow_2
+    3300016: fir_tree_snow_3
+    3300018: log
+    3300020: log_2
+    3300022: log_3
+    3300024: log_4
+    3300026: log_5
+    3300028: logs
+    3300030: logs_2
+    3300032: pine_tree_1
+    3300034: pine_tree_2
+    3300036: pine_tree_3
+    3300038: pine_tree_4
+    3300040: pine_tree_5
+    3300042: pine_tree_6
+    3300044: pine_tree_snow_1
+    3300046: pine_tree_snow_2
+    3300048: pine_tree_snow_3
+    4300000: fir_tree_6
+    4300002: log_5
+    4300004: log_4
+    4300006: log_3
+    4300008: log_2
+    4300010: logs_2
+    4300012: log
+    4300014: logs
+    4300016: fir_tree_snow_1
+    4300018: fir_tree_snow_2
+    4300020: fir_tree_snow_3
+    4300022: pine_tree_snow_1
+    4300024: pine_tree_snow_2
+    4300026: pine_tree_snow_3
+    4300028: fir_tree_5
+    4300030: fir_tree_4
+    4300032: fir_tree_3
+    4300034: fir_tree_2
+    4300036: fir_tree_1
+    4300038: pine_tree_6
+    4300040: pine_tree_5
+    4300042: pine_tree_4
+    4300044: pine_tree_3
+    4300046: pine_tree_2
+    4300048: pine_tree_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/environment/trees.fbx
+  uploadId: 616078

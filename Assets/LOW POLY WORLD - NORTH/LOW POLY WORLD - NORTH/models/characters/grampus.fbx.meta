@@ -1,0 +1,414 @@
+fileFormatVersion: 2
+guid: 54f40a3184b252b41a478a03cba403ff
+timeCreated: 1488230761
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 1
+    100002: 2
+    100004: 3
+    100006: 3_end
+    100008: Bone
+    100010: //RootNode
+    100012: grampus
+    100014: head
+    100016: head_2
+    100018: head_2_end
+    100020: rig_grampus
+    400000: 1
+    400002: 2
+    400004: 3
+    400006: 3_end
+    400008: Bone
+    400010: //RootNode
+    400012: grampus
+    400014: head
+    400016: head_2
+    400018: head_2_end
+    400020: rig_grampus
+    4300000: grampus
+    7400000: rig_grampus|attack
+    7400002: rig_grampus|dead
+    7400004: rig_grampus|eat
+    7400006: rig_grampus|hit
+    7400008: rig_grampus|Idle
+    7400010: rig_grampus|swim
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: grampus
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rig_grampus|attack
+      takeName: rig_grampus|attack
+      firstFrame: 0
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: grampus
+        weight: 1
+      - path: rig_grampus
+        weight: 1
+      - path: rig_grampus/Bone
+        weight: 1
+      - path: rig_grampus/Bone/1
+        weight: 1
+      - path: rig_grampus/Bone/1/2
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3/3_end
+        weight: 1
+      - path: rig_grampus/Bone/head
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2/head_2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_grampus|dead
+      takeName: rig_grampus|dead
+      firstFrame: 0
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: grampus
+        weight: 1
+      - path: rig_grampus
+        weight: 1
+      - path: rig_grampus/Bone
+        weight: 1
+      - path: rig_grampus/Bone/1
+        weight: 1
+      - path: rig_grampus/Bone/1/2
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3/3_end
+        weight: 1
+      - path: rig_grampus/Bone/head
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2/head_2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_grampus|eat
+      takeName: rig_grampus|eat
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: grampus
+        weight: 1
+      - path: rig_grampus
+        weight: 1
+      - path: rig_grampus/Bone
+        weight: 1
+      - path: rig_grampus/Bone/1
+        weight: 1
+      - path: rig_grampus/Bone/1/2
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3/3_end
+        weight: 1
+      - path: rig_grampus/Bone/head
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2/head_2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_grampus|hit
+      takeName: rig_grampus|hit
+      firstFrame: 0
+      lastFrame: 13
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: grampus
+        weight: 1
+      - path: rig_grampus
+        weight: 1
+      - path: rig_grampus/Bone
+        weight: 1
+      - path: rig_grampus/Bone/1
+        weight: 1
+      - path: rig_grampus/Bone/1/2
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3/3_end
+        weight: 1
+      - path: rig_grampus/Bone/head
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2/head_2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_grampus|Idle
+      takeName: rig_grampus|Idle
+      firstFrame: 0
+      lastFrame: 38
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: grampus
+        weight: 1
+      - path: rig_grampus
+        weight: 1
+      - path: rig_grampus/Bone
+        weight: 1
+      - path: rig_grampus/Bone/1
+        weight: 1
+      - path: rig_grampus/Bone/1/2
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3/3_end
+        weight: 1
+      - path: rig_grampus/Bone/head
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2/head_2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig_grampus|swim
+      takeName: rig_grampus|swim
+      firstFrame: 0
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: grampus
+        weight: 1
+      - path: rig_grampus
+        weight: 1
+      - path: rig_grampus/Bone
+        weight: 1
+      - path: rig_grampus/Bone/1
+        weight: 1
+      - path: rig_grampus/Bone/1/2
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3
+        weight: 1
+      - path: rig_grampus/Bone/1/2/3/3_end
+        weight: 1
+      - path: rig_grampus/Bone/head
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2
+        weight: 1
+      - path: rig_grampus/Bone/head/head_2/head_2_end
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/characters/grampus.fbx
+  uploadId: 616078

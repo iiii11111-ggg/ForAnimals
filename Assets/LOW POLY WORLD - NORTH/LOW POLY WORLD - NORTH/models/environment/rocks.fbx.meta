@@ -1,0 +1,244 @@
+fileFormatVersion: 2
+guid: 43ae9d12a018f1e4eb35d7c925b50ecc
+timeCreated: 1487684976
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: rock_1
+    100002: rock_10
+    100004: rock_10_snow
+    100006: rock_11
+    100008: rock_11_snow
+    100010: rock_12
+    100012: rock_12_snow
+    100014: rock_13
+    100016: rock_13_snow
+    100018: rock_14
+    100020: rock_14_snow
+    100022: rock_15
+    100024: rock_15_snow
+    100026: rock_16
+    100028: rock_16_snow
+    100030: rock_1_snow
+    100032: rock_2
+    100034: rock_2_snow
+    100036: rock_3
+    100038: rock_3_snow
+    100040: rock_4
+    100042: rock_4_snow
+    100044: rock_5
+    100046: rock_5_snow
+    100048: rock_6
+    100050: rock_6_snow
+    100052: rock_7
+    100054: rock_7_snow
+    100056: rock_8
+    100058: rock_8_snow
+    100060: rock_9
+    100062: rock_9_snow
+    100064: //RootNode
+    400000: rock_1
+    400002: rock_10
+    400004: rock_10_snow
+    400006: rock_11
+    400008: rock_11_snow
+    400010: rock_12
+    400012: rock_12_snow
+    400014: rock_13
+    400016: rock_13_snow
+    400018: rock_14
+    400020: rock_14_snow
+    400022: rock_15
+    400024: rock_15_snow
+    400026: rock_16
+    400028: rock_16_snow
+    400030: rock_1_snow
+    400032: rock_2
+    400034: rock_2_snow
+    400036: rock_3
+    400038: rock_3_snow
+    400040: rock_4
+    400042: rock_4_snow
+    400044: rock_5
+    400046: rock_5_snow
+    400048: rock_6
+    400050: rock_6_snow
+    400052: rock_7
+    400054: rock_7_snow
+    400056: rock_8
+    400058: rock_8_snow
+    400060: rock_9
+    400062: rock_9_snow
+    400064: //RootNode
+    2300000: rock_1
+    2300002: rock_10
+    2300004: rock_10_snow
+    2300006: rock_11
+    2300008: rock_11_snow
+    2300010: rock_12
+    2300012: rock_12_snow
+    2300014: rock_13
+    2300016: rock_13_snow
+    2300018: rock_14
+    2300020: rock_14_snow
+    2300022: rock_15
+    2300024: rock_15_snow
+    2300026: rock_16
+    2300028: rock_16_snow
+    2300030: rock_1_snow
+    2300032: rock_2
+    2300034: rock_2_snow
+    2300036: rock_3
+    2300038: rock_3_snow
+    2300040: rock_4
+    2300042: rock_4_snow
+    2300044: rock_5
+    2300046: rock_5_snow
+    2300048: rock_6
+    2300050: rock_6_snow
+    2300052: rock_7
+    2300054: rock_7_snow
+    2300056: rock_8
+    2300058: rock_8_snow
+    2300060: rock_9
+    2300062: rock_9_snow
+    3300000: rock_1
+    3300002: rock_10
+    3300004: rock_10_snow
+    3300006: rock_11
+    3300008: rock_11_snow
+    3300010: rock_12
+    3300012: rock_12_snow
+    3300014: rock_13
+    3300016: rock_13_snow
+    3300018: rock_14
+    3300020: rock_14_snow
+    3300022: rock_15
+    3300024: rock_15_snow
+    3300026: rock_16
+    3300028: rock_16_snow
+    3300030: rock_1_snow
+    3300032: rock_2
+    3300034: rock_2_snow
+    3300036: rock_3
+    3300038: rock_3_snow
+    3300040: rock_4
+    3300042: rock_4_snow
+    3300044: rock_5
+    3300046: rock_5_snow
+    3300048: rock_6
+    3300050: rock_6_snow
+    3300052: rock_7
+    3300054: rock_7_snow
+    3300056: rock_8
+    3300058: rock_8_snow
+    3300060: rock_9
+    3300062: rock_9_snow
+    4300000: rock_8_snow
+    4300002: rock_7_snow
+    4300004: rock_5_snow
+    4300006: rock_9_snow
+    4300008: rock_10_snow
+    4300010: rock_6_snow
+    4300012: rock_11_snow
+    4300014: rock_12_snow
+    4300016: rock_13_snow
+    4300018: rock_14_snow
+    4300020: rock_4_snow
+    4300022: rock_3_snow
+    4300024: rock_15_snow
+    4300026: rock_16_snow
+    4300028: rock_2_snow
+    4300030: rock_1_snow
+    4300032: rock_1
+    4300034: rock_2
+    4300036: rock_16
+    4300038: rock_15
+    4300040: rock_3
+    4300042: rock_4
+    4300044: rock_14
+    4300046: rock_13
+    4300048: rock_12
+    4300050: rock_11
+    4300052: rock_6
+    4300054: rock_10
+    4300056: rock_9
+    4300058: rock_5
+    4300060: rock_7
+    4300062: rock_8
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 76705
+  packageName: LOW POLY WORLD - NORTH
+  packageVersion: 2.0
+  assetPath: Assets/LOW POLY WORLD - NORTH/LOW POLY WORLD - NORTH/models/environment/rocks.fbx
+  uploadId: 616078

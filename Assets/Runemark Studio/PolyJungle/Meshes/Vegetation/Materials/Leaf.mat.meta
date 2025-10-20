@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d6e6170affd07e14cab2b8de725b527f
+timeCreated: 1536760981
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 128562
+  packageName: POLYJungle
+  packageVersion: 1.1
+  assetPath: Assets/Runemark Studio/PolyJungle/Meshes/Vegetation/Materials/Leaf.mat
+  uploadId: 304632
