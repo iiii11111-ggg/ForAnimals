@@ -178,7 +178,7 @@ public class SaveManager : MonoBehaviour
     {
         yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
-        yield return new WaitForSeconds(stayDuration);
+        yield return new WaitForSecondsRealtime(stayDuration);
 
         yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
     }
@@ -189,7 +189,7 @@ public class SaveManager : MonoBehaviour
 
         while (timer < duration)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
             float newAlpha = Mathf.Lerp(startAlpha, endAlpha, timer / duration);
 
             Color color = popupImg.color;

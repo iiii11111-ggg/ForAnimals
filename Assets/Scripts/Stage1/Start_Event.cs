@@ -57,8 +57,6 @@ public class Start_Event : MonoBehaviour, IEventController
             player.GetComponentInChildren<PlayerController_Rabbit>().enabled = false;
 
             StartCoroutine(FadeUI());
-
-
         }
     }
     public void ScriptStart()

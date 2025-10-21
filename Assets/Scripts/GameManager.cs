@@ -93,9 +93,32 @@ public class GameManager : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
+
+            PlayerController_Rabbit rabbit = player.GetComponent<PlayerController_Rabbit>();
+
+            if (rabbit != null)
+            {
+                // Rabbit이 있으면 Rabbit의 TeleportTo 실행
+                rabbit.TeleportTo(data.characterPosition);
+                Debug.Log($"<color=yellow><b>[GameManager] 플레이어 위치 적용 완료: {data.characterPosition}</b></color>");
+            }
+            else
+            {
+                // Rabbit이 없으면 Monkey 컨트롤러를 가져와 봅니다.
+                PlayerController_Monkey monkey = player.GetComponent<PlayerController_Monkey>();
+                if (monkey != null)
+                {
+                    // Monkey가 있으면 Monkey의 TeleportTo 실행
+                    monkey.TeleportTo(data.characterPosition);
+                    Debug.Log($"<color=yellow><b>[GameManager] 플레이어 위치 적용 완료: {data.characterPosition}</b></color>");
+                }
+                else
+                {
+                    // 둘 다 없는 경우 (오류 처리)
+                    Debug.LogWarning("플레이어에서 Rabbit 또는 Monkey 컨트롤러를 찾을 수 없습니다.", player);
+                }
+            }
             
-            player.GetComponent<PlayerController_Rabbit>().TeleportTo(data.characterPosition);
-            Debug.Log($"<color=yellow><b>[GameManager] 플레이어 위치 적용 완료: {data.characterPosition}</b></color>");
         }
         else
         {

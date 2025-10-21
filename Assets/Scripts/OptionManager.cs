@@ -5,6 +5,7 @@ public class OptionManager : MonoBehaviour
     public static OptionManager instance = null;
 
     public GameObject optionUi;
+    public GameObject buttonM;
 
     private void Awake()
     {
@@ -27,4 +28,5 @@ public class OptionManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

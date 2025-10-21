@@ -7,6 +7,7 @@
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance { get; private set; }
+    public GameObject SaveBtn;
 
     private IEventController currentActiveEvent;
 
@@ -54,11 +55,13 @@ public class EventManager : MonoBehaviour
         }
 
         // 요청을 승인하고, 현재 진행 중인 이벤트로 등록
+
         currentActiveEvent = eventController;
         Debug.Log($"<color=lime><b>[EventManager] '{currentActiveEvent.UniqueID}' 이벤트 시작을 승인합니다.</b></color>");
 
         // ✅ 매니저의 유일한 임무: 이벤트에게 "시작하라"는 신호만 보낸다.
         //    이벤트가 구체적으로 어떤 동작을 할지는 전혀 알지 못한다.
+        SaveBtn.SetActive(false);
         currentActiveEvent.OnEventStart.Invoke();
     }
 
@@ -92,8 +95,12 @@ public class EventManager : MonoBehaviour
         {
             Debug.LogError(currentActiveEvent.gameObject.name + "에서 Collider를 찾을 수 없습니다!");
         }
-
+        SaveBtn.SetActive(true);
         // 3. 현재 이벤트 상태를 초기화하여 다음 이벤트를 받을 준비
+        currentActiveEvent = null;
+    }
+    public void OnDialogQuit() 
+    {
         currentActiveEvent = null;
     }
 }

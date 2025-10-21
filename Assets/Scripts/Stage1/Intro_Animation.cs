@@ -36,9 +36,17 @@ public class Intro_Animation : MonoBehaviour
         mainAudioSource.clip = backgroundMusicJungle;
         mainAudioSource.loop = true; // 반복 재생 설정
         mainAudioSource.Play();
+        Dialog.Instance.OnIndexChanged += IndexChanged;
         StartCoroutine(startScene(BoomPoint.transform.position));
     }
-
+    void OnDisable()
+    {
+        if (Dialog.Instance != null)
+        {
+            // Dialog.Instance에 등록했던 구독을 해제합니다.
+            Dialog.Instance.OnIndexChanged -= IndexChanged;
+        }
+    }
     void Update()
     {
         float distance = Vector3.Distance(player_Rabbit.transform.position, BoomPoint.transform.position);
@@ -55,7 +63,6 @@ public class Intro_Animation : MonoBehaviour
             CinemachineBrain brain = FindObjectOfType<CinemachineBrain>();
             brain.DefaultBlend.Style = CinemachineBlendDefinition.Styles.EaseInOut;
             MonkeyCam.Priority = BoomCam.Priority + 1;
-            Dialog.Instance.OnIndexChanged += IndexChanged;
             EventTrigger = false;
         }
 
@@ -165,7 +172,10 @@ public class Intro_Animation : MonoBehaviour
         {
             CinemachineBrain brain = Object.FindAnyObjectByType<CinemachineBrain>();
             brain.DefaultBlend.Style = CinemachineBlendDefinition.Styles.Cut;
-            CG.alpha = 1;
+            if (CG)
+            {
+                CG.alpha = 1f;
+            }
         }
         else if (index == 2)
         {
