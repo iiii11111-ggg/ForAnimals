@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - OptionUI
+  - Ledge
   layers:
   - Default
   - TransparentFX
