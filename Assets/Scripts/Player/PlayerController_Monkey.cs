@@ -33,6 +33,10 @@ public class PlayerController_Monkey : MonoBehaviour
     public float swingPumpForce = 5f;
     public float swingDampening = 0.1f;
     public float maxSwingAngle = 1.8f;
+    [Tooltip("앞으로 swing할 때 플레이어 이동 배율")]
+    public float forwardSwingMovementScale = 0.5f;
+    [Tooltip("뒤로 swing할 때 플레이어 이동 배율")]
+    public float backwardSwingMovementScale = 0.5f;
 
     [Header("Swinging Leap Settings")]
     public float leapVelocityFactor = 5f;
@@ -41,6 +45,7 @@ public class PlayerController_Monkey : MonoBehaviour
 
     [Header("Control")]
     public bool canMove = true;
+
 
     [Header("References")]
     private CharacterController controller;
@@ -65,30 +70,18 @@ public class PlayerController_Monkey : MonoBehaviour
     private float currentSwingPosition = 0f;
     private float currentSwingVelocity = 0f;
 
-    // (어깨 제어용 변수였던 rightShoulderBone, ikShoulderOffset 모두 삭제됨)
+    private float lastInputMagnitude = 0f;
 
-    // --- 디버그용 변수 ---
-    private Transform debugSphere;
 
     void Start()
     {
+        
         controller = GetComponent<CharacterController>();
         an = GetComponent<Animator>();
         mainCameraTransform = Camera.main.transform;
 
-        // (어깨 뼈 찾는 코드 모두 삭제됨)
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        // [디버그 구체] (이 코드는 그대로 둡니다)
-        GameObject debugObj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        debugObj.name = "IK_TARGET_DEBUG_SPHERE";
-        debugObj.transform.localScale = Vector3.one * 0.2f;
-        Destroy(debugObj.GetComponent<Collider>());
-        debugObj.GetComponent<Renderer>().material.color = Color.red;
-        debugSphere = debugObj.transform;
-        debugSphere.gameObject.SetActive(false);
     }
 
     void Update()
@@ -113,9 +106,13 @@ public class PlayerController_Monkey : MonoBehaviour
 
         bool isGrounded = controller.isGrounded;
 
-        if (isGrounded && playerVelocity.y < 0)
+        if (isGrounded)
         {
-            playerVelocity.y = -2f;
+            if (playerVelocity.y <= 0f) 
+            {
+                playerVelocity.y = -2f;
+            }
+
             if (isLeapingFromHang)
             {
                 isLeapingFromHang = false;
@@ -125,11 +122,12 @@ public class PlayerController_Monkey : MonoBehaviour
 
         Vector3 inputDirection = Vector3.zero;
         if (canMove && !isLeapingFromHang)
-        {
-            float xInput = Input.GetAxisRaw("Horizontal");
-            float zInput = Input.GetAxisRaw("Vertical");
-            inputDirection = new Vector3(xInput, 0f, zInput).normalized;
-        }
+{
+    float xInput = Input.GetAxisRaw("Horizontal");
+    float zInput = Input.GetAxisRaw("Vertical");
+    inputDirection = new Vector3(xInput, 0f, zInput).normalized;
+    lastInputMagnitude = inputDirection.magnitude; // 추가된 코드
+}
 
         Vector3 moveDirection = Vector3.zero;
         float currentMaxSpeed = 0f;
@@ -178,7 +176,10 @@ public class PlayerController_Monkey : MonoBehaviour
             currentHorizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z);
         }
 
-        playerVelocity.y += gravity * Time.deltaTime;
+        if (!isGrounded)
+        {
+            playerVelocity.y += gravity * Time.deltaTime;
+        }
         controller.Move((currentHorizontalVelocity + playerVelocity) * Time.deltaTime);
     }
 
@@ -198,6 +199,12 @@ public class PlayerController_Monkey : MonoBehaviour
         {
             // (일반 이동)
             float targetSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
+    
+
+            if (lastInputMagnitude < 0.1f && controller.isGrounded)
+            {
+                targetSpeed = 0f;
+            }
             bool isStopping = targetSpeed < 0.1f;
             bool wasDashing = animationSpeed > moveSpeed + 0.1f;
             float currentSmoothTime = (isStopping && wasDashing) ? dashStopSmoothTime : walkStopSmoothTime;
@@ -285,7 +292,7 @@ public class PlayerController_Monkey : MonoBehaviour
         isHanging = true;
     }
 
-    void HandleHanging()
+  void HandleHanging()
     {
         if (!Input.GetKey(KeyCode.E))
         {
@@ -319,16 +326,26 @@ public class PlayerController_Monkey : MonoBehaviour
         }
 
 
-        // 8. 시각적 위치 업데이트
+        // swing에 따라 플레이어 위치 조정 (앞/뒤 분리)
         if (currentHangTransform != null)
         {
-            // [핵심] 몸통 위치 계산을 가장 단순한 코드로 되돌립니다
-            // (어깨 제어 코드 모두 삭제)
             Vector3 baseRootPosition = currentHangTransform.position + handToRootOffset;
-            Vector3 swingOffset = transform.forward * currentSwingPosition;
+            
+            // swing 방향에 따라 다른 스케일 적용
+            float movementScale = currentSwingPosition >= 0 
+                ? forwardSwingMovementScale 
+                : backwardSwingMovementScale;
+            
+            Vector3 swingOffset = transform.forward * (currentSwingPosition * movementScale);
 
-            transform.position = baseRootPosition + swingOffset;
-
+            // ▼▼▼ [수정된 부분] ▼▼▼
+            // Y축(높이) 값을 baseRootPosition.y로 강제 고정하여
+            // 애니메이션 루트모션으로 인해 캐릭터가 아래로 꺼지는 현상을 방지합니다.
+            Vector3 targetPosition = baseRootPosition + swingOffset;
+            targetPosition.y = baseRootPosition.y; 
+            transform.position = targetPosition;
+            // ▲▲▲ [수정 완료] ▲▲▲
+            
             transform.rotation = Quaternion.LookRotation(-currentHangTransform.forward, Vector3.up);
         }
     }
@@ -342,6 +359,15 @@ public class PlayerController_Monkey : MonoBehaviour
         isLeapingFromHang = true;
         an.SetBool("isHanging", false);
         an.SetBool("isLeapingFromHang", true);
+
+        if (currentHangTransform != null)
+        {
+            // 현재 위치(X, Z)는 유지하되, Y(높이)만 강제로 리셋합니다.
+            Vector3 safePosition = transform.position;
+            Vector3 baseRootPosition = currentHangTransform.position + handToRootOffset;
+            safePosition.y = baseRootPosition.y;
+            transform.position = safePosition;
+        }
 
         controller.enabled = true;
 
@@ -362,24 +388,13 @@ public class PlayerController_Monkey : MonoBehaviour
         currentSwingPosition = 0f;
         currentSwingVelocity = 0f;
     }
-
     #endregion
+
 
     public void TeleportTo(Vector3 destination)
     {
-        if (isHanging || isMovingToHangPoint || isLeapingFromHang)
-        {
-            StopAllCoroutines();
-            isHanging = false;
-            isMovingToHangPoint = false;
-            isLeapingFromHang = false;
-            currentSwingPosition = 0f;
-            currentSwingVelocity = 0f;
-
-            an.SetBool("isHanging", false);
-            an.SetBool("isLeapingFromHang", false);
-            an.SetFloat("SwingPower", 0f);
-        }
+       
+        ResetHangingState();
 
         controller.enabled = false;
         transform.position = destination;
@@ -390,48 +405,49 @@ public class PlayerController_Monkey : MonoBehaviour
         Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
     }
 
-    void OnAnimatorIK(int layerIndex)
+    public void TeleportTo(Vector3 destination, Quaternion newRotation)
     {
-        // [디버그 구체]
-        if (debugSphere != null)
+        // controller가 null인 경우 다시 가져오기 (SetActive 직후 호출 시 초기화가 안 되었을 수 있음)
+        if (controller == null)
         {
-            if (!isHanging && !isMovingToHangPoint)
-                debugSphere.gameObject.SetActive(false);
-            else if (currentHangTransform != null)
+            controller = GetComponent<CharacterController>();
+            if (controller == null)
             {
-                debugSphere.gameObject.SetActive(true);
-                debugSphere.position = currentHangTransform.position;
+                Debug.LogError("PlayerController_Monkey: CharacterController를 찾을 수 없습니다!");
+                return;
             }
         }
 
-        if (!isHanging && !isMovingToHangPoint)
-        {
-            an.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
-            an.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
-            an.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
-            an.SetIKRotationWeight(AvatarIKGoal.LeftHand, 0);
-            return;
-        }
+        ResetHangingState();
 
-        if (currentHangTransform == null) return;
+        controller.enabled = false;
+        transform.position = destination;
+        transform.rotation = newRotation; 
+        controller.enabled = true;
 
-        // public float handSeparation = 0.3f; // 인스펙터에서 조절 가능
-        float handSeparation = 0.3f;
-
-        Vector3 rightHandTargetPos = currentHangTransform.position + (transform.right * handSeparation);
-        Vector3 leftHandTargetPos = currentHangTransform.position - (transform.right * handSeparation);
-        Quaternion handTargetRotation = transform.rotation;
-
-        // --- IK 적용: 오른손 ---
-        an.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
-        an.SetIKRotationWeight(AvatarIKGoal.RightHand, 1.0f);
-        an.SetIKPosition(AvatarIKGoal.RightHand, rightHandTargetPos);
-        an.SetIKRotation(AvatarIKGoal.RightHand, handTargetRotation);
-
-        // --- IK 적용: 왼손 ---
-        an.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
-        an.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1.0f);
-        an.SetIKPosition(AvatarIKGoal.LeftHand, leftHandTargetPos);
-        an.SetIKRotation(AvatarIKGoal.LeftHand, handTargetRotation);
+        playerVelocity = Vector3.zero;
+        currentHorizontalVelocity = Vector3.zero;
+        Debug.Log($"플레이어를 {destination} 위치, {newRotation.eulerAngles} 회전으로 텔레포트했습니다.");
     }
+
+
+    private void  ResetHangingState()
+    {
+         if (isHanging || isMovingToHangPoint || isLeapingFromHang)
+        {
+            StopAllCoroutines();
+            isHanging = false;
+            isMovingToHangPoint = false;
+            isLeapingFromHang = false;
+            currentSwingPosition = 0f;
+            currentSwingVelocity = 0f;
+
+            an.SetBool("isJumping", false);
+            an.SetBool("isHanging", false);
+            an.SetBool("isLeapingFromHang", false);
+            an.SetFloat("SwingPower", 0f);
+        }
+    }
+    
+
 }
