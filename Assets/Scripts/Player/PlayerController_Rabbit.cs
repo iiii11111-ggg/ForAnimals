@@ -9,16 +9,14 @@ public class PlayerController_Rabbit : MonoBehaviour
     public float moveSpeed = 5f;
     public float turnSpeed = 12f;
     public float gravity = -9.81f;
-    public float jumpHeight = 1.5f; 
+    public float jumpHeight = 1.5f;
     public float doubleJumpForce = 4f;
-
-    
 
     [Header("Ground Check Settings")]
     [Tooltip("바닥으로 인식할 레이어")]
     public LayerMask groundLayer;
     [Tooltip("바닥 감지 스피어의 반지름 (캐릭터 컨트롤러 반지름보다 약간 작게)")]
-    public float groundCheckRadius = 0.4f; 
+    public float groundCheckRadius = 0.4f;
     [Tooltip("캐릭터 발밑에서 얼마나 아래까지를 바닥으로 감지할지")]
     public float groundCheckDistance = 0.2f;
 
@@ -58,33 +56,51 @@ public class PlayerController_Rabbit : MonoBehaviour
         // PauseManager의 static 변수를 참조하여 일시정지 상태인지 확인합니다.
         if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
 
-        // --- 1. 바닥 감지 및 점프 리셋 ---
-        bool isGrounded_Controller = controller.isGrounded;
-        
+        // --- 1. 바닥 감지 및 점프 리셋 (💡 여기가 수정된 부분입니다!) ---
+
         Vector3 sphereOrigin = transform.position + (Vector3.up * groundCheckRadius);
-        // 바닥 감지 로직
-        bool isGrounded_SphereCast = Physics.SphereCast(
-            sphereOrigin,           // 스피어 시작 위치 (캐릭터 발 약간 위)
-            groundCheckRadius,      // 스피어 반지름
-            Vector3.down,           // 쏘는 방향 (아래)
-            out RaycastHit hit,
-            groundCheckDistance,    // 체크할 거리 (시작위치로부터 0.2m 아래까지)
-            groundLayer             // 감지할 레이어 (인스펙터에서 설정)
-        );
 
-        // 바닥을 감지하는 두가지 경우에 하나라도 만족할 때 땅으로 간주주 
-        bool isGrounded = isGrounded_Controller || isGrounded_SphereCast; 
+        bool isGrounded_SphereCast = false; // 기본값은 false (공중)
+        RaycastHit hit; // 충돌 정보 저장 변수
 
-        
+        // 1. SphereCast로 groundLayer만 감지
+        if (Physics.SphereCast(
+                sphereOrigin,
+                groundCheckRadius,
+                Vector3.down,
+                out hit,
+                groundCheckDistance,
+                groundLayer // "Ledge"가 제외된 groundLayer 마스크 사용
+            ))
+        {
+            // 2. groundLayer에 닿았다면, 닿은 표면의 각도를 검사
+            float surfaceAngle = Vector3.Angle(Vector3.up, hit.normal);
+
+            // 3. 닿은 각도가 설 수 있는 경사(Slope Limit)보다 완만할 때만
+            if (surfaceAngle < controller.slopeLimit)
+            {
+                isGrounded_SphereCast = true; // '진짜 바닥'으로 인정
+            }
+            // (만약 각도가 더 가파르면? isGrounded_SphereCast는 false로 유지됨 -> 미끄러짐)
+        }
+        // (만약 Ledge에 닿았다면? groundLayer에 없으므로 이 if문 자체가 실행 안 됨 -> 미끄러짐)
+
+        // 4. 최종 바닥 판정은 오직 SphereCast 결과로만 결정!
+        bool isGrounded = isGrounded_SphereCast;
+
+        // (기존 코드: bool isGrounded = isGrounded_Controller || isGrounded_SphereCast; 는 삭제됨)
+
+        // --- (수정 끝) ---
+
+
         if (isGrounded)
         {
-            
             an.SetBool("isJumping", false);
             an.SetBool("isJumping_Dubble", false);
             canDoubleJump = true;
             if (playerVelocity.y <= 0f)
             {
-                playerVelocity.y = -2f; 
+                playerVelocity.y = -2f; // 바닥에 붙어있도록 살짝 아래로 힘을 줌
             }
         }
 
@@ -106,7 +122,7 @@ public class PlayerController_Rabbit : MonoBehaviour
                 // 카메라 기준 이동 방향 계산
                 float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
                 targetRotation = Quaternion.Euler(0f, targetAngle, 0f); // targetRotation 계산
-                moveDirection = targetRotation * Vector3.forward;    // moveDirection 계산
+                moveDirection = targetRotation * Vector3.forward;     // moveDirection 계산
             }
         }
 
@@ -129,25 +145,24 @@ public class PlayerController_Rabbit : MonoBehaviour
                 // 2단 점프 (공중)
                 playerVelocity.y = jumpSpeed; // 수직 점프력은 동일하게 적용
                 canDoubleJump = false; // 2단 점프 기회 소진
-                an.SetBool("isJumping_Dubble", true); 
+                an.SetBool("isJumping_Dubble", true);
 
                 if (inputDirection.magnitude >= 0.1f)
-                {
-                    // 1. 키 입력이 있으면: 위에서 계산한 카메라 기준 방향 (moveDirection)으로 힘 적용
-                    currentHorizontalVelocity = moveDirection * doubleJumpForce;
-                }
-                else if (currentHorizontalVelocity.magnitude > 0.1f)
-                {
-                    // 2. 키 입력이 없고, 원래 속도가 있으면: 원래 진행 방향으로 힘 적용
-                    Vector3 doubleJumpDirection = currentHorizontalVelocity.normalized;
-                    currentHorizontalVelocity = doubleJumpDirection * doubleJumpForce;
-                }
-                else
-                {
-                    // 3. 둘 다 없으면 (제자리 2단 점프): 수평 속도를 0으로 설정합니다.
-                    currentHorizontalVelocity = Vector3.zero;
-                }
-
+                {
+                    // 1. 키 입력이 있으면: 위에서 계산한 카메라 기준 방향 (moveDirection)으로 힘 적용
+                    currentHorizontalVelocity = moveDirection * doubleJumpForce;
+                }
+                else if (currentHorizontalVelocity.magnitude > 0.1f)
+                {
+                    // 2. 키 입력이 없고, 원래 속도가 있으면: 원래 진행 방향으로 힘 적용
+                    Vector3 doubleJumpDirection = currentHorizontalVelocity.normalized;
+                    currentHorizontalVelocity = doubleJumpDirection * doubleJumpForce;
+                }
+                else
+                {
+                    // 3. 둘 다 없으면 (제자리 2단 점프): 수평 속도를 0으로 설정합니다.
+                    currentHorizontalVelocity = Vector3.zero;
+                }
             }
         }
 
@@ -170,19 +185,26 @@ public class PlayerController_Rabbit : MonoBehaviour
         // 지상/공중에 따른 수평 속도 제어 (공중에서는 감쇠 적용)
         if (isGrounded)
         {
+            // [지상일 때]
+            // 플레이어의 입력값을 그대로 수평 속도로 사용합니다.
             currentHorizontalVelocity = desiredHorizontalVelocity;
         }
-        else
+        else // [공중 또는 가파른 경사로일 때]
         {
+            // CharacterController가 직전 프레임에 *실제로* 움직인
+            // 수평 속도(슬라이드 속도 포함)를 가져옵니다.
+            Vector3 lastFrameHorizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z);
+
+            // '실제 속도'를 기반으로 '원하는 입력 방향'으로 부드럽게 변경합니다 (공중 제어).
             currentHorizontalVelocity = Vector3.Lerp(
-                currentHorizontalVelocity,
+                lastFrameHorizontalVelocity,    // 👈 (중요) currentHorizontalVelocity 대신 이걸 사용
                 desiredHorizontalVelocity,
                 Time.deltaTime * turnSpeed * airControlFactor
             );
         }
 
         // --- 4. 중력 적용 ---
-        if (!isGrounded)
+        if (!isGrounded) // 👈 '진짜 바닥'이 아닐 때만 중력 적용
         {
             playerVelocity.y += gravity * Time.deltaTime;
         }
