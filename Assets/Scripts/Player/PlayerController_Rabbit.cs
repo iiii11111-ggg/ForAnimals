@@ -8,12 +8,24 @@ public class PlayerController_Rabbit : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float turnSpeed = 12f;
-    public float gravity = -9.81f; // 중력 값
-    public float jumpHeight = 1.5f; // 점프 높이 (Inspector에서 조절 가능)
+    public float gravity = -9.81f;
+    public float jumpHeight = 1.5f; 
+    public float doubleJumpForce = 4f;
+
+    
+
+    [Header("Ground Check Settings")]
+    [Tooltip("바닥으로 인식할 레이어")]
+    public LayerMask groundLayer;
+    [Tooltip("바닥 감지 스피어의 반지름 (캐릭터 컨트롤러 반지름보다 약간 작게)")]
+    public float groundCheckRadius = 0.4f; 
+    [Tooltip("캐릭터 발밑에서 얼마나 아래까지를 바닥으로 감지할지")]
+    public float groundCheckDistance = 0.2f;
 
     [Header("Air Control Settings")]
     [Range(0f, 1f)]
     public float airControlFactor = 0.2f;
+    public float airControlSpeed = 1.5f;
 
     [Header("Control")]
     public bool canMove = true; // 외부에서 움직임을 제어할 스위치
@@ -47,7 +59,23 @@ public class PlayerController_Rabbit : MonoBehaviour
         if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
 
         // --- 1. 바닥 감지 및 점프 리셋 ---
-        bool isGrounded = controller.isGrounded;
+        bool isGrounded_Controller = controller.isGrounded;
+        
+        Vector3 sphereOrigin = transform.position + (Vector3.up * groundCheckRadius);
+        // 바닥 감지 로직
+        bool isGrounded_SphereCast = Physics.SphereCast(
+            sphereOrigin,           // 스피어 시작 위치 (캐릭터 발 약간 위)
+            groundCheckRadius,      // 스피어 반지름
+            Vector3.down,           // 쏘는 방향 (아래)
+            out RaycastHit hit,
+            groundCheckDistance,    // 체크할 거리 (시작위치로부터 0.2m 아래까지)
+            groundLayer             // 감지할 레이어 (인스펙터에서 설정)
+        );
+
+        // 바닥을 감지하는 두가지 경우에 하나라도 만족할 때 땅으로 간주주 
+        bool isGrounded = isGrounded_Controller || isGrounded_SphereCast; 
+
+        
         if (isGrounded)
         {
             
@@ -60,6 +88,29 @@ public class PlayerController_Rabbit : MonoBehaviour
             }
         }
 
+        // 💡 [A. 수정] --- 입력 처리 (2단 점프 로직보다 먼저 계산) ---
+        float xInput = 0f;
+        float zInput = 0f;
+        Vector3 inputDirection = Vector3.zero;
+        Quaternion targetRotation = transform.rotation; // 현재 회전 값으로 초기화
+        Vector3 moveDirection = Vector3.zero;           // 0으로 초기화
+
+        if (canMove)
+        {
+            xInput = Input.GetAxisRaw("Horizontal");
+            zInput = Input.GetAxisRaw("Vertical");
+            inputDirection = new Vector3(xInput, 0f, zInput).normalized;
+
+            if (inputDirection.magnitude >= 0.1f)
+            {
+                // 카메라 기준 이동 방향 계산
+                float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
+                targetRotation = Quaternion.Euler(0f, targetAngle, 0f); // targetRotation 계산
+                moveDirection = targetRotation * Vector3.forward;    // moveDirection 계산
+            }
+        }
+
+
         // --- 2. 점프 입력 처리 ---
         // canMove 상태일 때, "Jump" 버튼(기본: 스페이스바)을 눌렀을 때
         if (canMove && Input.GetButtonDown("Jump"))
@@ -71,16 +122,32 @@ public class PlayerController_Rabbit : MonoBehaviour
                 an.SetBool("isJumping", true);
                 // 점프 직후 현재 수평 속도를 보존하여 자연스러운 이행
                 currentHorizontalVelocity = new Vector3(controller.velocity.x, 0f, controller.velocity.z);
-                // canDoubleJump는 이미 true 상태입니다.
             }
+            // 💡 [B. 수정] --- 2단 점프 로직 ---
             else if (canDoubleJump)
             {
                 // 2단 점프 (공중)
-                playerVelocity.y = jumpSpeed; // 1단 점프와 동일한 높이로 설정
+                playerVelocity.y = jumpSpeed; // 수직 점프력은 동일하게 적용
                 canDoubleJump = false; // 2단 점프 기회 소진
                 an.SetBool("isJumping_Dubble", true); 
-                // 공중 점프 시에도 현재 수평 속도 유지
-                currentHorizontalVelocity = new Vector3(controller.velocity.x, 0f, controller.velocity.z);
+
+                if (inputDirection.magnitude >= 0.1f)
+                {
+                    // 1. 키 입력이 있으면: 위에서 계산한 카메라 기준 방향 (moveDirection)으로 힘 적용
+                    currentHorizontalVelocity = moveDirection * doubleJumpForce;
+                }
+                else if (currentHorizontalVelocity.magnitude > 0.1f)
+                {
+                    // 2. 키 입력이 없고, 원래 속도가 있으면: 원래 진행 방향으로 힘 적용
+                    Vector3 doubleJumpDirection = currentHorizontalVelocity.normalized;
+                    currentHorizontalVelocity = doubleJumpDirection * doubleJumpForce;
+                }
+                else
+                {
+                    // 3. 둘 다 없으면 (제자리 2단 점프): 수평 속도를 0으로 설정합니다.
+                    currentHorizontalVelocity = Vector3.zero;
+                }
+
             }
         }
 
@@ -88,22 +155,15 @@ public class PlayerController_Rabbit : MonoBehaviour
         Vector3 desiredHorizontalVelocity = Vector3.zero;
         if (canMove)
         {
-            float xInput = Input.GetAxisRaw("Horizontal");
-            float zInput = Input.GetAxisRaw("Vertical");
-            Vector3 inputDirection = new Vector3(xInput, 0f, zInput).normalized;
-
+            // 입력값 계산 로직은 (A)로 이동했음
             if (inputDirection.magnitude >= 0.1f)
             {
-                // 카메라 기준 이동 방향 계산
-                float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
-                Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
-
-                // 부드러운 회전
+                // 부드러운 회전 (회전은 매 프레임 적용)
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
 
-                // 최종 수평 이동 방향
-                Vector3 moveDirection = targetRotation * Vector3.forward;
-                desiredHorizontalVelocity = moveDirection * moveSpeed;
+                // 최종 수평 이동 방향 (목표 속도 계산)
+                float currentMaxSpeed = isGrounded ? moveSpeed : airControlSpeed;
+                desiredHorizontalVelocity = moveDirection * currentMaxSpeed;
             }
         }
 

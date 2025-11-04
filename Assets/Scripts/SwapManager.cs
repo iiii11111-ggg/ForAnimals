@@ -46,11 +46,11 @@ public class SwapManager : MonoBehaviour
         // 초기 설정: monkey을 활성화하고 rabbit을 비활성화
         if (monkey != null && rabbit != null)
         {
-            currentPlayer = monkey;
-            inactivePlayer = rabbit;
+            currentPlayer = rabbit;
+            inactivePlayer = monkey;
 
-            monkey.SetActive(true);
-            rabbit.SetActive(false);
+            monkey.SetActive(false);
+            rabbit.SetActive(true);
 
             // 카메라 타겟을 현재 플레이어로 설정
             UpdateCameraTarget(currentPlayer.transform);
@@ -90,17 +90,14 @@ public class SwapManager : MonoBehaviour
         Vector3 currentPosition = currentPlayer.transform.position;
         Quaternion currentRotation = currentPlayer.transform.rotation;
 
-        // ▼▼▼ [수정 2] 현재 플레이어의 지상 상태(isGrounded)를 확인합니다. ▼▼▼
         CharacterController currentController = currentPlayer.GetComponent<CharacterController>();
         bool isGrounded = (currentController != null && currentController.isGrounded);
 
-        // 지상일 때만 땅에 박히는 현상을 방지하는 미세한 높이 보정을 추가합니다.
+        // 지상일 때만 땅에 박히는 현상을 방지하는 미세한 높이 보정
         if (isGrounded)
         {
-            // (참고: 이 0.05f 값은 기존 코드에 있던 값입니다)
             currentPosition.y += 0.05f;
         }
-        // ▲▲▲ [수정 2] 완료 ▲▲▲
 
 
         // 스왑 방향에 따른 높이 오프셋 계산
@@ -108,7 +105,6 @@ public class SwapManager : MonoBehaviour
         bool isMonkeyToRabbit = currentPlayer == monkey && inactivePlayer == rabbit;
         bool isRabbitToMonkey = currentPlayer == rabbit && inactivePlayer == monkey;
 
-        // ▼▼▼ [수정 3] isGrounded 상태에 따라 지상/공중 오프셋을 선택합니다. ▼▼▼
         if (isMonkeyToRabbit)
         {
             heightOffset = isGrounded ? monkeyToRabbitHeightOffset : monkeyToRabbitHeightOffset_Air;
@@ -117,15 +113,13 @@ public class SwapManager : MonoBehaviour
         {
             heightOffset = isGrounded ? rabbitToMonkeyHeightOffset : rabbitToMonkeyHeightOffset_Air;
         }
-        // ▲▲▲ [수정 3] 완료 ▲▲▲
 
-        // 높이 오프셋 적용
         currentPosition.y += heightOffset;
 
         // 플레이어 활성/비활성 상태 변경
         currentPlayer.SetActive(false);
         inactivePlayer.SetActive(true);
-
+        freeLookCamera.Lens.FieldOfView = 55;
         // 코루틴에 Quaternion 값을 전달합니다.
         StartCoroutine(TeleportAfterActivation(inactivePlayer, currentPosition, currentRotation));
 
