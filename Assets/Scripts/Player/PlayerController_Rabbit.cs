@@ -9,8 +9,10 @@ public class PlayerController_Rabbit : MonoBehaviour
     public float moveSpeed = 5f;
     public float turnSpeed = 12f;
     public float gravity = -9.81f;
-    public float jumpHeight = 1.5f;
-    public float doubleJumpForce = 4f;
+    [Tooltip("경사면에서 미끄러지는 속도에 영향을 주는 배율")]
+    public float slopeGravityFactor = 2.0f;
+    [Tooltip("플레이어가 설 수 있는 최대 경사 각도. CharacterController의 Slope Limit에도 자동 적용됩니다.")]
+    public float maxSlopeAngle = 45f;
 
     [Header("Ground Check Settings")]
     [Tooltip("바닥으로 인식할 레이어")]
@@ -19,6 +21,12 @@ public class PlayerController_Rabbit : MonoBehaviour
     public float groundCheckRadius = 0.4f;
     [Tooltip("캐릭터 발밑에서 얼마나 아래까지를 바닥으로 감지할지")]
     public float groundCheckDistance = 0.2f;
+
+    [Header("Jump Settings")]
+    public float jumpHeight = 1.5f;
+    public float doubleJumpForce = 4f;
+    [Tooltip("1단 점프 직후, 점프 입력을 허용하는 시간 (Coyote Time)")]
+    public float coyoteTimeDuration = 0.1f;
 
     [Header("Air Control Settings")]
     [Range(0f, 1f)]
@@ -38,6 +46,14 @@ public class PlayerController_Rabbit : MonoBehaviour
     private bool canDoubleJump; // 2단 점프 가능 여부
     private Vector3 currentHorizontalVelocity = Vector3.zero;
 
+    // --- 상태 변수 ---
+    private float coyoteTimeCounter = 0f;
+    private bool isSliding = false;
+    private Vector3 slopeNormal;
+    private bool isGrounded_Strict = false;
+    private bool justDoubleJumped = false; // 2단 점프 직후 Lerp를 막기 위한 플래그
+
+
     void Awake()
     {
         controller = GetComponent<CharacterController>(); // CharacterController 컴포넌트 가져오기
@@ -47,6 +63,12 @@ public class PlayerController_Rabbit : MonoBehaviour
         // 점프 높이에 도달하기 위한 점프 속도 계산
         jumpSpeed = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
+        // 스크립트의 maxSlopeAngle 값을 CharacterController의 slopeLimit에 동기화
+        if (controller != null)
+        {
+            controller.slopeLimit = maxSlopeAngle;
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -55,61 +77,87 @@ public class PlayerController_Rabbit : MonoBehaviour
     {
         // PauseManager의 static 변수를 참조하여 일시정지 상태인지 확인합니다.
         if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
+        
+        justDoubleJumped = false; // 매 프레임 플래그 초기화
 
-        // --- 1. 바닥 감지 및 점프 리셋 (💡 여기가 수정된 부분입니다!) ---
+        // --- 1. 바닥 감지 및 점프 리셋 ---
+        // (isGroundedByController, SphereCast, isGrounded_Strict, isSliding, slopeNormal, coyoteTimeCounter 계산)
+        bool isGroundedByController = controller.isGrounded;
+        isGrounded_Strict = false;
+        isSliding = false;
+        slopeNormal = Vector3.zero;
 
-        Vector3 sphereOrigin = transform.position + (Vector3.up * groundCheckRadius);
-
-        bool isGrounded_SphereCast = false; // 기본값은 false (공중)
-        RaycastHit hit; // 충돌 정보 저장 변수
-
-        // 1. SphereCast로 groundLayer만 감지
-        if (Physics.SphereCast(
-                sphereOrigin,
-                groundCheckRadius,
-                Vector3.down,
-                out hit,
-                groundCheckDistance,
-                groundLayer // "Ledge"가 제외된 groundLayer 마스크 사용
-            ))
+        if (isGroundedByController)
         {
-            // 2. groundLayer에 닿았다면, 닿은 표면의 각도를 검사
-            float surfaceAngle = Vector3.Angle(Vector3.up, hit.normal);
+            Vector3 sphereOrigin = transform.position + (Vector3.up * groundCheckRadius);
+            RaycastHit hit;
 
-            // 3. 닿은 각도가 설 수 있는 경사(Slope Limit)보다 완만할 때만
-            if (surfaceAngle < controller.slopeLimit)
+            if (Physics.SphereCast(
+                    sphereOrigin,
+                    groundCheckRadius,
+                    Vector3.down,
+                    out hit,
+                    groundCheckDistance,
+                    groundLayer
+                ))
             {
-                isGrounded_SphereCast = true; // '진짜 바닥'으로 인정
+                float surfaceAngle = Vector3.Angle(Vector3.up, hit.normal);
+                slopeNormal = hit.normal;
+
+                if (surfaceAngle < controller.slopeLimit)
+                {
+                    isGrounded_Strict = true; 
+                    isSliding = false;
+                }
+                else
+                {
+                    isGrounded_Strict = false; 
+                    isSliding = true;
+                }
             }
-            // (만약 각도가 더 가파르면? isGrounded_SphereCast는 false로 유지됨 -> 미끄러짐)
+            else
+            {
+                isGrounded_Strict = true;
+                isSliding = false;
+            }
         }
-        // (만약 Ledge에 닿았다면? groundLayer에 없으므로 이 if문 자체가 실행 안 됨 -> 미끄러짐)
+        else
+        {
+            isGrounded_Strict = false;
+            isSliding = false;
+        }
 
-        // 4. 최종 바닥 판정은 오직 SphereCast 결과로만 결정!
-        bool isGrounded = isGrounded_SphereCast;
+        // 코요테 타임
+        if (isGrounded_Strict)
+        {
+            coyoteTimeCounter = coyoteTimeDuration;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
 
-        // (기존 코드: bool isGrounded = isGrounded_Controller || isGrounded_SphereCast; 는 삭제됨)
-
-        // --- (수정 끝) ---
-
-
-        if (isGrounded)
+        // 지상 착지 처리
+        if (isGrounded_Strict)
         {
             an.SetBool("isJumping", false);
             an.SetBool("isJumping_Dubble", false);
             canDoubleJump = true;
             if (playerVelocity.y <= 0f)
             {
-                playerVelocity.y = -2f; // 바닥에 붙어있도록 살짝 아래로 힘을 줌
+                playerVelocity.y = -2f; 
             }
         }
 
-        // 💡 [A. 수정] --- 입력 처리 (2단 점프 로직보다 먼저 계산) ---
+
+        // --- 입력 처리 (점프 로직보다 먼저 계산) ---
+        // (xInput, zInput, inputDirection, targetRotation, moveDirection, currentMaxSpeed 계산)
         float xInput = 0f;
         float zInput = 0f;
         Vector3 inputDirection = Vector3.zero;
-        Quaternion targetRotation = transform.rotation; // 현재 회전 값으로 초기화
-        Vector3 moveDirection = Vector3.zero;           // 0으로 초기화
+        Quaternion targetRotation = transform.rotation; 
+        Vector3 moveDirection = Vector3.zero;          
+        float currentMaxSpeed = 0f;
 
         if (canMove)
         {
@@ -119,128 +167,153 @@ public class PlayerController_Rabbit : MonoBehaviour
 
             if (inputDirection.magnitude >= 0.1f)
             {
-                // 카메라 기준 이동 방향 계산
                 float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
-                targetRotation = Quaternion.Euler(0f, targetAngle, 0f); // targetRotation 계산
-                moveDirection = targetRotation * Vector3.forward;     // moveDirection 계산
+                targetRotation = Quaternion.Euler(0f, targetAngle, 0f); 
+                moveDirection = targetRotation * Vector3.forward;      
             }
         }
+        
+        currentMaxSpeed = isGrounded_Strict ? moveSpeed : airControlSpeed;
 
 
         // --- 2. 점프 입력 처리 ---
-        // canMove 상태일 때, "Jump" 버튼(기본: 스페이스바)을 눌렀을 때
+        // (1단 점프, 2단 점프, justDoubleJumped 플래그 설정)
         if (canMove && Input.GetButtonDown("Jump"))
         {
-            if (isGrounded)
+            if (coyoteTimeCounter > 0f) // 1단 점프 (코요테 타임 포함)
             {
-                // 1단 점프 (지상)
                 playerVelocity.y = jumpSpeed;
                 an.SetBool("isJumping", true);
-                // 점프 직후 현재 수평 속도를 보존하여 자연스러운 이행
                 currentHorizontalVelocity = new Vector3(controller.velocity.x, 0f, controller.velocity.z);
+                coyoteTimeCounter = 0f; 
             }
-            // 💡 [B. 수정] --- 2단 점프 로직 ---
-            else if (canDoubleJump)
+            else if (canDoubleJump && !isGrounded_Strict && !isSliding) // 2단 점프
             {
-                // 2단 점프 (공중)
-                playerVelocity.y = jumpSpeed; // 수직 점프력은 동일하게 적용
-                canDoubleJump = false; // 2단 점프 기회 소진
+                playerVelocity.y = jumpSpeed; 
+                canDoubleJump = false; 
                 an.SetBool("isJumping_Dubble", true);
+                justDoubleJumped = true; 
 
                 if (inputDirection.magnitude >= 0.1f)
                 {
-                    // 1. 키 입력이 있으면: 위에서 계산한 카메라 기준 방향 (moveDirection)으로 힘 적용
                     currentHorizontalVelocity = moveDirection * doubleJumpForce;
                 }
                 else if (currentHorizontalVelocity.magnitude > 0.1f)
                 {
-                    // 2. 키 입력이 없고, 원래 속도가 있으면: 원래 진행 방향으로 힘 적용
                     Vector3 doubleJumpDirection = currentHorizontalVelocity.normalized;
                     currentHorizontalVelocity = doubleJumpDirection * doubleJumpForce;
                 }
                 else
                 {
-                    // 3. 둘 다 없으면 (제자리 2단 점프): 수평 속도를 0으로 설정합니다.
                     currentHorizontalVelocity = Vector3.zero;
                 }
             }
         }
 
-        // --- 3. 입력 처리 및 수평 이동 계산 ---
-        Vector3 desiredHorizontalVelocity = Vector3.zero;
-        if (canMove)
-        {
-            // 입력값 계산 로직은 (A)로 이동했음
-            if (inputDirection.magnitude >= 0.1f)
-            {
-                // 부드러운 회전 (회전은 매 프레임 적용)
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
 
-                // 최종 수평 이동 방향 (목표 속도 계산)
-                float currentMaxSpeed = isGrounded ? moveSpeed : airControlSpeed;
-                desiredHorizontalVelocity = moveDirection * currentMaxSpeed;
-            }
+        // --- 3. 수평 이동 계산 ---
+        // (MODIFIED) 회전 로직만 밖으로 분리
+        if (canMove && inputDirection.magnitude >= 0.1f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
         }
 
-        // 지상/공중에 따른 수평 속도 제어 (공중에서는 감쇠 적용)
-        if (isGrounded)
+        if (isGrounded_Strict)
         {
             // [지상일 때]
-            // 플레이어의 입력값을 그대로 수평 속도로 사용합니다.
-            currentHorizontalVelocity = desiredHorizontalVelocity;
+            Vector3 targetHorizontalVelocity = moveDirection * currentMaxSpeed;
+            currentHorizontalVelocity = targetHorizontalVelocity;
         }
         else // [공중 또는 가파른 경사로일 때]
         {
-            // CharacterController가 직전 프레임에 *실제로* 움직인
-            // 수평 속도(슬라이드 속도 포함)를 가져옵니다.
-            Vector3 lastFrameHorizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z);
+            // 💡 (MODIFIED) 미끄러짐 / 공중 로직 분리
+            if (isSliding)
+            {
+                // [미끄러질 때]
+                // 1. (FIXED) 정확한 내리막(downhill) 벡터 계산
+                Vector3 slideVector = Vector3.ProjectOnPlane(Vector3.down, slopeNormal);
+                Vector3 slideDirection = new Vector3(slideVector.x, 0, slideVector.z).normalized;
+                Vector3 slideVelocity = slideDirection * moveSpeed * slopeGravityFactor;
 
-            // '실제 속도'를 기반으로 '원하는 입력 방향'으로 부드럽게 변경합니다 (공중 제어).
-            currentHorizontalVelocity = Vector3.Lerp(
-                lastFrameHorizontalVelocity,    // 👈 (중요) currentHorizontalVelocity 대신 이걸 사용
-                desiredHorizontalVelocity,
-                Time.deltaTime * turnSpeed * airControlFactor
-            );
+                // 2. 플레이어의 공중 제어 입력 계산
+                Vector3 inputVelocity = moveDirection * currentMaxSpeed; // currentMaxSpeed = airControlSpeed
+
+                // 3. 2단 점프 직후가 아니면, (미끄러짐 속도 + 입력)을 목표로 Lerp
+                if (!justDoubleJumped)
+                {
+                    Vector3 targetVelocity = slideVelocity + inputVelocity; // 미끄러짐(주) + 입력(보조)
+
+                    currentHorizontalVelocity = Vector3.Lerp(
+                        currentHorizontalVelocity,
+                        targetVelocity,
+                        Time.deltaTime * turnSpeed * airControlFactor 
+                    );
+                }
+            }
+            else
+            {
+                // [순수 공중일 때]
+                // 2단 점프 직후가 아닐 때만 공중 제어(Lerp)를 적용
+                if (!justDoubleJumped)
+                {
+                    Vector3 targetHorizontalVelocity = moveDirection * currentMaxSpeed; // currentMaxSpeed = airControlSpeed
+
+                    currentHorizontalVelocity = Vector3.Lerp(
+                        currentHorizontalVelocity,
+                        targetHorizontalVelocity,
+                        Time.deltaTime * turnSpeed * airControlFactor
+                    );
+                }
+            }
+            // 2단 점프 직후(justDoubleJumped == true)에는 2번에서 계산된 속도(currentHorizontalVelocity)가 그대로 유지됨
         }
 
         // --- 4. 중력 적용 ---
-        if (!isGrounded) // 👈 '진짜 바닥'이 아닐 때만 중력 적용
+        // (isSliding일 때 -2f, 아닐 때 gravity 누적)
+        if (!isGrounded_Strict) 
+    {
+        if (isSliding)
+        {
+            playerVelocity.y = gravity;
+        }
+        else
         {
             playerVelocity.y += gravity * Time.deltaTime;
         }
+    }
+
 
         // --- 5. 최종 이동 실행 (Move를 한 번만 호출!) ---
-        // 수평 이동(currentHorizontalVelocity)과 수직 이동(playerVelocity)을 합쳐서 한 번에 적용합니다.
         controller.Move((currentHorizontalVelocity + new Vector3(0, playerVelocity.y, 0)) * Time.deltaTime);
 
+
         // --- 6. 애니메이션 처리 ---
-        // CharacterController의 실제 속도를 기반으로 애니메이션을 제어합니다.
-        // (수정) 점프 중에는 달리기 애니메이션이 실행되지 않도록 isGrounded 조건 추가
         float currentHorizontalSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
-        an.SetBool("isRunning", currentHorizontalSpeed > 0.1f && isGrounded);
+an.SetBool("isRunning", currentHorizontalSpeed > 0.1f && isGrounded_Strict);
+        an.SetBool("isJumping", !isGrounded_Strict && !isSliding); 
     }
 
     /// <summary>
     /// 캐릭터를 지정된 위치로 즉시 이동시킵니다 (텔레포트).
     /// </summary>
-    /// <param name="destination">이동할 목표 위치</param>
     public void TeleportTo(Vector3 destination)
     {
-        // CharacterController를 잠시 비활성화해야 transform.position을 안전하게 설정할 수 있습니다.
         controller.enabled = false;
         transform.position = destination;
         controller.enabled = true;
 
-        // 텔레포트 후 수직 속도를 초기화하여, 텔레포트하자마자
-        // 이전에 쌓인 낙하 속도로 인해 바닥으로 곤두박질치는 것을 방지합니다.
         playerVelocity = Vector3.zero;
-        // 텔레포트 후에는 공중에 있을 수 있으므로, 2단 점프가 아닌 1단 점프만 가능하도록 설정
+        currentHorizontalVelocity = Vector3.zero;
+        coyoteTimeCounter = 0f; 
         canDoubleJump = true;
         Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
     }
+
+    /// <summary>
+    /// 캐릭터를 지정된 위치와 회전값으로 즉시 이동시킵니다 (텔레포트).
+    /// </summary>
     public void TeleportTo(Vector3 destination, Quaternion newRotation)
     {
-        // controller가 null인 경우 다시 가져오기 (SetActive 직후 호출 시 초기화가 안 되었을 수 있음)
         if (controller == null)
         {
             controller = GetComponent<CharacterController>();
@@ -251,17 +324,14 @@ public class PlayerController_Rabbit : MonoBehaviour
             }
         }
 
-        // CharacterController를 잠시 비활성화해야 transform.position을 안전하게 설정할 수 있습니다.
         controller.enabled = false;
         transform.position = destination;
         transform.rotation = newRotation;
         controller.enabled = true;
 
-
-        // 텔레포트 후 수직 속도를 초기화하여, 텔레포트하자마자
-        // 이전에 쌓인 낙하 속도로 인해 바닥으로 곤두박질치는 것을 방지합니다.
         playerVelocity = Vector3.zero;
-        // 텔레포트 후에는 공중에 있을 수 있으므로, 2단 점프가 아닌 1단 점프만 가능하도록 설정
+        currentHorizontalVelocity = Vector3.zero;
+        coyoteTimeCounter = 0f; 
         canDoubleJump = true;
         Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
     }

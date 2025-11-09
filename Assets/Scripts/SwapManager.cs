@@ -27,13 +27,22 @@ public class SwapManager : MonoBehaviour
     [Tooltip("Rabbit에서 Monkey로 스왑할 때 높이 조정 (지상)")]
     public float rabbitToMonkeyHeightOffset = 0f;
 
-    // ▼▼▼ [수정 1] 공중 스왑을 위한 오프셋 변수 추가 ▼▼▼
     [Tooltip("Monkey에서 Rabbit으로 스왑할 때 높이 조정 (공중)")]
     public float monkeyToRabbitHeightOffset_Air = 0f;
 
     [Tooltip("Rabbit에서 Monkey로 스왑할 때 높이 조정 (공중)")]
     public float rabbitToMonkeyHeightOffset_Air = 0f;
-    // ▲▲▲ [수정 1] 완료 ▲▲▲
+
+    [Header("Ground-Clip Correction")]
+    [Tooltip("스왑 직후 땅 뚫림을 감지할 시간 (초)")]
+    public float correctionDuration = 0.5f;
+
+    [Tooltip("땅 뚫림 보정 시, 땅 위로 띄울 높이 (요청: 0.1f)")]
+    public float correctionOffset = 0.1f;
+
+    [Tooltip("땅으로 인식할 레이어 마스크")]
+    public LayerMask groundLayerMask;
+
 
 
     // 내부 상태 변수
@@ -161,7 +170,11 @@ public class SwapManager : MonoBehaviour
 
             // 텔레포트가 완료된 직후, 여기서 카메라 타겟을 업데이트합니다.
             UpdateCameraTarget(player.transform);
+
+            StartCoroutine(CheckGroundPenetration(player));
         }
+
+        
     }
 
     /// <summary>
@@ -205,5 +218,80 @@ public class SwapManager : MonoBehaviour
     public GameObject GetInactivePlayer()
     {
         return inactivePlayer;
+    }
+
+    /// <summary>
+    /// 스왑 텔레포트 직후, 정해진 시간(correctionDuration) 동안 땅 뚫림을 감지하고 보정합니다.
+    /// </summary>
+    /// <param name="player">방금 활성화된 플레이어</param>
+    IEnumerator CheckGroundPenetration(GameObject player)
+    {
+        if (player == null) yield break;
+
+        CharacterController controller = player.GetComponent<CharacterController>();
+        if (controller == null)
+        {
+            Debug.LogWarning($"[SwapManager] GroundPenetration check: {player.name}에 CharacterController가 없습니다.");
+            yield break;
+        }
+
+        // 0.5초 타이머 시작
+        float endTime = Time.time + correctionDuration;
+        Transform playerTransform = player.transform;
+
+        while (Time.time < endTime)
+        {
+            // 캐릭터의 중심에서 아래로 레이캐스트를 쏴서 땅을 찾습니다.
+            // (캐릭터 높이 절반 + 1m) 만큼 넉넉하게 쏩니다.
+            Vector3 rayOrigin = playerTransform.position + controller.center;
+            float rayDistance = (controller.height * 0.5f) + 1.0f;
+            RaycastHit hit;
+
+            if (Physics.Raycast(rayOrigin, Vector3.down, out hit, rayDistance, groundLayerMask))
+            {
+                // 땅을 감지함
+                float groundHeight = hit.point.y;
+
+                // 캐릭터의 실제 발 위치 (캡슐의 최하단)
+                float playerFeetY = (playerTransform.position + controller.center).y - (controller.height * 0.5f);
+
+                // 캐릭터의 발이 땅보다 0.01f (허용 오차) 이상 아래로 내려갔는지 확인
+                if (playerFeetY < groundHeight - 0.01f)
+                {
+                    Debug.LogWarning($"[SwapManager] 땅 뚫림 감지! 보정 실행. PlayerFeet: {playerFeetY}, Ground: {groundHeight}");
+
+                    // 보정 위치 계산 (땅 높이 + correctionOffset)
+                    float desiredFeetY = groundHeight + correctionOffset; // (요청하신 0.1f)
+
+                    // 얼마나 위로 올려야 하는지 계산
+                    float correctionAmount = desiredFeetY - playerFeetY;
+                    
+                    // 현재 위치에서 y값만 보정한 새 위치
+                    Vector3 correctedPosition = playerTransform.position + new Vector3(0, correctionAmount, 0);
+
+                    // 플레이어의 자체 텔레포트 기능을 사용하여 위치 보정
+                    // (이 방법이 controller.enabled=false/true 보다 안전합니다)
+                    PlayerController_Monkey monkeyController = player.GetComponent<PlayerController_Monkey>();
+                    PlayerController_Rabbit rabbitController = player.GetComponent<PlayerController_Rabbit>();
+
+                    if (monkeyController != null)
+                    {
+                        monkeyController.TeleportTo(correctedPosition, playerTransform.rotation);
+                    }
+                    else if (rabbitController != null)
+                    {
+                        rabbitController.TeleportTo(correctedPosition, playerTransform.rotation);
+                    }
+                    
+                    Debug.Log($"[SwapManager] 보정 완료. 새 위치 Y: {correctedPosition.y}");
+
+                    // 보정이 완료되었으므로 코루틴 즉시 종료
+                    yield break;
+                }
+            }
+            
+            // 다음 프레임까지 대기
+            yield return null;
+        }
     }
 }

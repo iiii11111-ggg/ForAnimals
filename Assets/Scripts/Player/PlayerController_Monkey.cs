@@ -27,6 +27,9 @@ public class PlayerController_Monkey : MonoBehaviour
 
     [Header("Jump Settings")]
     public float jumpHeight = 1.5f;
+    // 💡 [추가] 코요테 타임 변수
+    [Tooltip("땅에서 떨어진 후 점프가 가능한 시간 (코요테 타임)")]
+    public float coyoteTime = 0.1f;
 
     [Header("Hanging Settings")]
     public float hangDetectionRadius = 1.0f;
@@ -80,6 +83,11 @@ public class PlayerController_Monkey : MonoBehaviour
     // --- 상태 변수 ---
     private Vector3 playerVelocity;
     private Vector3 currentHorizontalVelocity = Vector3.zero;
+
+    // 💡 [수정] isGrounded를 멤버 변수로 변경
+    private bool isGrounded = false;
+    // 💡 [추가] 코요테 타임을 위한 마지막 지면 감지 시간
+    private float timeLastGrounded = 0f;
 
     private bool isHanging = false;
     private bool isMovingToHangPoint = false;
@@ -138,28 +146,32 @@ public class PlayerController_Monkey : MonoBehaviour
             AttemptGrab();
 
             if (isMovingToHangPoint)
-            {
-                return;
-            }
+            {
+                return;
+            }
         }
 
         bool isGrounded_Controller = controller.isGrounded;
 
         Vector3 sphereOrigin = transform.position + (Vector3.up * groundCheckRadius);
         bool isGrounded_SphereCast = Physics.SphereCast(
-            sphereOrigin,           // 스피어 시작 위치 (캐릭터 발 약간 위)
-            groundCheckRadius,      // 스피어 반지름
-            Vector3.down,           // 쏘는 방향 (아래)
+            sphereOrigin,          // 스피어 시작 위치 (캐릭터 발 약간 위)
+            groundCheckRadius,     // 스피어 반지름
+            Vector3.down,          // 쏘는 방향 (아래)
             out RaycastHit hit,
-            groundCheckDistance,    // 체크할 거리 (시작위치로부터 0.2m 아래까지)
-            groundLayer             // 감지할 레이어 (인스펙터에서 설정)
+            groundCheckDistance,   // 체크할 거리 (시작위치로부터 0.2m 아래까지)
+            groundLayer            // 감지할 레이어 (인스펙터에서 설정)
         );
 
-        bool isGrounded = isGrounded_Controller || isGrounded_SphereCast;
+        // 💡 [수정] 로컬 변수 -> 멤버 변수 'isGrounded' 사용
+        isGrounded = isGrounded_Controller || isGrounded_SphereCast;
 
         if (isGrounded)
         {
-            if (playerVelocity.y <= 0f) 
+            // 💡 [추가] 코요테 타임을 위해 마지막 지면 감지 시간 갱신
+            timeLastGrounded = Time.time;
+
+            if (playerVelocity.y <= 0f)
             {
                 playerVelocity.y = -2f;
             }
@@ -227,16 +239,23 @@ public class PlayerController_Monkey : MonoBehaviour
             }
         }
 
-        if (canMove && Input.GetKeyDown(KeyCode.Space) && isGrounded && !isLeapingFromHang)
+        // 💡 [수정] 점프 조건 및 로직 변경 (코요테 타임 적용, 제자리 점프 공중 이동)
+        if (canMove && Input.GetKeyDown(KeyCode.Space) && (Time.time - timeLastGrounded <= coyoteTime) && !isLeapingFromHang)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            currentHorizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z);
+            
+            // [제거] 👈 제자리 점프 시 공중 이동을 위해 이 줄을 제거
+            // currentHorizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z); 
+
+            // [추가] 👈 코요테 타임을 사용했으므로 즉시 만료시킴 (공중 이단 점프 방지)
+            timeLastGrounded = 0f; 
         }
 
         if (!isGrounded)
         {
             playerVelocity.y += gravity * Time.deltaTime;
         }
+        
         controller.Move((currentHorizontalVelocity + playerVelocity) * Time.deltaTime);
     }
 
@@ -258,7 +277,8 @@ public class PlayerController_Monkey : MonoBehaviour
             // (일반 이동)
             float targetSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
     
-            if (lastInputMagnitude < 0.1f && controller.isGrounded)
+            // 💡 [수정] controller.isGrounded -> isGrounded (멤버 변수 사용)
+            if (lastInputMagnitude < 0.1f && isGrounded)
             {
                 targetSpeed = 0f;
             }
@@ -274,7 +294,9 @@ public class PlayerController_Monkey : MonoBehaviour
             );
 
             an.SetFloat("Speed", animationSpeed);
-            an.SetBool("isJumping", !controller.isGrounded);
+            
+            // 💡 [수정] controller.isGrounded -> isGrounded (일관성 유지)
+            an.SetBool("isJumping", !isGrounded);
         }
 
         HandleCameraFOV();
@@ -410,8 +432,8 @@ public class PlayerController_Monkey : MonoBehaviour
             Vector3 baseRootPosition = currentHangTransform.position + handToRootOffset;
             
             // swing 방향에 따라 다른 스케일 적용
-            float movementScale = currentSwingPosition >= 0 
-                ? forwardSwingMovementScale 
+            float movementScale = currentSwingPosition >= 0
+                ? forwardSwingMovementScale
                 : backwardSwingMovementScale;
             
             Vector3 swingOffset = transform.forward * (currentSwingPosition * movementScale);
@@ -420,7 +442,7 @@ public class PlayerController_Monkey : MonoBehaviour
             // Y축(높이) 값을 baseRootPosition.y로 강제 고정하여
             // 애니메이션 루트모션으로 인해 캐릭터가 아래로 꺼지는 현상을 방지합니다.
             Vector3 targetPosition = baseRootPosition + swingOffset;
-            targetPosition.y = baseRootPosition.y; 
+            targetPosition.y = baseRootPosition.y;
             transform.position = targetPosition;
             // ▲▲▲ [수정 완료] ▲▲▲
             
@@ -500,7 +522,7 @@ public class PlayerController_Monkey : MonoBehaviour
 
         controller.enabled = false;
         transform.position = destination;
-        transform.rotation = newRotation; 
+        transform.rotation = newRotation;
         controller.enabled = true;
 
         playerVelocity = Vector3.zero;
@@ -527,5 +549,4 @@ public class PlayerController_Monkey : MonoBehaviour
         }
     }
     
-
 }
