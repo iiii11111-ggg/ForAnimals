@@ -104,6 +104,43 @@ public class SaveManager : MonoBehaviour
         Debug.Log("지정된 위치(" + specificPosition + ")를 수동 저장했습니다.");
         ShowTemporaryUIWithFade();
     }
+    public void SaveGameData(string specificScene, Vector3 specificPosition)
+    {
+        // 1. 매개변수로 받은 씬 이름과 위치를 핵심 저장 함수로 넘겨줍니다.
+        SaveCurrentProgress(specificScene, specificPosition);
+
+        // 2. (선택) 일관성을 위해 로그 및 UI 피드백을 동일하게 호출합니다.
+        Debug.Log("지정된 씬(" + specificScene + ")과 위치(" + specificPosition + ")를 수동 저장했습니다.");
+        ShowTemporaryUIWithFade();
+    }
+    public void RecordAndSaveEventCompletion(string eventUniqueID)
+    {
+        if (string.IsNullOrEmpty(eventUniqueID))
+        {
+            Debug.LogWarning("[SaveManager] eventUniqueID가 null이거나 비어있어, 이벤트 완료 저장을 건너뜁니다.");
+            return;
+        }
+
+        Debug.Log($"[SaveManager] 이벤트 완료 저장 시작: {eventUniqueID}");
+
+        // 1. 이벤트 완료 상태 저장 (PlayerPrefs 사용)
+        int currentSlotIndex = PlayerData.currentSlotIndex;
+        MarkAsDestroyed(currentSlotIndex, eventUniqueID);
+
+        // 2. 이벤트 ID에 따른 분기 저장
+        if (eventUniqueID == "0001")
+        {
+            // 튜토리얼 완료 등 특별한 저장 지점이 필요할 때
+            Debug.Log($"[SaveManager] 특수 이벤트 '{eventUniqueID}' 완료. Jungle 위치로 저장합니다.");
+            SaveGameData("Jungle", new Vector3(334, 1, 172));
+        }
+        else
+        {
+            // 일반적인 이벤트 완료 시 자동 저장
+            Debug.Log($"[SaveManager] 일반 이벤트 '{eventUniqueID}' 완료. 현재 상태로 게임을 저장합니다.");
+            SaveGameData();
+        }
+    }
 
     public void SaveCurrentProgress(string sceneName, Vector3 position)
     {
@@ -131,8 +168,6 @@ public class SaveManager : MonoBehaviour
         Debug.Log($"슬롯 {currentSaveSlot}에 자동 저장 완료 (씬: {sceneName}, 위치: {position})");
 
     }
-
-
 
     private string GetDestructionKey(int saveSlotIndex, string objectID)
     {

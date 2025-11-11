@@ -34,7 +34,11 @@ public class StageIntro_T : MonoBehaviour
         name.Add("원숭이");
         script.Add("하.. 어떤 사람이... ");     
         name.Add("토끼");
-        script.Add("뭐라고? 그 놈 당장 찾으러 가자!");
+        script.Add("뭐? 도망쳐야하는 거 아니야?");
+        name.Add("원숭이");
+        script.Add("어디로?");
+        name.Add("토끼");
+        script.Add("죽기 싫으면 도망쳐!");
         Dialog.Instance.StartDialog(script, name);
     }
 }

@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
 
             // 새 게임을 위한 기본값 설정
             data = new GameData();
-            data.characterPosition = new Vector3(24, 0, 5); // 👈 새 게임 시작 위치
+            data.characterPosition = new Vector3(1920, 32, -18); // 👈 새 게임 시작 위치
             sceneToLoad = "Tutorial"; // 👈 새 게임 시작 씬 이름
             data.currentSceneName = sceneToLoad;
 

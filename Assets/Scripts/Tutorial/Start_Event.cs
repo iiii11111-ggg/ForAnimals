@@ -54,16 +54,12 @@ public class Start_Event : MonoBehaviour, IEventController
         {
             StartEvent.GetComponentInChildren<Intro_Animation>().enabled = true;
 
-            player.GetComponentInChildren<PlayerController_Rabbit>().enabled = false;
-
             StartCoroutine(FadeUI());
         }
     }
     public void ScriptStart()
     {
         StartEvent.GetComponentInChildren<Intro_Animation>().enabled = true;
-
-        player.GetComponentInChildren<PlayerController_Rabbit>().enabled = false;
 
         StartCoroutine(FadeUI());
 

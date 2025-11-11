@@ -44,7 +44,6 @@ public class SwapManager : MonoBehaviour
     public LayerMask groundLayerMask;
 
 
-
     // 내부 상태 변수
     private GameObject currentPlayer;
     private GameObject inactivePlayer;
@@ -52,9 +51,12 @@ public class SwapManager : MonoBehaviour
 
     void Start()
     {
-        // 초기 설정: monkey을 활성화하고 rabbit을 비활성화
+        // 초기 설정: rabbit을 활성화하고 monkey을 비활성화 (기존 코드 유지)
         if (monkey != null && rabbit != null)
         {
+            // Start()에서 rabbit을 활성화했으므로 currentPlayer는 rabbit이어야 합니다.
+            // 하지만 현재 코드는 rabbit을 활성화하고 currentPlayer = rabbit을 제대로 수행하므로 문제가 없습니다.
+            // (만약 초기화 순서를 반대로 하고 싶다면 아래 두 줄을 변경하세요.)
             currentPlayer = rabbit;
             inactivePlayer = monkey;
 
@@ -88,80 +90,103 @@ public class SwapManager : MonoBehaviour
     /// </summary>
     void SwapPlayers()
     {
-        // 플레이어 참조 확인
         if (currentPlayer == null || inactivePlayer == null)
         {
             Debug.LogWarning("SwapManager: 플레이어 참조가 유효하지 않습니다.");
             return;
         }
 
-        // 현재 플레이어의 위치 저장
+        // 1. 현재 플레이어의 상태 저장
         Vector3 currentPosition = currentPlayer.transform.position;
         Quaternion currentRotation = currentPlayer.transform.rotation;
 
         CharacterController currentController = currentPlayer.GetComponent<CharacterController>();
         bool isGrounded = (currentController != null && currentController.isGrounded);
 
-        // 지상일 때만 땅에 박히는 현상을 방지하는 미세한 높이 보정
+        // [추가/통합] 속도 저장
+        Vector3 storedVelocity = GetPlayerVelocity(currentPlayer);
+
+
+        // 지상일 때만 땅에 박히는 현상을 방지하는 미세한 높이 보정 (0.05f)
         if (isGrounded)
         {
             currentPosition.y += 0.05f;
         }
 
 
-        // 스왑 방향에 따른 높이 오프셋 계산
+        // 2. 스왑 방향에 따른 높이 오프셋 계산
         float heightOffset = 0f;
         bool isMonkeyToRabbit = currentPlayer == monkey && inactivePlayer == rabbit;
-        bool isRabbitToMonkey = currentPlayer == rabbit && inactivePlayer == monkey;
+        // bool isRabbitToMonkey = currentPlayer == rabbit && inactivePlayer == monkey; // 지역 변수 사용 안 함
 
         if (isMonkeyToRabbit)
         {
             heightOffset = isGrounded ? monkeyToRabbitHeightOffset : monkeyToRabbitHeightOffset_Air;
         }
-        else if (isRabbitToMonkey)
+        else // RabbitToMonkey
         {
             heightOffset = isGrounded ? rabbitToMonkeyHeightOffset : rabbitToMonkeyHeightOffset_Air;
         }
 
         currentPosition.y += heightOffset;
 
-        // 플레이어 활성/비활성 상태 변경
+        // 3. 플레이어 활성/비활성 상태 변경 및 코루틴 시작
         currentPlayer.SetActive(false);
         inactivePlayer.SetActive(true);
-        freeLookCamera.Lens.FieldOfView = 55;
-        // 코루틴에 Quaternion 값을 전달합니다.
-        StartCoroutine(TeleportAfterActivation(inactivePlayer, currentPosition, currentRotation));
+        // freeLookCamera.Lens.FieldOfView = 55; // PlayerController에서 관리하도록 위임
 
-        // 현재 플레이어와 비활성 플레이어 참조 교체
+        // [수정] 코루틴 이름 변경 및 속도 인자 추가
+        StartCoroutine(TeleportAndApplyVelocity(inactivePlayer, currentPosition, currentRotation, storedVelocity));
+
+        // 4. 현재 플레이어와 비활성 플레이어 참조 교체
         GameObject temp = currentPlayer;
         currentPlayer = inactivePlayer;
         inactivePlayer = temp;
 
-        Debug.Log($"플레이어 스왑: {currentPlayer.name}로 변경되었습니다. (지상: {isGrounded}, 적용 오프셋: {heightOffset})");
+        Debug.Log($"플레이어 스왑: {currentPlayer.name}로 변경되었습니다. (지상: {isGrounded}, 적용 오프셋: {heightOffset}, 적용 속도: {storedVelocity})");
     }
 
     /// <summary>
-    /// GameObject 활성화 후 한 프레임 대기하여 컴포넌트 초기화를 보장한 뒤 텔레포트
+    /// 플레이어 컨트롤러에서 현재 속도를 가져오는 헬퍼 메서드
     /// </summary>
-    IEnumerator TeleportAfterActivation(GameObject player, Vector3 position, Quaternion rotation)
+    private Vector3 GetPlayerVelocity(GameObject player)
+    {
+        if (player.TryGetComponent<PlayerController_Monkey>(out var monkeyController))
+        {
+            return monkeyController.CurrentVelocity;
+        }
+        else if (player.TryGetComponent<PlayerController_Rabbit>(out var rabbitController))
+        {
+            return rabbitController.CurrentVelocity;
+        }
+        return Vector3.zero;
+    }
+
+
+    /// <summary>
+    /// GameObject 활성화 후 한 프레임 대기하여 텔레포트하고 속도를 적용합니다.
+    /// (이전 TeleportAfterActivation 코루틴 대체)
+    /// </summary>
+    IEnumerator TeleportAndApplyVelocity(GameObject player, Vector3 position, Quaternion rotation, Vector3 velocity)
     {
         // 한 프레임 대기 (Awake와 Start가 실행되도록)
         yield return null;
 
-        // 텔레포트 실행
         if (player != null)
         {
             PlayerController_Monkey monkeyController = player.GetComponent<PlayerController_Monkey>();
             PlayerController_Rabbit rabbitController = player.GetComponent<PlayerController_Rabbit>();
 
+            // [통합] TeleportTo와 SetVelocity를 함께 호출
             if (monkeyController != null)
             {
                 monkeyController.TeleportTo(position, rotation);
+                monkeyController.SetVelocity(velocity);
             }
             else if (rabbitController != null)
             {
-                // (참고: 토끼 컨트롤러에도 TeleportTo(position, rotation) 오버로드가 필요합니다)
                 rabbitController.TeleportTo(position, rotation);
+                rabbitController.SetVelocity(velocity);
             }
             else
             {
@@ -171,16 +196,14 @@ public class SwapManager : MonoBehaviour
             // 텔레포트가 완료된 직후, 여기서 카메라 타겟을 업데이트합니다.
             UpdateCameraTarget(player.transform);
 
+            // 땅 뚫림 검사 시작
             StartCoroutine(CheckGroundPenetration(player));
         }
-
-        
     }
 
     /// <summary>
     /// Freelook 카메라의 타겟을 변경합니다.
     /// </summary>
-    /// <param name="target">새로운 타겟 Transform</param>
     void UpdateCameraTarget(Transform target)
     {
         if (freeLookCamera == null)
@@ -205,7 +228,6 @@ public class SwapManager : MonoBehaviour
     /// <summary>
     /// 외부에서 현재 활성 플레이어를 가져오는 메서드
     /// </summary>
-    /// <returns>현재 활성화된 플레이어 GameObject</returns>
     public GameObject GetCurrentPlayer()
     {
         return currentPlayer;
@@ -214,7 +236,6 @@ public class SwapManager : MonoBehaviour
     /// <summary>
     /// 외부에서 비활성 플레이어를 가져오는 메서드
     /// </summary>
-    /// <returns>현재 비활성화된 플레이어 GameObject</returns>
     public GameObject GetInactivePlayer()
     {
         return inactivePlayer;
@@ -223,9 +244,10 @@ public class SwapManager : MonoBehaviour
     /// <summary>
     /// 스왑 텔레포트 직후, 정해진 시간(correctionDuration) 동안 땅 뚫림을 감지하고 보정합니다.
     /// </summary>
-    /// <param name="player">방금 활성화된 플레이어</param>
     IEnumerator CheckGroundPenetration(GameObject player)
     {
+        // ... (기존 GroundPenetration 코루틴 로직 유지) ...
+
         if (player == null) yield break;
 
         CharacterController controller = player.GetComponent<CharacterController>();
@@ -261,16 +283,15 @@ public class SwapManager : MonoBehaviour
                     Debug.LogWarning($"[SwapManager] 땅 뚫림 감지! 보정 실행. PlayerFeet: {playerFeetY}, Ground: {groundHeight}");
 
                     // 보정 위치 계산 (땅 높이 + correctionOffset)
-                    float desiredFeetY = groundHeight + correctionOffset; // (요청하신 0.1f)
+                    float desiredFeetY = groundHeight + correctionOffset;
 
                     // 얼마나 위로 올려야 하는지 계산
                     float correctionAmount = desiredFeetY - playerFeetY;
-                    
+
                     // 현재 위치에서 y값만 보정한 새 위치
                     Vector3 correctedPosition = playerTransform.position + new Vector3(0, correctionAmount, 0);
 
                     // 플레이어의 자체 텔레포트 기능을 사용하여 위치 보정
-                    // (이 방법이 controller.enabled=false/true 보다 안전합니다)
                     PlayerController_Monkey monkeyController = player.GetComponent<PlayerController_Monkey>();
                     PlayerController_Rabbit rabbitController = player.GetComponent<PlayerController_Rabbit>();
 
@@ -282,14 +303,14 @@ public class SwapManager : MonoBehaviour
                     {
                         rabbitController.TeleportTo(correctedPosition, playerTransform.rotation);
                     }
-                    
+
                     Debug.Log($"[SwapManager] 보정 완료. 새 위치 Y: {correctedPosition.y}");
 
                     // 보정이 완료되었으므로 코루틴 즉시 종료
                     yield break;
                 }
             }
-            
+
             // 다음 프레임까지 대기
             yield return null;
         }

@@ -76,28 +76,34 @@ public class EventManager : MonoBehaviour
 
         currentActiveEvent.OnEventEnd.Invoke();
 
-        // --- 공통 종료 로직 ---
-        // 1. 이벤트 완료 상태 저장
-        int currentSlotIndex = PlayerData.currentSlotIndex;
-        SaveManager.Instance.MarkAsDestroyed(currentSlotIndex, currentActiveEvent.UniqueID);
-        SaveManager.Instance.SaveGameData();
+        int currentSlotIndex = PlayerData.currentSlotIndex; // PlayerData는 전역에서 접근 가능하다고 가정
+        if (currentSlotIndex == null)
+        {
+            Debug.LogError("[EventManager] 유효한 슬롯 인덱스가 없어 이벤트 완료 기록을 건너뜁니다!");
+        }
+        // 3. 이벤트 오브젝트 콜라이더(트리거) 비활성화
+        DisableEventCollider(currentActiveEvent.gameObject);
 
-        // 2. 이벤트 오브젝트 트리거 비활성화
-        Collider collider = currentActiveEvent.gameObject.GetComponent<Collider>();
+        // 4. 현재 이벤트 상태를 초기화하여 다음 이벤트를 받을 준비
+        currentActiveEvent = null;
+    }
+    private void DisableEventCollider(GameObject eventObject)
+    {
+        Debug.Log($"[EventManager] EventCollider 종료 함수 호출");
+    
+        if (eventObject == null) return;
+
+        Collider collider = eventObject.GetComponent<Collider>();
         if (collider != null)
         {
-            // 3. isTrigger 속성을 false로 설정하여 물리적 충돌체로 만듭니다.
-            collider.isTrigger = false;
-
-            Debug.Log(currentActiveEvent.gameObject.name + "의 isTrigger가 비활성화되었습니다.");
+            // isTrigger 속성을 false로 설정하여 물리적 충돌체로 만듭니다.
+            collider.enabled = false;
+            Debug.Log($"[EventManager] {eventObject.name}의 Collider 비활성화되었습니다.");
         }
         else
         {
-            Debug.LogError(currentActiveEvent.gameObject.name + "에서 Collider를 찾을 수 없습니다!");
+            Debug.LogError($"[EventManager] {eventObject.name}에서 Collider를 찾을 수 없습니다!");
         }
-        SaveBtn.SetActive(true);
-        // 3. 현재 이벤트 상태를 초기화하여 다음 이벤트를 받을 준비
-        currentActiveEvent = null;
     }
     public void OnDialogQuit() 
     {

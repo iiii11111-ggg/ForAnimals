@@ -11,7 +11,7 @@ public class Intro_Animation : MonoBehaviour
     private AudioSource mainAudioSource;
     public AudioClip backgroundMusicJungle;
 
-    public CinemachineCamera RabbitFollowCam, StartCam, BoomCam,MonkeyCam,MonkeyCam_M, RabbitCam, RabbitFocusingCam,introEndCam;
+    public CinemachineCamera  StartCam, BoomCam,MonkeyCam,MonkeyCam_M, RabbitCam, RabbitFocusingCam,introEndCam;
     public StageIntro_T script;
     public GameObject player_Rabbit,BoomPoint,RabbitPoint, startMap, BrokenMap, nils, monkey,EndPoint,InGamePoint;
     private GameObject dialog;
@@ -49,12 +49,7 @@ public class Intro_Animation : MonoBehaviour
     }
     void Update()
     {
-        float distance = Vector3.Distance(player_Rabbit.transform.position, BoomPoint.transform.position);
-        if (sequence == 0 && distance <= 1f)
-        {
-            StartCoroutine(BoomScene());
-            sequence++;
-        }
+
         if (sequence == 1 && EventTrigger)
         {
             script.intro();
@@ -71,7 +66,6 @@ public class Intro_Animation : MonoBehaviour
 
     IEnumerator startScene(Vector3 targetPosition)
     {
-
 
         float moveDuration = 6.0f;
         Vector3 startPosition = player_Rabbit.transform.position;
@@ -99,7 +93,19 @@ public class Intro_Animation : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
         RabbitAn.SetBool("isRunning", false);
+        
+        Rigidbody rb = player_Rabbit.GetComponent<Rigidbody>();
+        if (rb != null && !rb.isKinematic) 
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        rb.isKinematic = true;
+        player_Rabbit.transform.position = targetPosition;
+        StartCoroutine(BoomScene());
+        sequence = 1; 
     }
 
     IEnumerator introEndScene(Vector3 targetPosition)
@@ -191,6 +197,8 @@ public class Intro_Animation : MonoBehaviour
         {
             monkey.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             player_Rabbit.transform.position = RabbitPoint.transform.position;
+            Rigidbody rb = player_Rabbit.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
             CG.alpha = 0;
             MonkeyCam_M.Priority = priorityIndex;
             priorityIndex++;
@@ -216,9 +224,20 @@ public class Intro_Animation : MonoBehaviour
             RabbitFocusingCam.Priority = priorityIndex;
             priorityIndex++;
         }
-        else if (index == 9) 
+        else if (index == 9)
         {
+            RabbitCam.Priority = priorityIndex;
+            priorityIndex++;
+        }
+        else if (index == 10)
+        {
+            RabbitFocusingCam.Priority = priorityIndex;
+            priorityIndex++;
+        }
+        else if (index == 11) 
+        {  
             dialog.SetActive(false);
+            SaveManager.Instance.RecordAndSaveEventCompletion("0001");
             Vector3 Rposition = new Vector3(player_Rabbit.transform.position.x + 4, player_Rabbit.transform.position.y, player_Rabbit.transform.position.z);
             monkey.transform.position = Rposition;
             monkey.transform.LookAt(player_Rabbit.transform);

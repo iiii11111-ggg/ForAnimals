@@ -141,7 +141,7 @@ public class PlayerController_Monkey : MonoBehaviour
             return;
         }
 
-        if (canMove && Input.GetKeyDown(KeyCode.E) && !isLeapingFromHang)
+        if (canMove && Input.GetKeyDown(KeyCode.E))
         {
             AttemptGrab();
 
@@ -174,12 +174,12 @@ public class PlayerController_Monkey : MonoBehaviour
             if (playerVelocity.y <= 0f)
             {
                 playerVelocity.y = -2f;
-            }
 
-            if (isLeapingFromHang)
-            {
-                isLeapingFromHang = false;
-                an.SetBool("isLeapingFromHang", false);
+                if (isLeapingFromHang)
+                {
+                    isLeapingFromHang = false;
+                    an.SetBool("isLeapingFromHang", false);
+                }
             }
         }
 
@@ -360,6 +360,7 @@ public class PlayerController_Monkey : MonoBehaviour
         currentHorizontalVelocity = Vector3.zero;
         an.SetBool("isJumping", false);
         an.SetBool("isHanging", true);
+        an.SetBool("isLeapingFromHang", false);
         currentSwingPosition = 0f;
         currentSwingVelocity = 0f;
         an.SetFloat("SwingPower", 0f);
@@ -488,17 +489,15 @@ public class PlayerController_Monkey : MonoBehaviour
         currentSwingPosition = 0f;
         currentSwingVelocity = 0f;
     }
+
+
     #endregion
 
 
     public void TeleportTo(Vector3 destination)
     {
-        
-        ResetHangingState();
 
-        controller.enabled = false;
-        transform.position = destination;
-        controller.enabled = true;
+        TeleportTo(destination, transform.rotation);
 
         playerVelocity = Vector3.zero;
         currentHorizontalVelocity = Vector3.zero;
@@ -525,9 +524,25 @@ public class PlayerController_Monkey : MonoBehaviour
         transform.rotation = newRotation;
         controller.enabled = true;
 
-        playerVelocity = Vector3.zero;
-        currentHorizontalVelocity = Vector3.zero;
+
         Debug.Log($"플레이어를 {destination} 위치, {newRotation.eulerAngles} 회전으로 텔레포트했습니다.");
+    }
+
+    public Vector3 CurrentVelocity
+    {
+        get { return currentHorizontalVelocity + new Vector3(0, playerVelocity.y, 0); }
+    }
+
+    public void SetVelocity(Vector3 newVelocity)
+    {
+        // 스왑 시 속도 적용
+        currentHorizontalVelocity = new Vector3(newVelocity.x, 0, newVelocity.z);
+        playerVelocity.y = newVelocity.y;
+
+        // 땅 뚫림 보정 코루틴이 즉시 동작하도록 지면 상태를 강제 해제
+        timeLastGrounded = 0f;
+        isGrounded = false;
+        an.SetBool("isJumping", true); 
     }
 
 

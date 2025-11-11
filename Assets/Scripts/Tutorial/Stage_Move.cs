@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Stage_Move : MonoBehaviour
 {
-       public GameObject player,position,tutorial,startEvent;
+       public GameObject player,position,startEvent;
     public CinemachineCamera FollowCam, StartCam;
 
 
@@ -11,7 +11,6 @@ public class Stage_Move : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            tutorial.SetActive(false);
             startEvent.SetActive(true);
             player.GetComponent<PlayerController_Rabbit>().TeleportTo(position.transform.position);
             StartCam.Priority = FollowCam.Priority + 1;

@@ -77,7 +77,16 @@ public class PlayerController_Rabbit : MonoBehaviour
     {
         // PauseManager의 static 변수를 참조하여 일시정지 상태인지 확인합니다.
         if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
-        
+
+        if (!canMove)
+        {
+            an.SetBool("isRunning", false);
+            an.SetBool("isJumping", false);
+            an.SetBool("isJumping_Dubble", false);
+
+            return;
+        }
+
         justDoubleJumped = false; // 매 프레임 플래그 초기화
 
         // --- 1. 바닥 감지 및 점프 리셋 ---
@@ -106,12 +115,12 @@ public class PlayerController_Rabbit : MonoBehaviour
 
                 if (surfaceAngle < controller.slopeLimit)
                 {
-                    isGrounded_Strict = true; 
+                    isGrounded_Strict = true;
                     isSliding = false;
                 }
                 else
                 {
-                    isGrounded_Strict = false; 
+                    isGrounded_Strict = false;
                     isSliding = true;
                 }
             }
@@ -145,7 +154,7 @@ public class PlayerController_Rabbit : MonoBehaviour
             canDoubleJump = true;
             if (playerVelocity.y <= 0f)
             {
-                playerVelocity.y = -2f; 
+                playerVelocity.y = -2f;
             }
         }
 
@@ -155,8 +164,8 @@ public class PlayerController_Rabbit : MonoBehaviour
         float xInput = 0f;
         float zInput = 0f;
         Vector3 inputDirection = Vector3.zero;
-        Quaternion targetRotation = transform.rotation; 
-        Vector3 moveDirection = Vector3.zero;          
+        Quaternion targetRotation = transform.rotation;
+        Vector3 moveDirection = Vector3.zero;
         float currentMaxSpeed = 0f;
 
         if (canMove)
@@ -168,11 +177,11 @@ public class PlayerController_Rabbit : MonoBehaviour
             if (inputDirection.magnitude >= 0.1f)
             {
                 float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
-                targetRotation = Quaternion.Euler(0f, targetAngle, 0f); 
-                moveDirection = targetRotation * Vector3.forward;      
+                targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
+                moveDirection = targetRotation * Vector3.forward;
             }
         }
-        
+
         currentMaxSpeed = isGrounded_Strict ? moveSpeed : airControlSpeed;
 
 
@@ -185,14 +194,14 @@ public class PlayerController_Rabbit : MonoBehaviour
                 playerVelocity.y = jumpSpeed;
                 an.SetBool("isJumping", true);
                 currentHorizontalVelocity = new Vector3(controller.velocity.x, 0f, controller.velocity.z);
-                coyoteTimeCounter = 0f; 
+                coyoteTimeCounter = 0f;
             }
             else if (canDoubleJump && !isGrounded_Strict && !isSliding) // 2단 점프
             {
-                playerVelocity.y = jumpSpeed; 
-                canDoubleJump = false; 
+                playerVelocity.y = jumpSpeed;
+                canDoubleJump = false;
                 an.SetBool("isJumping_Dubble", true);
-                justDoubleJumped = true; 
+                justDoubleJumped = true;
 
                 if (inputDirection.magnitude >= 0.1f)
                 {
@@ -246,7 +255,7 @@ public class PlayerController_Rabbit : MonoBehaviour
                     currentHorizontalVelocity = Vector3.Lerp(
                         currentHorizontalVelocity,
                         targetVelocity,
-                        Time.deltaTime * turnSpeed * airControlFactor 
+                        Time.deltaTime * turnSpeed * airControlFactor
                     );
                 }
             }
@@ -270,17 +279,17 @@ public class PlayerController_Rabbit : MonoBehaviour
 
         // --- 4. 중력 적용 ---
         // (isSliding일 때 -2f, 아닐 때 gravity 누적)
-        if (!isGrounded_Strict) 
-    {
-        if (isSliding)
+        if (!isGrounded_Strict)
         {
-            playerVelocity.y = gravity;
+            if (isSliding)
+            {
+                playerVelocity.y = gravity;
+            }
+            else
+            {
+                playerVelocity.y += gravity * Time.deltaTime;
+            }
         }
-        else
-        {
-            playerVelocity.y += gravity * Time.deltaTime;
-        }
-    }
 
 
         // --- 5. 최종 이동 실행 (Move를 한 번만 호출!) ---
@@ -289,8 +298,8 @@ public class PlayerController_Rabbit : MonoBehaviour
 
         // --- 6. 애니메이션 처리 ---
         float currentHorizontalSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
-an.SetBool("isRunning", currentHorizontalSpeed > 0.1f && isGrounded_Strict);
-        an.SetBool("isJumping", !isGrounded_Strict && !isSliding); 
+        an.SetBool("isRunning", currentHorizontalSpeed > 0.1f && isGrounded_Strict);
+        an.SetBool("isJumping", !isGrounded_Strict && !isSliding);
     }
 
     /// <summary>
@@ -304,7 +313,7 @@ an.SetBool("isRunning", currentHorizontalSpeed > 0.1f && isGrounded_Strict);
 
         playerVelocity = Vector3.zero;
         currentHorizontalVelocity = Vector3.zero;
-        coyoteTimeCounter = 0f; 
+        coyoteTimeCounter = 0f;
         canDoubleJump = true;
         Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
     }
@@ -329,10 +338,47 @@ an.SetBool("isRunning", currentHorizontalSpeed > 0.1f && isGrounded_Strict);
         transform.rotation = newRotation;
         controller.enabled = true;
 
-        playerVelocity = Vector3.zero;
-        currentHorizontalVelocity = Vector3.zero;
-        coyoteTimeCounter = 0f; 
+        coyoteTimeCounter = 0f;
         canDoubleJump = true;
         Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
+    }
+
+    public Vector3 CurrentVelocity
+    {
+        get { return currentHorizontalVelocity + new Vector3(0, playerVelocity.y, 0); }
+    }
+
+    // [추가] 2. 외부에서 속도를 설정하는 메서드
+    public void SetVelocity(Vector3 newVelocity)
+    {
+        // 스왑 시 속도 적용
+        currentHorizontalVelocity = new Vector3(newVelocity.x, 0, newVelocity.z);
+        playerVelocity.y = newVelocity.y;
+
+        // 속도 적용 후 상태 초기화 (공중 상태 강제 적용)
+        coyoteTimeCounter = 0f;
+        isGrounded_Strict = false;
+        isSliding = false;
+        canDoubleJump = true; // 2단 점프는 허용
+
+        // 애니메이션 업데이트를 위해 isJumping 플래그 설정
+        if (newVelocity.y > 0.01f || newVelocity.y < -0.01f) // 수직 속도가 있으면 점프 애니메이션
+        {
+            an.SetBool("isJumping", true);
+            an.SetBool("isRunning", false);
+        }
+    }
+
+    public void StopMovementAndDisableControls()
+    {
+        canMove = false;
+
+        currentHorizontalVelocity = Vector3.zero;
+
+        playerVelocity = Vector3.zero;
+
+        an.SetBool("isRunning", false);
+        an.SetBool("isJumping", false);
+        an.SetBool("isJumping_Dubble", false);
     }
 }
