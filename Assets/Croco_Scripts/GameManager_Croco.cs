@@ -12,7 +12,7 @@ public class GameManager_Croco : MonoBehaviour
     public TextMeshProUGUI timerText; // TMPro를 사용안하면 UnityEngine.UI.Text 사용
     public TextMeshProUGUI resultText;
     private bool gameEnded = false;
-    public GameObject restart;
+    public GameObject restartBtn,finishBtn;
 
     void Awake()
     {
@@ -56,7 +56,7 @@ public class GameManager_Croco : MonoBehaviour
         if (gameEnded) return;
         gameEnded = true;
         if (resultText) resultText.text = "Game Over\n잡혔습니다!";
-        restart.SetActive(true);
+        restartBtn.SetActive(true);
         // 멈추기
         Time.timeScale = 0f;
     }
@@ -65,13 +65,20 @@ public class GameManager_Croco : MonoBehaviour
     {
         if (gameEnded) return;
         gameEnded = true;
-        if (resultText) resultText.text = "Victory!\n20초 생존 성공!";
+        if (resultText) resultText.text = "Victory!\n30초 생존 성공!";
         Time.timeScale = 0f;
+        finishBtn.SetActive(true);
+
     }
 
     public void Restart() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void finish() 
+    {
+        SceneManager.LoadScene("Jungle");
+        SaveManager.Instance.RecordAndSaveEventCompletion("0002");
     }
 }
 

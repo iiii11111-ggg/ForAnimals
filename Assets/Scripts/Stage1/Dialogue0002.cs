@@ -3,6 +3,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Dialogue0002 : MonoBehaviour, IEventController
 {
@@ -24,12 +25,12 @@ public class Dialogue0002 : MonoBehaviour, IEventController
     public GameObject Player_Rabbit;
     public GameObject Player_Monkey;
     public CanvasGroup FadeScreen;
-    public Transform CP, RP, MP;
+    public Transform CP, RP, MP, SavePoint;
 
     private Animator CA, RA, MA;
 
 
-    public CinemachineCamera Cam1,Cam2,Cam3;
+    public CinemachineCamera Cam1,Cam2,Cam3,Cam4,Cam5;
 
     [Header("Others")]
     private GameObject dp;
@@ -97,7 +98,9 @@ public class Dialogue0002 : MonoBehaviour, IEventController
     }
     public void ScriptEnd()
     {
-        
+        dp = Dialog.Instance.dialogPanel;
+        dp.SetActive(false);
+        Dialog.Instance.OnIndexChanged -= IndexChanged;
     }
 
     void IndexChanged(int index) 
@@ -115,18 +118,52 @@ public class Dialogue0002 : MonoBehaviour, IEventController
             Cam2.Priority = 11;
 
         }
-        else if (index == 2) 
+        else if (index == 2)
         {
             brain.DefaultBlend.Style = CinemachineBlendDefinition.Styles.Cut;
             MA.SetBool("isTalking", true);
             Cam2.Priority = 9;
             Cam3.Priority = 11;
         }
+        else if (index == 3)
+        {
+            CA.SetBool("isIdle", false);
+            CA.SetBool("isAttacking_1", true);
+            Cam3.Priority = 9;
+            Cam4.Priority = 11;
+        }
+        else if (index == 4)
+        {
+            RA.SetBool("isLookingOut", false);
+            RA.SetBool("isJumping_Dubble", true);
+
+            StartCoroutine(AnimationReturn(RA, "isLookingOut","isJumping_Dubble", 1f));
+            Cam4.Priority = 9;
+            Cam5.Priority = 11;
+        }
+        else if (index == 5)
+        {
+            MA.SetBool("isTalking", false);
+            CA.SetBool("isAttacking_1", false);
+            RA.SetBool("isJumping_Dubble", false);
+            Cam4.Priority = 9;
+            Cam5.Priority = 9;
+
+            SaveManager.Instance.SaveGameData(SavePoint.transform.position);
+            SceneManager.LoadScene("Croco_InGame");
+        }
     }
     IEnumerator DialogOpen(float t) 
     {
         yield return new WaitForSeconds(t);
         dp.SetActive(true);
+    }
+    IEnumerator AnimationReturn(Animator An,string Active, string NonActive, float Duration) 
+    {
+        yield return new WaitForSeconds(Duration);
+        An.SetBool(NonActive, false);
+        An.SetBool(Active, true);
+        yield return null;
     }
 
     IEnumerator Fade(float startAlpha, float endAlpha, float duration)

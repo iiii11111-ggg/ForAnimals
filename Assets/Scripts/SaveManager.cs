@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor.Search.Providers;
 public class SaveManager : MonoBehaviour
 {
     // 1. 싱글톤 인스턴스 변수 추가
@@ -60,7 +61,7 @@ public class SaveManager : MonoBehaviour
             return;
         }
         // 메인 메뉴나 타이틀 씬 등 저장할 필요 없는 씬은 제외
-        if (scene.name == "Main" || scene.name == "BugCrash")
+        if (scene.name == "Main" || scene.name == "BugCrash"||scene.name == "Croco")
         {
             return;
         }
@@ -131,6 +132,11 @@ public class SaveManager : MonoBehaviour
         if (eventUniqueID == "0001")
         {
             // 튜토리얼 완료 등 특별한 저장 지점이 필요할 때
+            Debug.Log($"[SaveManager] 특수 이벤트 '{eventUniqueID}' 완료. Jungle 위치로 저장합니다.");
+            SaveGameData("Jungle", new Vector3(334, 1, 172));
+        }
+        else if (eventUniqueID == "0002") 
+        {
             Debug.Log($"[SaveManager] 특수 이벤트 '{eventUniqueID}' 완료. Jungle 위치로 저장합니다.");
             SaveGameData("Jungle", new Vector3(334, 1, 172));
         }
