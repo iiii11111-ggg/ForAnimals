@@ -6,8 +6,11 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager Instance { get; private set; }
     public bool IsLoading { get; private set; } // 👈 1. '로딩 중' 상태를 알려줄 변수 추가
+
+    public CanvasGroup FadeScreen;
 
     void Awake()
     {
@@ -80,6 +83,7 @@ public class GameManager : MonoBehaviour
             File.WriteAllText(filePath, json);
         }
 
+        LoadAndFadeOut();
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
         while (!asyncLoad.isDone)
         {
@@ -128,5 +132,29 @@ public class GameManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         Debug.Log("<color=red><b>[GameManager] LOAD END! IsLoading을 FALSE로 설정합니다.</b></color>");
         IsLoading = false;
+    }
+    public void LoadAndFadeOut() 
+    {
+        StartCoroutine(Fade(1f,0f,1f));
+    }
+    IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    {
+        float timer = 0f;
+
+        FadeScreen.alpha = startAlpha;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / duration;
+
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, progress);
+
+            FadeScreen.alpha = newAlpha;
+
+            yield return null;
+        }
+
+        FadeScreen.alpha = endAlpha;
     }
 }

@@ -61,7 +61,7 @@ public class SaveManager : MonoBehaviour
             return;
         }
         // 메인 메뉴나 타이틀 씬 등 저장할 필요 없는 씬은 제외
-        if (scene.name == "Main" || scene.name == "BugCrash"||scene.name == "Croco")
+        if (scene.name == "Main" || scene.name == "BugCrash"||scene.name == "Croco"|| scene.name == "Croco_InGame")
         {
             return;
         }
@@ -135,10 +135,14 @@ public class SaveManager : MonoBehaviour
             Debug.Log($"[SaveManager] 특수 이벤트 '{eventUniqueID}' 완료. Jungle 위치로 저장합니다.");
             SaveGameData("Jungle", new Vector3(334, 1, 172));
         }
-        else if (eventUniqueID == "0002") 
+        else if (eventUniqueID == "0002")
         {
             Debug.Log($"[SaveManager] 특수 이벤트 '{eventUniqueID}' 완료. Jungle 위치로 저장합니다.");
-            SaveGameData("Jungle", new Vector3(334, 1, 172));
+            SaveGameData("Jungle", new Vector3(313, 18, 380));
+        }
+        else if (eventUniqueID == "0003") 
+        {
+            Debug.Log($"[SaveManager] 특수 이벤트 '{eventUniqueID}' 완료. Jungle 위치로 저장합니다.");
         }
         else
         {

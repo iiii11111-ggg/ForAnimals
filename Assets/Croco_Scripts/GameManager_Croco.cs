@@ -18,6 +18,8 @@ public class GameManager_Croco : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void Start()
@@ -77,8 +79,8 @@ public class GameManager_Croco : MonoBehaviour
     }
     public void finish() 
     {
-        SceneManager.LoadScene("Jungle");
         SaveManager.Instance.RecordAndSaveEventCompletion("0002");
+        GameManager.Instance.LoadGameSlot(PlayerData.currentSlotIndex);
     }
 }
 

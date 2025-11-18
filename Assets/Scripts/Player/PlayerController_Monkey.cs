@@ -6,11 +6,15 @@ using Unity.Cinemachine;
 [RequireComponent(typeof(Animator))]
 public class PlayerController_Monkey : MonoBehaviour
 {
+    // ... (변수 선언은 이전과 동일) ...
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float dashSpeed = 10f;
+    public float slideSpeed = 4f;
     public float turnSpeed = 12f;
     public float gravity = -9.81f;
+    [Tooltip("플레이어가 설 수 있는 최대 경사 각도.")]
+    public float maxSlopeAngle = 45f;
 
     [Header("Air Control Settings")]
     [Range(0f, 1f)]
@@ -20,14 +24,9 @@ public class PlayerController_Monkey : MonoBehaviour
     [Header("Ground Check Settings")]
     [Tooltip("바닥으로 인식할 레이어")]
     public LayerMask groundLayer;
-    [Tooltip("바닥 감지 스피어의 반지름 (캐릭터 컨트롤러 반지름보다 약간 작게)")]
-    public float groundCheckRadius = 0.4f;
-    [Tooltip("캐릭터 발밑에서 얼마나 아래까지를 바닥으로 감지할지")]
-    public float groundCheckDistance = 0.2f;
 
     [Header("Jump Settings")]
     public float jumpHeight = 1.5f;
-    // 💡 [추가] 코요테 타임 변수
     [Tooltip("땅에서 떨어진 후 점프가 가능한 시간 (코요테 타임)")]
     public float coyoteTime = 0.1f;
 
@@ -36,8 +35,6 @@ public class PlayerController_Monkey : MonoBehaviour
     public float hangDetectionOffset = 0.5f;
     public string hangPointLedgeTag = "Ledge";
     public string hangPointChildName = "HangPoint";
-    // [핵심] 스크립트의 오프셋은 0으로 고정합니다.
-    // 높이 조절은 애니메이션 클립에서 직접 합니다.
     public Vector3 handToRootOffset = Vector3.zero;
     public float hangMoveDuration = 0.3f;
 
@@ -46,9 +43,7 @@ public class PlayerController_Monkey : MonoBehaviour
     public float swingPumpForce = 5f;
     public float swingDampening = 0.1f;
     public float maxSwingAngle = 1.8f;
-    [Tooltip("앞으로 swing할 때 플레이어 이동 배율")]
     public float forwardSwingMovementScale = 0.5f;
-    [Tooltip("뒤로 swing할 때 플레이어 이동 배율")]
     public float backwardSwingMovementScale = 0.5f;
 
     [Header("Swinging Leap Settings")]
@@ -59,13 +54,9 @@ public class PlayerController_Monkey : MonoBehaviour
     [Header("Control")]
     public bool canMove = true;
 
-    // 💡 2. 카메라 FOV 조절을 위한 변수 추가
     [Header("Camera Settings")]
-    [Tooltip("FOV를 조절할 시네머신 프리룩 카메라")]
     public CinemachineCamera freeLookCamera;
-    [Tooltip("대시할 때 변경될 FOV 값")]
     public float dashFOV = 50f;
-    [Tooltip("FOV가 변경되는 속도")]
     public float fovSmoothSpeed = 5f;
 
 
@@ -84,10 +75,11 @@ public class PlayerController_Monkey : MonoBehaviour
     private Vector3 playerVelocity;
     private Vector3 currentHorizontalVelocity = Vector3.zero;
 
-    // 💡 [수정] isGrounded를 멤버 변수로 변경
     private bool isGrounded = false;
-    // 💡 [추가] 코요테 타임을 위한 마지막 지면 감지 시간
     private float timeLastGrounded = 0f;
+
+    private bool isSliding = false;
+    private Vector3 slopeNormal;
 
     private bool isHanging = false;
     private bool isMovingToHangPoint = false;
@@ -99,19 +91,21 @@ public class PlayerController_Monkey : MonoBehaviour
 
     private float lastInputMagnitude = 0f;
 
-    // 💡 2. 대시 상태 및 원본 FOV 저장을 위한 변수 추가
     private bool isDashing = false;
     private float originalFOV;
 
 
     void Start()
     {
-        
         controller = GetComponent<CharacterController>();
         an = GetComponent<Animator>();
         mainCameraTransform = Camera.main.transform;
 
-        // 💡 3. 시작 시 원본 FOV 값 저장
+        if (controller != null)
+        {
+            controller.slopeLimit = maxSlopeAngle;
+        }
+
         if (freeLookCamera != null)
         {
             originalFOV = freeLookCamera.Lens.FieldOfView;
@@ -127,9 +121,9 @@ public class PlayerController_Monkey : MonoBehaviour
 
     void Update()
     {
-
         if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
 
+        // --- 0. 특수 상태(매달리기) 우선 처리 ---
         if (isHanging)
         {
             HandleHanging();
@@ -144,45 +138,23 @@ public class PlayerController_Monkey : MonoBehaviour
         if (canMove && Input.GetKeyDown(KeyCode.E))
         {
             AttemptGrab();
-
             if (isMovingToHangPoint)
             {
                 return;
             }
         }
 
-        bool isGrounded_Controller = controller.isGrounded;
-
-        Vector3 sphereOrigin = transform.position + (Vector3.up * groundCheckRadius);
-        bool isGrounded_SphereCast = Physics.SphereCast(
-            sphereOrigin,          // 스피어 시작 위치 (캐릭터 발 약간 위)
-            groundCheckRadius,     // 스피어 반지름
-            Vector3.down,          // 쏘는 방향 (아래)
-            out RaycastHit hit,
-            groundCheckDistance,   // 체크할 거리 (시작위치로부터 0.2m 아래까지)
-            groundLayer            // 감지할 레이어 (인스펙터에서 설정)
-        );
-
-        // 💡 [수정] 로컬 변수 -> 멤버 변수 'isGrounded' 사용
-        isGrounded = isGrounded_Controller || isGrounded_SphereCast;
-
-        if (isGrounded)
+        // --- 1. 중력 적용 (수정됨) ---
+        if (!isGrounded)
         {
-            // 💡 [추가] 코요테 타임을 위해 마지막 지면 감지 시간 갱신
-            timeLastGrounded = Time.time;
-
-            if (playerVelocity.y <= 0f)
-            {
-                playerVelocity.y = -2f;
-
-                if (isLeapingFromHang)
-                {
-                    isLeapingFromHang = false;
-                    an.SetBool("isLeapingFromHang", false);
-                }
-            }
+            playerVelocity.y += gravity * Time.deltaTime;
         }
 
+        // --- 2. 상태 초기화 ---
+        isGrounded = false;
+
+
+        // --- 3. 입력 및 회전 ---
         Vector3 inputDirection = Vector3.zero;
         if (canMove && !isLeapingFromHang)
         {
@@ -195,67 +167,79 @@ public class PlayerController_Monkey : MonoBehaviour
         Vector3 moveDirection = Vector3.zero;
         float currentMaxSpeed = 0f;
 
-        // 💡 4. isDashing 로컬 변수를 멤버 변수로 사용하도록 수정
         if (inputDirection.magnitude >= 0.1f && !isLeapingFromHang)
         {
             float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + mainCameraTransform.eulerAngles.y;
             Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
             moveDirection = targetRotation * Vector3.forward;
-
-            if (isGrounded)
-            {
-                isDashing = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-                currentMaxSpeed = isDashing ? dashSpeed : moveSpeed;
-            }
-            else
-            {
-                isDashing = false; // 공중에서는 대시 상태 해제
-                currentMaxSpeed = airControlSpeed;
-            }
         }
         else
         {
-            isDashing = false; // 입력이 없으면 대시 상태 해제
+            isDashing = false; // 입력 없으면 대시 해제
         }
 
-        if (isGrounded)
+        // --- 4. 수평 이동 계산 (수정됨) ---
+        bool isActuallyGrounded = (Time.time - timeLastGrounded <= coyoteTime);
+
+        if (isActuallyGrounded && !isSliding) // [지상일 때]
         {
             if (!isLeapingFromHang)
             {
+                isDashing = (inputDirection.magnitude >= 0.1f) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
+                currentMaxSpeed = isDashing ? dashSpeed : moveSpeed;
                 currentHorizontalVelocity = moveDirection * currentMaxSpeed;
             }
         }
-        else
+        else // [공중 또는 가파른 경사로일 때]
         {
-            if (!isLeapingFromHang)
+            isDashing = false;
+            currentMaxSpeed = airControlSpeed;
+
+            if (isSliding)
             {
-                Vector3 desiredVelocity = moveDirection * currentMaxSpeed;
-                currentHorizontalVelocity = Vector3.Lerp(
-                    currentHorizontalVelocity,
-                    desiredVelocity,
-                    Time.deltaTime * turnSpeed * airControlFactor
-                );
+                // [미끄러질 때 (Rabbit 로직)]
+                Vector3 slideVector = Vector3.ProjectOnPlane(Vector3.down, slopeNormal);
+                Vector3 slideDirection = new Vector3(slideVector.x, 0, slideVector.z).normalized;
+                Vector3 slideVelocity = slideDirection * slideSpeed;
+                Vector3 inputVelocity = moveDirection * currentMaxSpeed;
+
+                if (!isLeapingFromHang)
+                {
+                    Vector3 targetVelocity = slideVelocity + inputVelocity;
+
+                    // [수정됨] airControlFactor를 제거하여 더 빠르게 반응
+                    currentHorizontalVelocity = Vector3.Lerp(
+                        currentHorizontalVelocity,
+                        targetVelocity,
+                        Time.deltaTime * turnSpeed
+                    );
+                }
+            }
+            else
+            {
+                // [순수 공중일 때 (Monkey 기존 로직)]
+                if (!isLeapingFromHang)
+                {
+                    Vector3 desiredVelocity = moveDirection * currentMaxSpeed;
+                    currentHorizontalVelocity = Vector3.Lerp(
+                        currentHorizontalVelocity,
+                        desiredVelocity,
+                        Time.deltaTime * turnSpeed * airControlFactor
+                    );
+                }
             }
         }
 
-        // 💡 [수정] 점프 조건 및 로직 변경 (코요테 타임 적용, 제자리 점프 공중 이동)
+
+        // --- 5. 점프 입력 처리 ---
         if (canMove && Input.GetKeyDown(KeyCode.Space) && (Time.time - timeLastGrounded <= coyoteTime) && !isLeapingFromHang)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            
-            // [제거] 👈 제자리 점프 시 공중 이동을 위해 이 줄을 제거
-            // currentHorizontalVelocity = new Vector3(controller.velocity.x, 0, controller.velocity.z); 
-
-            // [추가] 👈 코요테 타임을 사용했으므로 즉시 만료시킴 (공중 이단 점프 방지)
-            timeLastGrounded = 0f; 
+            timeLastGrounded = 0f;
         }
 
-        if (!isGrounded)
-        {
-            playerVelocity.y += gravity * Time.deltaTime;
-        }
-        
+        // --- 6. 최종 이동 ---
         controller.Move((currentHorizontalVelocity + playerVelocity) * Time.deltaTime);
     }
 
@@ -263,6 +247,7 @@ public class PlayerController_Monkey : MonoBehaviour
     {
         if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
 
+        bool isActuallyGrounded = (Time.time - timeLastGrounded <= coyoteTime);
 
         if (isHanging || isMovingToHangPoint)
         {
@@ -276,9 +261,8 @@ public class PlayerController_Monkey : MonoBehaviour
         {
             // (일반 이동)
             float targetSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
-    
-            // 💡 [수정] controller.isGrounded -> isGrounded (멤버 변수 사용)
-            if (lastInputMagnitude < 0.1f && isGrounded)
+
+            if (lastInputMagnitude < 0.1f && isActuallyGrounded)
             {
                 targetSpeed = 0f;
             }
@@ -294,34 +278,26 @@ public class PlayerController_Monkey : MonoBehaviour
             );
 
             an.SetFloat("Speed", animationSpeed);
-            
-            // 💡 [수정] controller.isGrounded -> isGrounded (일관성 유지)
-            an.SetBool("isJumping", !isGrounded);
+
+            an.SetBool("isJumping", !isActuallyGrounded && !isSliding);
         }
 
         HandleCameraFOV();
     }
-    
+
     void HandleCameraFOV()
     {
-        // 카메라가 할당되지 않았으면 아무것도 하지 않음
         if (freeLookCamera == null) return;
-
         float t = Mathf.InverseLerp(moveSpeed, dashSpeed, animationSpeed);
         float targetFOV = Mathf.Lerp(originalFOV, dashFOV, t);
-
-        // Mathf.Lerp를 사용하여 현재 FOV에서 목표 FOV로 부드럽게 변경
-         freeLookCamera.Lens.FieldOfView = Mathf.Lerp(
-             freeLookCamera.Lens.FieldOfView,
+        freeLookCamera.Lens.FieldOfView = Mathf.Lerp(
+            freeLookCamera.Lens.FieldOfView,
             targetFOV,
             Time.deltaTime * fovSmoothSpeed
         );
     }
 
     #region Hanging Logic
-
-    // ... (AttemptGrab, StartHanging, MoveToHangPosition, HandleHanging, Dismount 메서드는 기존과 동일) ...
-    // (이하 생략)
 
     void AttemptGrab()
     {
@@ -365,14 +341,12 @@ public class PlayerController_Monkey : MonoBehaviour
         currentSwingVelocity = 0f;
         an.SetFloat("SwingPower", 0f);
 
-        // [핵심] 몸통 위치 계산을 가장 단순한 코드로 되돌립니다
-        // (어깨 제어 코드 모두 삭제)
         Vector3 targetRootPosition = hangPoint.position + handToRootOffset;
-
         Quaternion targetRootRotation = Quaternion.LookRotation(-hangPoint.forward, Vector3.up);
         StartCoroutine(MoveToHangPosition(targetRootPosition, targetRootRotation));
     }
 
+    // 💡 (이 함수는 정상 위치)
     IEnumerator MoveToHangPosition(Vector3 targetPos, Quaternion targetRot)
     {
         float elapsed = 0f;
@@ -427,28 +401,25 @@ public class PlayerController_Monkey : MonoBehaviour
         }
 
 
-        // swing에 따라 플레이어 위치 조정 (앞/뒤 분리)
+        // swing에 따라 플레이어 위치 조정
         if (currentHangTransform != null)
         {
             Vector3 baseRootPosition = currentHangTransform.position + handToRootOffset;
-            
-            // swing 방향에 따라 다른 스케일 적용
+
             float movementScale = currentSwingPosition >= 0
                 ? forwardSwingMovementScale
                 : backwardSwingMovementScale;
-            
+
             Vector3 swingOffset = transform.forward * (currentSwingPosition * movementScale);
 
-            // ▼▼▼ [수정된 부분] ▼▼▼
-            // Y축(높이) 값을 baseRootPosition.y로 강제 고정하여
-            // 애니메이션 루트모션으로 인해 캐릭터가 아래로 꺼지는 현상을 방지합니다.
             Vector3 targetPosition = baseRootPosition + swingOffset;
             targetPosition.y = baseRootPosition.y;
             transform.position = targetPosition;
-            // ▲▲▲ [수정 완료] ▲▲▲
-            
+
             transform.rotation = Quaternion.LookRotation(-currentHangTransform.forward, Vector3.up);
         }
+
+        // 🔴 [수정됨] 여기에 잘못 복사되었던 MoveToHangPosition 코루틴을 삭제했습니다.
     }
 
     void Dismount()
@@ -463,7 +434,6 @@ public class PlayerController_Monkey : MonoBehaviour
 
         if (currentHangTransform != null)
         {
-            // 현재 위치(X, Z)는 유지하되, Y(높이)만 강제로 리셋합니다.
             Vector3 safePosition = transform.position;
             Vector3 baseRootPosition = currentHangTransform.position + handToRootOffset;
             safePosition.y = baseRootPosition.y;
@@ -490,15 +460,12 @@ public class PlayerController_Monkey : MonoBehaviour
         currentSwingVelocity = 0f;
     }
 
-
     #endregion
 
 
     public void TeleportTo(Vector3 destination)
     {
-
         TeleportTo(destination, transform.rotation);
-
         playerVelocity = Vector3.zero;
         currentHorizontalVelocity = Vector3.zero;
         Debug.Log($"플레이어를 {destination} 위치로 텔레포트했습니다.");
@@ -506,7 +473,6 @@ public class PlayerController_Monkey : MonoBehaviour
 
     public void TeleportTo(Vector3 destination, Quaternion newRotation)
     {
-        // controller가 null인 경우 다시 가져오기 (SetActive 직후 호출 시 초기화가 안 되었을 수 있음)
         if (controller == null)
         {
             controller = GetComponent<CharacterController>();
@@ -516,15 +482,11 @@ public class PlayerController_Monkey : MonoBehaviour
                 return;
             }
         }
-
         ResetHangingState();
-
         controller.enabled = false;
         transform.position = destination;
         transform.rotation = newRotation;
         controller.enabled = true;
-
-
         Debug.Log($"플레이어를 {destination} 위치, {newRotation.eulerAngles} 회전으로 텔레포트했습니다.");
     }
 
@@ -535,18 +497,14 @@ public class PlayerController_Monkey : MonoBehaviour
 
     public void SetVelocity(Vector3 newVelocity)
     {
-        // 스왑 시 속도 적용
         currentHorizontalVelocity = new Vector3(newVelocity.x, 0, newVelocity.z);
         playerVelocity.y = newVelocity.y;
-
-        // 땅 뚫림 보정 코루틴이 즉시 동작하도록 지면 상태를 강제 해제
         timeLastGrounded = 0f;
         isGrounded = false;
-        an.SetBool("isJumping", true); 
+        an.SetBool("isJumping", true);
     }
 
-
-    private void  ResetHangingState()
+    private void ResetHangingState()
     {
         if (isHanging || isMovingToHangPoint || isLeapingFromHang)
         {
@@ -563,5 +521,55 @@ public class PlayerController_Monkey : MonoBehaviour
             an.SetFloat("SwingPower", 0f);
         }
     }
-    
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (isHanging || isMovingToHangPoint) return;
+
+        if ((groundLayer.value & (1 << hit.gameObject.layer)) == 0)
+        {
+            return;
+        }
+
+        float surfaceAngle = Vector3.Angle(Vector3.up, hit.normal);
+
+        if (surfaceAngle < controller.slopeLimit)
+        {
+            // [정상적인 바닥]
+            if (playerVelocity.y < 0.1f)
+            {
+                isGrounded = true;
+                isSliding = false;
+
+                timeLastGrounded = Time.time;
+
+                playerVelocity.y = -2f;
+
+                an.SetBool("isJumping", false);
+                if (isLeapingFromHang)
+                {
+                    isLeapingFromHang = false;
+                    an.SetBool("isLeapingFromHang", false);
+                }
+            }
+        }
+        else
+        {
+            // [수정됨] 90도 벽은 '미끄러짐'이 아니라 '공중'으로 처리
+            if (surfaceAngle > 89.0f)
+            {
+                isGrounded = false;
+                isSliding = false;
+                timeLastGrounded = 0f;
+                return;
+            }
+
+            // [미끄러운 경사면]
+            isGrounded = false;
+            isSliding = true;
+            slopeNormal = hit.normal;
+
+            timeLastGrounded = 0f;
+        }
+    }
 }
