@@ -13,11 +13,7 @@ public class SaveManager : MonoBehaviour
     // playerTransform은 더 이상 public일 필요가 없습니다.
     private Transform playerTransform;
 
-    public Image popupImg;
-
-    public float stayDuration = 1.0f;
-
-    public float fadeDuration = 0.2f;
+    public CanvasGroup SaveCompleteText;
 
     // 2. Awake() 함수에서 인스턴스 설정
     void Awake()
@@ -34,9 +30,6 @@ public class SaveManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
 
-        Color color = popupImg.color;
-        color.a = 0f;
-        popupImg.color = color;
     }
    
     void OnEnable()
@@ -95,7 +88,7 @@ public class SaveManager : MonoBehaviour
         SaveCurrentProgress(currentScene, playerTransform.position);
 
         Debug.Log("슬롯 " + PlayerData.currentSlotIndex + "에 게임 데이터가 수동 저장되었습니다.");
-        ShowTemporaryUIWithFade();
+
     }
     public void SaveGameData(Vector3 specificPosition)
     {
@@ -103,7 +96,7 @@ public class SaveManager : MonoBehaviour
         SaveCurrentProgress(currentScene, specificPosition);
 
         Debug.Log("지정된 위치(" + specificPosition + ")를 수동 저장했습니다.");
-        ShowTemporaryUIWithFade();
+        
     }
     public void SaveGameData(string specificScene, Vector3 specificPosition)
     {
@@ -112,7 +105,6 @@ public class SaveManager : MonoBehaviour
 
         // 2. (선택) 일관성을 위해 로그 및 UI 피드백을 동일하게 호출합니다.
         Debug.Log("지정된 씬(" + specificScene + ")과 위치(" + specificPosition + ")를 수동 저장했습니다.");
-        ShowTemporaryUIWithFade();
     }
     public void RecordAndSaveEventCompletion(string eventUniqueID)
     {
@@ -175,6 +167,8 @@ public class SaveManager : MonoBehaviour
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(filePath, json);
 
+        FadeInOut(1f,0.5f);
+
         Debug.Log($"슬롯 {currentSaveSlot}에 자동 저장 완료 (씬: {sceneName}, 위치: {position})");
 
     }
@@ -208,44 +202,34 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-   
-
-  
-
-    public void ShowTemporaryUIWithFade()
+    IEnumerator FadeInOut(float fadeDuration, float holdDuration)
     {
-        StopAllCoroutines();
 
-        StartCoroutine(FadeInStayFadeOut());
-    }
-
-    private IEnumerator FadeInStayFadeOut()
-    {
         yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
-        yield return new WaitForSecondsRealtime(stayDuration);
+        yield return new WaitForSeconds(holdDuration);
 
         yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
     }
 
-    private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    IEnumerator Fade(float startAlpha, float endAlpha, float duration)
     {
         float timer = 0f;
 
+        SaveCompleteText.alpha = startAlpha;
+
         while (timer < duration)
         {
-            timer += Time.unscaledDeltaTime;
-            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, timer / duration);
+            timer += Time.deltaTime;
+            float progress = timer / duration;
 
-            Color color = popupImg.color;
-            color.a = newAlpha;
-            popupImg.color = color;
+            float newAlpha = Mathf.Lerp(startAlpha, endAlpha, progress);
 
-            yield return null; 
+            SaveCompleteText.alpha = newAlpha;
+
+            yield return null;
         }
-        Color finalColor = popupImg.color; 
-        finalColor.a = endAlpha;
-        popupImg.color = finalColor; 
-    }
 
+        SaveCompleteText.alpha = endAlpha;
+    }
 }

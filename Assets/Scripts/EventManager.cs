@@ -7,7 +7,6 @@
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance { get; private set; }
-    public GameObject SaveBtn;
 
     private IEventController currentActiveEvent;
 
@@ -61,7 +60,6 @@ public class EventManager : MonoBehaviour
 
         // ✅ 매니저의 유일한 임무: 이벤트에게 "시작하라"는 신호만 보낸다.
         //    이벤트가 구체적으로 어떤 동작을 할지는 전혀 알지 못한다.
-        SaveBtn.SetActive(false);
         currentActiveEvent.OnEventStart.Invoke();
     }
 
