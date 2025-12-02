@@ -59,15 +59,19 @@ public class GameManager_Croco_Minigame : MonoBehaviour
         restartBtn.SetActive(true);
         // 멈추기
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void PlayerSurvived()
     {
         if (gameEnded) return;
         gameEnded = true;
-        if (resultText) resultText.text = "Victory!\n30초 생존 성공!";
+        if (resultText) resultText.text = "Victory!\n20초 생존 성공!";
         Time.timeScale = 0f;
         finishBtn.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Restart() 

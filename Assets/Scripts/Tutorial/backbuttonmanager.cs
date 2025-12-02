@@ -1,60 +1,75 @@
-using UnityEngine;
+ï»¿using UnityEngine;
+using System.Collections; // System.CollectionsëŠ” ì‚¬ìš©ë˜ì§€ ì•Šì•„ ì œê±° ê°€ëŠ¥í•˜ì§€ë§Œ, ì›ë³¸ì— ìˆì—ˆìœ¼ë¯€ë¡œ ì¼ë‹¨ ìœ ì§€
+using UnityEngine.UI; // UnityEngine.UIëŠ” ì‚¬ìš©ë˜ì§€ ì•Šì•„ ì œê±° ê°€ëŠ¥í•˜ì§€ë§Œ, ì›ë³¸ì— ìˆì—ˆìœ¼ë¯€ë¡œ ì¼ë‹¨ ìœ ì§€
 
 public class BackButtonManager : MonoBehaviour
 {
     public static BackButtonManager Instance { get; private set; }
     public bool IsPaused { get; private set; }
 
+    private bool isMenuLocked = false;
+
     private GameObject optionUI;
     private CanvasGroup optionsCanvas;
+
+    // ğŸ’¡ 1. ì´ì „ ì»¤ì„œ ìƒíƒœë¥¼ ì €ì¥í•  ë³€ìˆ˜ ì¶”ê°€
+    private CursorLockMode previousCursorLockMode;
+    private bool previousCursorVisible;
 
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            // ì”¬ì´ ë°”ë€Œì–´ë„ ìœ ì§€ë˜ë„ë¡ DontDestroyOnLoad(this.gameObject);ë¥¼ ì¶”ê°€í•˜ëŠ” ê²ƒì´ ì¼ë°˜ì ì…ë‹ˆë‹¤. (í•„ìš”í•˜ë‹¤ë©´ ì¶”ê°€)
         }
         else
         {
-            Debug.LogWarning("PauseManager ÀÎ½ºÅÏ½º°¡ µÎ °³ ÀÌ»óÀÔ´Ï´Ù.");
+            Debug.LogWarning("PauseManager ì¸ìŠ¤í„´ìŠ¤ê°€ ë‘ ê°œ ì´ìƒì…ë‹ˆë‹¤.");
+            Destroy(this.gameObject); // ì¼ë°˜ì ìœ¼ë¡œ ì‹±ê¸€í†¤ ì¤‘ë³µ ì‹œ íŒŒê´´
         }
     }
 
     void Start()
     {
-        // ½ÃÀÛÇÒ ¶§ UI¸¦ Ã£¾Æ¿À°í, ºñÈ°¼ºÈ­ ÇØµÓ´Ï´Ù.
+        // Start() ë¡œì§ì€ ì›ë³¸ê³¼ ë™ì¼
         if (optionUI == null)
         {
             optionUI = GameObject.FindWithTag("OptionUI");
-            optionsCanvas = optionUI.GetComponent<CanvasGroup>();
             if (optionUI != null)
             {
-                // CanvasGroup ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿É´Ï´Ù.
                 optionsCanvas = optionUI.GetComponent<CanvasGroup>();
-                // °ÔÀÓ ½ÃÀÛ ½Ã¿¡´Â º¸ÀÌÁö ¾Êµµ·Ï ¼³Á¤ÇÕ´Ï´Ù.
-                optionsCanvas.alpha = 0f;
-                optionsCanvas.interactable = false;
-                optionsCanvas.blocksRaycasts = false;
+                if (optionsCanvas != null)
+                {
+                    optionsCanvas.alpha = 0f;
+                    optionsCanvas.interactable = false;
+                    optionsCanvas.blocksRaycasts = false;
+                }
             }
         }
-        IsPaused = false; // ÃÊ±â »óÅÂ´Â ÀÏ½ÃÁ¤Áö ¾Æ´Ô
+        IsPaused = false; // ì´ˆê¸° ìƒíƒœëŠ” ì¼ì‹œì •ì§€ ì•„ë‹˜
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
     {
-        // ESC Å° ÀÔ·ÂÀ» ¿©±â¼­ Àü´ãÇÕ´Ï´Ù.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }
     }
 
-    // publicÀ¸·Î ¼±¾ğÇÏ¿© UI ¹öÆ° µî¿¡¼­µµ È£ÃâÇÒ ¼ö ÀÖ½À´Ï´Ù.
     public void TogglePause()
     {
+        if (isMenuLocked)
+        {
+            Debug.Log("ë©”ë‰´ê°€ ì ê²¨ìˆì–´ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+            return;
+        }
         if (optionsCanvas == null)
         {
-            Debug.LogError("'OptionUI' ¶Ç´Â ±× À§ÀÇ CanvasGroupÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogError("'OptionUI' ë˜ëŠ” ê·¸ ìœ„ì˜ CanvasGroupì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
             return;
         }
 
@@ -62,11 +77,16 @@ public class BackButtonManager : MonoBehaviour
 
         if (IsPaused)
         {
+            // ğŸ’¡ 2. ì¼ì‹œì •ì§€(ë©”ë‰´ ì—´ê¸°) ì§ì „ì— í˜„ì¬ ì»¤ì„œ ìƒíƒœë¥¼ ì €ì¥í•©ë‹ˆë‹¤.
+            previousCursorLockMode = Cursor.lockState;
+            previousCursorVisible = Cursor.visible;
+
             Time.timeScale = 0f;
             optionsCanvas.alpha = 1f;
             optionsCanvas.interactable = true;
             optionsCanvas.blocksRaycasts = true;
 
+            // ë©”ë‰´ë¥¼ ì¼°ìœ¼ë‹ˆ ì»¤ì„œëŠ” ë¬´ì¡°ê±´ ë³´ì´ê²Œ í•˜ê³  ì ê¸ˆ í•´ì œí•©ë‹ˆë‹¤.
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -77,8 +97,14 @@ public class BackButtonManager : MonoBehaviour
             optionsCanvas.interactable = false;
             optionsCanvas.blocksRaycasts = false;
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            // ğŸ’¡ 3. ì¼ì‹œì •ì§€ í•´ì œ(ë©”ë‰´ ë‹«ê¸°) ì‹œ, ì €ì¥í•´ ë‘” ì´ì „ ì»¤ì„œ ìƒíƒœë¥¼ ë³µì›í•©ë‹ˆë‹¤.
+            Cursor.lockState = previousCursorLockMode;
+            Cursor.visible = previousCursorVisible;
         }
+    }
+
+    public void SetMenuLock(bool isLocked)
+    {
+        isMenuLocked = isLocked;
     }
 }

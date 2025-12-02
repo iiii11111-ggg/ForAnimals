@@ -77,6 +77,10 @@ public class UIManager : MonoBehaviour
     {
         SwitchToUI(mainUI);
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }
 

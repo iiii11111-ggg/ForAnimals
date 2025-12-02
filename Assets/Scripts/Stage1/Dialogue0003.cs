@@ -28,8 +28,8 @@ public class Dialogue0003 : MonoBehaviour, IEventController
     public CanvasGroup FadeScreen;
     public Transform CP, RP, MP;
     public Transform SavePoint;
-
     private Animator CA, RA, MA;
+    public GameObject InGameUI;
 
 
     public CinemachineCamera Cam1,Cam2,Cam3;
@@ -87,6 +87,8 @@ public class Dialogue0003 : MonoBehaviour, IEventController
         Player_Rabbit.SetActive(false);
         Player_Monkey.SetActive(false);
 
+        InGameUI.SetActive(false);
+
         Croco.transform.position = CP.transform.position;
         Croco.transform.LookAt(Rabbit.transform);
         Rabbit.transform.position = RP.transform.position;
@@ -105,6 +107,8 @@ public class Dialogue0003 : MonoBehaviour, IEventController
     public void ScriptEnd()
     {
         SaveManager.Instance.SaveGameData(SavePoint.transform.position);
+
+        InGameUI.SetActive(true);
 
         dp = Dialog.Instance.dialogPanel;
         dp.SetActive(false);

@@ -1,35 +1,48 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance; // ½Ì±ÛÅæÀ¸·Î »ç¿ë °¡´É
+    public static SoundManager Instance; // ì‹±ê¸€í†¤ìœ¼ë¡œ ì‚¬ìš© ê°€ëŠ¥
 
     public AudioSource bgmSource;
     public AudioSource sfxSource;
-    public Slider bgmSlider;
-    public Slider sfxSlider;
 
-    public AudioClip bgmClip; // ¿øÇÏ´Â BGM
-    public AudioClip TutorialClip;
-    public AudioClip testSFXClip;  // Å×½ºÆ®¿ë È¿°úÀ½ (¹öÆ° Å¬¸¯¿ë)
+    public AudioClip bgmClipMain; 
+    public AudioClip bgmClipTutorial;
+    public AudioClip bgmClipJungle;
+    public AudioClip bgmClipCroco;
+    public AudioClip bgmClipBug;
+    public AudioClip bgmClipEnding;
+    public AudioClip buttonClickClip;
 
+    void Awake()
+    {
+        // 1. ì´ë¯¸ Instanceê°€ ì¡´ì¬í•˜ëŠ” ê²½ìš° (ì´ì „ ì”¬ì—ì„œ DontDestroyOnLoadë¡œ ë„˜ì–´ì˜¨ ì¸ìŠ¤í„´ìŠ¤ê°€ ìˆìŒ)
+        if (Instance != null)
+        {
+            // ì”¬ì— ìƒˆë¡œìš´ SoundManagerê°€ ë“±ì¥í–ˆìœ¼ë¯€ë¡œ, 
+            // ğŸš¨ ê¸°ì¡´ì˜ ì¸ìŠ¤í„´ìŠ¤(Instance)ë¥¼ íŒŒê´´í•©ë‹ˆë‹¤.
+            Destroy(Instance.gameObject);
+        }
+
+        // 2. í˜„ì¬ ì˜¤ë¸Œì íŠ¸(this)ë¥¼ ìƒˆë¡œìš´ Instanceë¡œ ì§€ì •í•©ë‹ˆë‹¤.
+        Instance = this;
+
+        // 3. ê·¸ë¦¬ê³  ìƒˆë¡œìš´ Instanceë„ ì”¬ ì „í™˜ ì‹œ ìœ ì§€ë˜ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤.
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
-        // ¹è°æÀ½¾Ç ¼³Á¤ ¹× Àç»ı
-        if (bgmSource != null && bgmClip != null)
+        // ë°°ê²½ìŒì•… ì„¤ì • ë° ì¬ìƒ
+        if (bgmSource != null && bgmClipMain != null)
         {
-            bgmSource.clip = bgmClip;
+            bgmSource.clip = bgmClipMain;
             bgmSource.loop = true;
             bgmSource.Play();
         }
 
-        // º¼·ı Á¶Àı ½½¶óÀÌ´õ ÀÌº¥Æ® ¿¬°á
-        if (bgmSlider != null)
-            bgmSlider.onValueChanged.AddListener(SetBGMVolume);
-        if (sfxSlider != null)
-            sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
 
     public void SetBGMVolume(float value)
@@ -44,17 +57,47 @@ public class SoundManager : MonoBehaviour
             sfxSource.volume = value;
     }
 
-    // ¿ÜºÎ¿¡¼­ È£ÃâÇÒ ¼ö ÀÖ´Â SFX Àç»ı ÇÔ¼ö
+    // ì™¸ë¶€ì—ì„œ í˜¸ì¶œí•  ìˆ˜ ìˆëŠ” SFX ì¬ìƒ í•¨ìˆ˜
     public void PlaySFX(AudioClip clip)
     {
         if (sfxSource != null && clip != null)
             sfxSource.PlayOneShot(clip);
     }
-
-    // ¹Ì¸® ÁöÁ¤µÈ Å×½ºÆ® SFX Àç»ı
-    public void PlayTestSFX()
+    public void PlayButtonClickSFX()
     {
-        PlaySFX(testSFXClip);
+        PlaySFX(buttonClickClip);
     }
+    public void SetBGMTutorial() 
+    {
+        bgmSource.clip = bgmClipTutorial;
+        bgmSource.loop = true;
+        bgmSource.Play();
+    }
+    public void SetBGMJungle()
+    {
+        bgmSource.clip = bgmClipJungle;
+        bgmSource.loop = true;
+        bgmSource.Play();
+    }
+
+    public void SetBGMCroco()
+    {
+        bgmSource.clip = bgmClipCroco;
+        bgmSource.loop = true;
+        bgmSource.Play();
+    }
+    public void SetBGMBug()
+    {
+        bgmSource.clip = bgmClipBug;
+        bgmSource.loop = true;
+        bgmSource.Play();
+    }
+    public void SetBGMEnding()
+    {
+        bgmSource.clip = bgmClipEnding;
+        bgmSource.loop = true;
+        bgmSource.Play();
+    }
+
 }
 

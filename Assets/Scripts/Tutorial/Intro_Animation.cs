@@ -32,7 +32,7 @@ public class Intro_Animation : MonoBehaviour
         sequence = 0;
         priorityIndex = 50;
         EventTrigger = false;
-        mainAudioSource = Camera.main.GetComponent<AudioSource>();
+        mainAudioSource = SoundManager.Instance.bgmSource;
         mainAudioSource.clip = backgroundMusicJungle;
         mainAudioSource.loop = true; // 반복 재생 설정
         mainAudioSource.Play();

@@ -4,6 +4,7 @@ public class buttonManager : MonoBehaviour
 {
     public GameObject optionUiActive;
     private GameObject dialog;
+    public GameObject CompleteExplainScreen;
 
     public void Startbutton()//public이있어야 함수 연결이 가능함
     {
@@ -65,5 +66,13 @@ public class buttonManager : MonoBehaviour
     public void exitbtn()//public이있어야 함수 연결이 가능함
     {
         Application.Quit();
+    }
+    public void ControllerOpen() 
+    {
+        CompleteExplainScreen.SetActive(true);
+    }
+    public void ControllerClose() 
+    {
+        CompleteExplainScreen.SetActive(false);
     }
 }

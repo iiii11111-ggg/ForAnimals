@@ -6,7 +6,7 @@ using Unity.Cinemachine;
 [RequireComponent(typeof(Animator))]
 public class PlayerController_Monkey : MonoBehaviour
 {
-    // ... (변수 선언은 이전과 동일) ...
+    // ... (기존 변수들) ...
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float dashSpeed = 10f;
@@ -59,6 +59,11 @@ public class PlayerController_Monkey : MonoBehaviour
     public float dashFOV = 50f;
     public float fovSmoothSpeed = 5f;
 
+    // ▼▼▼ [추가됨] UI 및 타이머 설정 ▼▼▼
+    [Header("UI Settings")]
+    public GameObject HoldUi;
+    private float uiBlockTimer = 0f; // 매달리기 해제 후 UI 표시를 막는 쿨타임
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
     [Header("References")]
     private CharacterController controller;
@@ -112,8 +117,11 @@ public class PlayerController_Monkey : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("PlayerController_Monkey: FreeLook Camera가 할당되지 않았습니다. FOV 조절이 작동하지 않습니다.");
+            Debug.LogWarning("FreeLook Camera가 할당되지 않았습니다.");
         }
+
+        // UI 초기화
+        if (HoldUi != null) HoldUi.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -123,28 +131,50 @@ public class PlayerController_Monkey : MonoBehaviour
     {
         if (BackButtonManager.Instance != null && BackButtonManager.Instance.IsPaused) return;
 
-        // --- 0. 특수 상태(매달리기) 우선 처리 ---
+        // ▼▼▼ [핵심 로직 변경] 감지 -> UI반영 -> 입력처리를 한 흐름으로 통합 ▼▼▼
+
+        // 1. UI 차단 타이머 감소
+        if (uiBlockTimer > 0f)
+        {
+            uiBlockTimer -= Time.deltaTime;
+        }
+
+        // 2. 주변 감지 (매달리지 않았을 때만)
+        Transform detectedLedge = null;
+        if (!isHanging && !isMovingToHangPoint)
+        {
+            detectedLedge = DetectNearestHangPoint();
+        }
+
+        // 3. UI 표시 처리
+        //    (감지된 게 있고 && 차단 타이머가 끝났고 && 현재 매달린 상태가 아님)
+        if (HoldUi != null)
+        {
+            bool showUI = (detectedLedge != null) && (uiBlockTimer <= 0f);
+            HoldUi.SetActive(showUI);
+        }
+
+        // 4. 매달리기 입력 처리
+        //    (별도로 다시 감지하지 않고, 위에서 감지한 detectedLedge를 바로 사용 -> 성능 최적화)
+        if (canMove && Input.GetKeyDown(KeyCode.E) && detectedLedge != null)
+        {
+            StartHanging(detectedLedge);
+            if (isMovingToHangPoint) return; // 매달리기 시작했으면 아래 이동 로직 패스
+        }
+        // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+
+        // --- 0. 특수 상태(매달리기 중) ---
         if (isHanging)
         {
             HandleHanging();
             return;
         }
 
-        if (isMovingToHangPoint)
-        {
-            return;
-        }
+        if (isMovingToHangPoint) return;
 
-        if (canMove && Input.GetKeyDown(KeyCode.E))
-        {
-            AttemptGrab();
-            if (isMovingToHangPoint)
-            {
-                return;
-            }
-        }
 
-        // --- 1. 중력 적용 (수정됨) ---
+        // --- 1. 중력 적용 ---
         if (!isGrounded)
         {
             playerVelocity.y += gravity * Time.deltaTime;
@@ -152,7 +182,6 @@ public class PlayerController_Monkey : MonoBehaviour
 
         // --- 2. 상태 초기화 ---
         isGrounded = false;
-
 
         // --- 3. 입력 및 회전 ---
         Vector3 inputDirection = Vector3.zero;
@@ -176,13 +205,13 @@ public class PlayerController_Monkey : MonoBehaviour
         }
         else
         {
-            isDashing = false; // 입력 없으면 대시 해제
+            isDashing = false;
         }
 
-        // --- 4. 수평 이동 계산 (수정됨) ---
+        // --- 4. 수평 이동 ---
         bool isActuallyGrounded = (Time.time - timeLastGrounded <= coyoteTime);
 
-        if (isActuallyGrounded && !isSliding) // [지상일 때]
+        if (isActuallyGrounded && !isSliding)
         {
             if (!isLeapingFromHang)
             {
@@ -191,14 +220,13 @@ public class PlayerController_Monkey : MonoBehaviour
                 currentHorizontalVelocity = moveDirection * currentMaxSpeed;
             }
         }
-        else // [공중 또는 가파른 경사로일 때]
+        else
         {
             isDashing = false;
             currentMaxSpeed = airControlSpeed;
 
             if (isSliding)
             {
-                // [미끄러질 때 (Rabbit 로직)]
                 Vector3 slideVector = Vector3.ProjectOnPlane(Vector3.down, slopeNormal);
                 Vector3 slideDirection = new Vector3(slideVector.x, 0, slideVector.z).normalized;
                 Vector3 slideVelocity = slideDirection * slideSpeed;
@@ -207,8 +235,6 @@ public class PlayerController_Monkey : MonoBehaviour
                 if (!isLeapingFromHang)
                 {
                     Vector3 targetVelocity = slideVelocity + inputVelocity;
-
-                    // [수정됨] airControlFactor를 제거하여 더 빠르게 반응
                     currentHorizontalVelocity = Vector3.Lerp(
                         currentHorizontalVelocity,
                         targetVelocity,
@@ -218,7 +244,6 @@ public class PlayerController_Monkey : MonoBehaviour
             }
             else
             {
-                // [순수 공중일 때 (Monkey 기존 로직)]
                 if (!isLeapingFromHang)
                 {
                     Vector3 desiredVelocity = moveDirection * currentMaxSpeed;
@@ -231,8 +256,7 @@ public class PlayerController_Monkey : MonoBehaviour
             }
         }
 
-
-        // --- 5. 점프 입력 처리 ---
+        // --- 5. 점프 ---
         if (canMove && Input.GetKeyDown(KeyCode.Space) && (Time.time - timeLastGrounded <= coyoteTime) && !isLeapingFromHang)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -255,11 +279,10 @@ public class PlayerController_Monkey : MonoBehaviour
         }
         else if (isLeapingFromHang)
         {
-            // (도약 애니메이션 재생 중)
+            // 도약 중
         }
         else
         {
-            // (일반 이동)
             float targetSpeed = new Vector3(controller.velocity.x, 0, controller.velocity.z).magnitude;
 
             if (lastInputMagnitude < 0.1f && isActuallyGrounded)
@@ -278,7 +301,6 @@ public class PlayerController_Monkey : MonoBehaviour
             );
 
             an.SetFloat("Speed", animationSpeed);
-
             an.SetBool("isJumping", !isActuallyGrounded && !isSliding);
         }
 
@@ -299,12 +321,15 @@ public class PlayerController_Monkey : MonoBehaviour
 
     #region Hanging Logic
 
-    void AttemptGrab()
+    // ▼▼▼ [분리됨] 감지 로직을 별도 함수로 분리 (유지보수성 UP) ▼▼▼
+    Transform DetectNearestHangPoint()
     {
         Vector3 grabCheckCenter = transform.position + transform.forward * hangDetectionOffset;
         Collider[] colliders = Physics.OverlapSphere(grabCheckCenter, hangDetectionRadius);
+
         Transform closestHangPoint = null;
         float closestDistSqr = float.MaxValue;
+
         foreach (var col in colliders)
         {
             if (col.CompareTag(hangPointLedgeTag))
@@ -321,11 +346,9 @@ public class PlayerController_Monkey : MonoBehaviour
                 }
             }
         }
-        if (closestHangPoint != null)
-        {
-            StartHanging(closestHangPoint);
-        }
+        return closestHangPoint;
     }
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
     void StartHanging(Transform hangPoint)
     {
@@ -341,12 +364,13 @@ public class PlayerController_Monkey : MonoBehaviour
         currentSwingVelocity = 0f;
         an.SetFloat("SwingPower", 0f);
 
+        // (매달리기 시작 시 UI가 즉시 꺼지도록 타이머나 조건은 Update 루프에서 자동 처리됨)
+
         Vector3 targetRootPosition = hangPoint.position + handToRootOffset;
         Quaternion targetRootRotation = Quaternion.LookRotation(-hangPoint.forward, Vector3.up);
         StartCoroutine(MoveToHangPosition(targetRootPosition, targetRootRotation));
     }
 
-    // 💡 (이 함수는 정상 위치)
     IEnumerator MoveToHangPosition(Vector3 targetPos, Quaternion targetRot)
     {
         float elapsed = 0f;
@@ -375,19 +399,12 @@ public class PlayerController_Monkey : MonoBehaviour
             return;
         }
 
-        // --- 그네 물리 계산 ---
         float swingInput = Input.GetAxisRaw("Vertical");
         float restoringForce = -swingGravity * currentSwingPosition;
         float pumpForce = 0f;
 
-        if (swingInput > 0.1f)
-        {
-            pumpForce = swingInput * swingPumpForce;
-        }
-        else if (swingInput < -0.1f)
-        {
-            pumpForce = swingInput * swingPumpForce;
-        }
+        if (swingInput > 0.1f) pumpForce = swingInput * swingPumpForce;
+        else if (swingInput < -0.1f) pumpForce = swingInput * swingPumpForce;
 
         float totalAcceleration = restoringForce + pumpForce;
         currentSwingVelocity += totalAcceleration * Time.deltaTime;
@@ -400,30 +417,24 @@ public class PlayerController_Monkey : MonoBehaviour
             currentSwingVelocity = 0;
         }
 
-
-        // swing에 따라 플레이어 위치 조정
         if (currentHangTransform != null)
         {
             Vector3 baseRootPosition = currentHangTransform.position + handToRootOffset;
-
-            float movementScale = currentSwingPosition >= 0
-                ? forwardSwingMovementScale
-                : backwardSwingMovementScale;
-
+            float movementScale = currentSwingPosition >= 0 ? forwardSwingMovementScale : backwardSwingMovementScale;
             Vector3 swingOffset = transform.forward * (currentSwingPosition * movementScale);
-
             Vector3 targetPosition = baseRootPosition + swingOffset;
             targetPosition.y = baseRootPosition.y;
             transform.position = targetPosition;
-
             transform.rotation = Quaternion.LookRotation(-currentHangTransform.forward, Vector3.up);
         }
-
-        // 🔴 [수정됨] 여기에 잘못 복사되었던 MoveToHangPosition 코루틴을 삭제했습니다.
     }
 
     void Dismount()
     {
+        // ▼▼▼ [핵심] 매달리기 해제 시 0.2초간 UI 차단 ▼▼▼
+        uiBlockTimer = 0.2f;
+        // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
         isHanging = false;
         isMovingToHangPoint = false;
         StopAllCoroutines();
@@ -442,7 +453,6 @@ public class PlayerController_Monkey : MonoBehaviour
 
         controller.enabled = true;
 
-        // --- 도약 속도 계산 ---
         float forwardLeapForce = currentSwingVelocity * leapVelocityFactor;
         float heightFactor = Mathf.InverseLerp(0, maxSwingAngle, Mathf.Abs(currentSwingPosition));
         float upwardLeapForce = baseLeapUpwardForce + (heightFactor * addedLeapUpwardForce);
@@ -462,7 +472,7 @@ public class PlayerController_Monkey : MonoBehaviour
 
     #endregion
 
-
+    // ... (텔레포트 및 기타 유틸리티 함수들은 그대로 유지) ...
     public void TeleportTo(Vector3 destination)
     {
         TeleportTo(destination, transform.rotation);
@@ -476,18 +486,13 @@ public class PlayerController_Monkey : MonoBehaviour
         if (controller == null)
         {
             controller = GetComponent<CharacterController>();
-            if (controller == null)
-            {
-                Debug.LogError("PlayerController_Monkey: CharacterController를 찾을 수 없습니다!");
-                return;
-            }
+            if (controller == null) return;
         }
         ResetHangingState();
         controller.enabled = false;
         transform.position = destination;
         transform.rotation = newRotation;
         controller.enabled = true;
-        Debug.Log($"플레이어를 {destination} 위치, {newRotation.eulerAngles} 회전으로 텔레포트했습니다.");
     }
 
     public Vector3 CurrentVelocity
@@ -515,6 +520,8 @@ public class PlayerController_Monkey : MonoBehaviour
             currentSwingPosition = 0f;
             currentSwingVelocity = 0f;
 
+            uiBlockTimer = 0f; // 리셋 시 타이머도 초기화
+
             an.SetBool("isJumping", false);
             an.SetBool("isHanging", false);
             an.SetBool("isLeapingFromHang", false);
@@ -535,7 +542,6 @@ public class PlayerController_Monkey : MonoBehaviour
 
         if (surfaceAngle < controller.slopeLimit)
         {
-            // [정상적인 바닥]
             if (playerVelocity.y < 0.1f)
             {
                 isGrounded = true;
@@ -555,7 +561,6 @@ public class PlayerController_Monkey : MonoBehaviour
         }
         else
         {
-            // [수정됨] 90도 벽은 '미끄러짐'이 아니라 '공중'으로 처리
             if (surfaceAngle > 89.0f)
             {
                 isGrounded = false;
@@ -564,11 +569,9 @@ public class PlayerController_Monkey : MonoBehaviour
                 return;
             }
 
-            // [미끄러운 경사면]
             isGrounded = false;
             isSliding = true;
             slopeNormal = hit.normal;
-
             timeLastGrounded = 0f;
         }
     }

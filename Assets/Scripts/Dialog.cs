@@ -146,12 +146,12 @@ public class Dialog : MonoBehaviour
 
     IEnumerator nextTalk()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         NextActive = true;
     }
     IEnumerator previousTalk()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         NextActive = true;
     }
 

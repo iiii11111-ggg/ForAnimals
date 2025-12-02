@@ -61,6 +61,8 @@ public class GameManager_Croco : MonoBehaviour
         restartBtn.SetActive(true);
         // 멈추기
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void PlayerSurvived()
@@ -70,6 +72,8 @@ public class GameManager_Croco : MonoBehaviour
         if (resultText) resultText.text = "Victory!\n30초 생존 성공!";
         Time.timeScale = 0f;
         finishBtn.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
     }
 
@@ -80,6 +84,7 @@ public class GameManager_Croco : MonoBehaviour
     public void finish() 
     {
         SaveManager.Instance.RecordAndSaveEventCompletion("0002");
+        Time.timeScale = 1f;
         GameManager.Instance.LoadGameSlot(PlayerData.currentSlotIndex);
     }
 }

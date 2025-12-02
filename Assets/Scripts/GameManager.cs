@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("<color=red><b>[GameManager] LOAD START! IsLoading을 TRUE로 설정합니다.</b></color>");
         IsLoading = true;
 
-        string folderPath = Path.Combine(Application.dataPath, "../", "SAVE");
+        string folderPath = Path.Combine(Application.persistentDataPath, "../", "SAVE");
         string filePath = Path.Combine(folderPath, "SaveSlot" + slotIndex + ".json");
         GameData data;
         string sceneToLoad;
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("플레이어 오브젝트를 찾을 수 없습니다! Player 태그를 확인해주세요.");
+            Debug.LogWarning("플레이어 오브젝트를 찾을 수 없습니다! Player 태그를 확인해주세요.");
         }
 
         yield return new WaitForEndOfFrame();
@@ -142,6 +142,8 @@ public class GameManager : MonoBehaviour
         float timer = 0f;
 
         FadeScreen.alpha = startAlpha;
+
+        yield return new WaitForSeconds(0.5f);
 
         while (timer < duration)
         {

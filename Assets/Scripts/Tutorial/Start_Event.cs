@@ -68,6 +68,7 @@ public class Start_Event : MonoBehaviour, IEventController
     }
     public void ScriptEnd()
     {
+
     }
 
 

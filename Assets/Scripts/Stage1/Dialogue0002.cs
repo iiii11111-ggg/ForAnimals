@@ -26,8 +26,8 @@ public class Dialogue0002 : MonoBehaviour, IEventController
     public GameObject Player_Monkey;
     public CanvasGroup FadeScreen;
     public Transform CP, RP, MP, SavePoint;
-
     private Animator CA, RA, MA;
+    public GameObject InGameUI;
 
 
     public CinemachineCamera Cam1,Cam2,Cam3,Cam4,Cam5;
@@ -75,13 +75,17 @@ public class Dialogue0002 : MonoBehaviour, IEventController
         Script.StartDialog_0002();
         Dialog.Instance.OnIndexChanged += IndexChanged;
 
+        SoundManager.Instance.SetBGMCroco();
+
         // √π ¥Î»≠ æ¿ 
-        
+
         Rabbit.SetActive(true);
         Monkey.SetActive(true);
 
         Player_Rabbit.SetActive(false);
         Player_Monkey.SetActive(false);
+
+        InGameUI.SetActive(false);
 
         Croco.transform.position = CP.transform.position;
         Rabbit.transform.position = RP.transform.position;
@@ -99,11 +103,14 @@ public class Dialogue0002 : MonoBehaviour, IEventController
     public void ScriptEnd()
     {
         SaveManager.Instance.SaveGameData(SavePoint.transform.position);
-        SceneManager.LoadScene("Croco_InGame");
+
+        InGameUI.SetActive(true);
 
         dp = Dialog.Instance.dialogPanel;
         dp.SetActive(false);
         Dialog.Instance.OnIndexChanged -= IndexChanged;
+
+        SceneManager.LoadScene("Croco_InGame");
     }
 
     void IndexChanged(int index) 

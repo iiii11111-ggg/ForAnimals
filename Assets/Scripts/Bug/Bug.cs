@@ -9,11 +9,12 @@ public class Bug : MonoBehaviour
     void Start()
     {
         direction = Random.insideUnitCircle.normalized; // 랜덤한 초기 방향 설정
-        speed = Random.Range(0.5f, 1.5f);
+        speed = Random.Range(5f, 8f);
         cam = Camera.main;
 
         // 초기 방향에 맞춰 오브젝트 회전
         UpdateRotation();
+
     }
 
     void Update()
